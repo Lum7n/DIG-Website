@@ -1,6 +1,6 @@
 "use strict";
-var vorlage03_standard;
-(function (vorlage03_standard) {
+var DIG_main;
+(function (DIG_main) {
     console.log("yes again");
-})(vorlage03_standard || (vorlage03_standard = {}));
+})(DIG_main || (DIG_main = {}));
 //# sourceMappingURL=script.js.map

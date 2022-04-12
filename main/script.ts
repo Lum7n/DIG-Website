@@ -1,4 +1,4 @@
-namespace vorlage03_standard {
+namespace DIG_main {
 
 console.log("yes again");
 
