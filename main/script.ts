@@ -5,10 +5,10 @@ window.addEventListener("load", handleLoad);
 
 function handleLoad(): void {
 
-    console.log("load");
+    console.log("color");
 
     let body: HTMLBodyElement = <HTMLBodyElement>document.querySelector("body");
-    body.style.backgroundColor = "#c49595";
+    body.style.color = "darkblue";
 }
 
 }
