@@ -38,8 +38,25 @@ header {
     height: 100%;
 }
 
-#search {
+#search-lang {
+    display: grid;
     background-color: aqua;
+    justify-content: right;
+}
+
+.searchbar {
+}
+
+.searchbar input,button {
+    height: 40px;
+}
+
+/* .languages {
+    display: inline;
+} */
+
+.flag {
+    height: auto;
 }
 
 #mainNav {
