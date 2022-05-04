@@ -13,10 +13,10 @@ body {
     'footer';
     grid-template-rows: 23% auto 20%;
     gap: 10px;
-    margin: 0px 160px;
+    margin: 0px 60px;
 }
 
-/* ----------------  header, navigation  ---------------- */
+/* -----160-----------  header, navigation  ---------------- */
 header {
     display: grid;
     grid-template-areas:
@@ -34,30 +34,31 @@ header {
 }
 
 #logoSize {
-    width: auto;
-    height: 100%;
+    width: 100%;
+    height: auto;
 }
 
 #search-lang {
     display: grid;
     background-color: aqua;
-    justify-content: right;
 }
 
-.searchbar {
+/* .test {
+    position: fixed;
 }
 
-.searchbar input,button {
+.test input,button {
     height: 40px;
 }
 
-/* .languages {
-    display: inline;
-} */
+#help {
+    margin-left: 220px;
+    margin-top: 5px;
+}
 
 .flag {
     height: auto;
-}
+} */
 
 #mainNav {
     background-color: pink;
