@@ -14,7 +14,8 @@ body {
     'footer';
     grid-template-rows: 23% auto 20%;
     gap: 10px;
-    margin: 0px 160px;
+    width: 1205px;
+    margin: auto;
 }
 
 /* -----160-----------  header, navigation  ---------------- */
@@ -30,7 +31,7 @@ header {
     padding: 10px;
     margin-top: 20px;
 }
-
+/* 1205x200 */
 #logo {
     background-color: #631111;
 }
