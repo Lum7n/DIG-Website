@@ -17,8 +17,9 @@ body {
     width: 1205px;
     margin: auto;
 }
+/* 1205x200 */
 
-/* -----160-----------  header, navigation  ---------------- */
+/* ----------------  header, navigation  ---------------- */
 header {
     display: grid;
     grid-template-areas:
@@ -31,7 +32,7 @@ header {
     padding: 10px;
     margin-top: 20px;
 }
-/* 1205x200 */
+
 #logo {
     background-color: #631111;
 }
@@ -51,7 +52,7 @@ header {
     display: grid;
     background-color: blueviolet;
     justify-content: right;
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 #search button {
@@ -72,7 +73,25 @@ header {
 }
 
 #mainNav {
+    display: flex;
+    justify-content: right;
     background-color: pink;
+    margin-right: 10px;
+}
+
+#mainNav li {
+    float: left;
+    list-style-type: none;
+}
+
+#mainNav a {
+    display: block;
+    font-size: 24px;
+    border: 4px solid green;
+    background-color: #91da91;
+    text-decoration: none;
+    padding: 10px;
+    margin-left: 10px;
 }
 
 /* ----------------  footer, contact  ---------------- */
