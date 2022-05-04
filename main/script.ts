@@ -1,7 +1,6 @@
 namespace DIG_main {
 
 window.addEventListener("load", handleLoad);
-window.addEventListener("change", bodyfiller);
 
 
 function handleLoad(): void {
@@ -11,15 +10,15 @@ function handleLoad(): void {
     let body: HTMLBodyElement = <HTMLBodyElement>document.querySelector("body");
     body.style.color = "darkblue";
 
-    bodyfiller();
+    // bodyfiller();
 }
 
-function bodyfiller(): void {
+// function bodyfiller(): void {
 
-    let windowWidth: number = window.innerWidth;
-    console.log(windowWidth);    
+//     let windowWidth: number = window.innerWidth;
+//     console.log(windowWidth);    
     
-}
+// }
 
 
 
