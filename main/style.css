@@ -1,9 +1,10 @@
 .item0 { grid-area: header; }
 .item1 { grid-area: logo; }
-.item2 { grid-area: search; }
-.item3 { grid-area: nav; }
-.item4 { grid-area: content; }
-.item5 { grid-area: footer; }
+.item2 { grid-area: language; }
+.item3 { grid-area: search; }
+.item4 { grid-area: nav; }
+.item5 { grid-area: content; }
+.item6 { grid-area: footer; }
 
 body {
     display: grid;
@@ -13,52 +14,62 @@ body {
     'footer';
     grid-template-rows: 23% auto 20%;
     gap: 10px;
-    margin: 0px 60px;
+    margin: 0px 160px;
 }
 
 /* -----160-----------  header, navigation  ---------------- */
 header {
     display: grid;
     grid-template-areas:
-    'logo search'
-    'logo nav';
+    'logo language search'
+    'logo nav nav';
     grid-template-rows: 30% 70%;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 22% 48% 30%;
     background-color: red;
     gap: 5px;
     padding: 10px;
+    margin-top: 20px;
 }
 
 #logo {
-    background-color: #ffffff;
+    background-color: #631111;
 }
 
 #logoSize {
-    width: 100%;
+    width: 99%;
     height: auto;
+    max-height: 145px;
 }
 
-#search-lang {
+.item2 {
     display: grid;
     background-color: aqua;
+    justify-content: right;
 }
 
-/* .test {
-    position: fixed;
+.item3 {
+    display: grid;
+    background-color: blueviolet;
+    justify-content: right;
+    margin-right: 20px;
 }
 
-.test input,button {
-    height: 40px;
+#search button {
+    width: 30px;
+    height: 38px;
 }
 
-#help {
-    margin-left: 220px;
-    margin-top: 5px;
+#search input {
+    width: 20em;
+    height: 38px;
 }
 
 .flag {
     height: auto;
-} */
+    max-height: 30px;
+    border: 4px solid beige;
+    border-radius: 3px;
+}
 
 #mainNav {
     background-color: pink;
