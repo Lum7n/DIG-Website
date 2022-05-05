@@ -5,7 +5,7 @@ var DIG_main;
     function handleLoad() {
         console.log("color");
         let body = document.querySelector("body");
-        body.style.color = "darkblue";
+        body.style.color = "white";
         // bodyfiller();
     }
     // function bodyfiller(): void {

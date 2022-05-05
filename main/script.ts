@@ -8,7 +8,7 @@ function handleLoad(): void {
     console.log("color");
 
     let body: HTMLBodyElement = <HTMLBodyElement>document.querySelector("body");
-    body.style.color = "darkblue";
+    body.style.color = "white";
 
     // bodyfiller();
 }
