@@ -1,0 +1,65 @@
+.item0 { grid-area: header; }
+.item1 { grid-area: logo; }
+.item2 { grid-area: language; }
+.item3 { grid-area: search; }
+.item4 { grid-area: nav; }
+.item5 { grid-area: stripe; }
+.item6 { grid-area: content; }
+.item7 { grid-area: footer; }
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-areas:
+    'header'
+    'content'
+    'footer';
+    grid-template-rows: 160px auto 200px;
+    gap: 10px;
+    width: 595px;
+    margin-left: 9px;
+}
+
+/* ----------------  header, navigation  ---------------- */
+header {
+    display: grid;
+    grid-template-areas:
+    'logo language'
+    'stripe stripe';
+    grid-template-rows: 122px 8px;
+    grid-template-columns: 40% 60%;
+    /* background-color: #462a2a; */
+    gap: 5px;
+    padding: 4px;
+    margin-top: 20px;
+    max-height: 200px;
+}
+
+#logoSize {
+    margin-left: 30px;
+    width: 90%;
+    height: 98%;
+    /* border: 2px solid #e6d1d1; */
+}
+
+#stripe {
+    background-color: #a5735c;
+    padding: 2px;
+    margin-left: -80px;
+    margin-right: -80px;
+    position: relative;
+    top: 0px;
+}
+
+/* ----------------  footer, contact  ---------------- */
+footer {
+    background-color: lightgrey;
+    padding: 10px;
+}
+
+/* ----------------  main content  ---------------- */
+section {
+    background-color: lightsalmon;
+    padding: 10px;
+}

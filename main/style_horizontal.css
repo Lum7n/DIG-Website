@@ -19,8 +19,8 @@ body {
     gap: 10px;
     width: 1205px;
     margin: auto;
+    background-color: #631111;
 }
-/* 1205x200 */
 
 /* ----------------  header, navigation  ---------------- */
 header {

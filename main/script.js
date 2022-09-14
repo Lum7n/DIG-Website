@@ -4,13 +4,41 @@ var DIG_main;
     window.addEventListener("load", handleLoad);
     function handleLoad() {
         console.log("color");
-        let body = document.querySelector("body");
-        body.style.color = "white";
-        // bodyfiller();
+        // let body: HTMLBodyElement = <HTMLBodyElement>document.querySelector("body");
+        // body.style.color = "white";
+        sizeTest();
     }
-    // function bodyfiller(): void {
-    //     let windowWidth: number = window.innerWidth;
-    //     console.log(windowWidth);    
-    // }
+    function sizeTest() {
+        let screenWidth = screen.width;
+        let screenHeight = screen.height;
+        console.log("Width: ", screenWidth);
+        console.log("Height: ", screenHeight);
+        let screenType;
+        if (screenWidth < screenHeight) {
+            console.log("vertical");
+            screenType = "vertical";
+            addStylesheet("style_vertical.css");
+            matchWidth();
+        }
+        else if (screenWidth > screenHeight) {
+            console.log("horizontal");
+            screenType = "horizontal";
+            addStylesheet("style_horizontal.css");
+        }
+        else {
+            console.log("fehler");
+        }
+    }
+    function addStylesheet(fileName) {
+        let head = document.head;
+        let link = document.createElement("link");
+        link.type = "text/css";
+        link.rel = "stylesheet";
+        link.href = fileName;
+        head.appendChild(link);
+    }
+    function matchWidth() {
+        console.log("test");
+    }
 })(DIG_main || (DIG_main = {}));
 //# sourceMappingURL=script.js.map
