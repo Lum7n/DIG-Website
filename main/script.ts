@@ -29,7 +29,7 @@ namespace DIG_main {
             screenType = "vertical";
 
             addStylesheet("style_vertical.css");
-            matchWidth();
+            matchWidth(screenWidth);
 
         } else if (screenWidth > screenHeight) {
             console.log("horizontal");
@@ -54,11 +54,13 @@ namespace DIG_main {
         head.appendChild(link);
     }
 
-    function matchWidth(): void {
+    function matchWidth(screenWidth: number): void {
 
-        console.log("test");
+        let bodyWidth: number = screenWidth - 20;
+        console.log("body: ", bodyWidth);
 
-        
+        let body: HTMLBodyElement = document.body;
+        body.style.width = bodyWidth;
     }
 
 }

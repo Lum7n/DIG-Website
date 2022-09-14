@@ -18,7 +18,7 @@ var DIG_main;
             console.log("vertical");
             screenType = "vertical";
             addStylesheet("style_vertical.css");
-            matchWidth();
+            matchWidth(screenWidth);
         }
         else if (screenWidth > screenHeight) {
             console.log("horizontal");
@@ -37,8 +37,11 @@ var DIG_main;
         link.href = fileName;
         head.appendChild(link);
     }
-    function matchWidth() {
-        console.log("test");
+    function matchWidth(screenWidth) {
+        let bodyWidth = screenWidth - 20;
+        console.log("body: ", bodyWidth);
+        let body = document.body;
+        body.style.width = bodyWidth;
     }
 })(DIG_main || (DIG_main = {}));
 //# sourceMappingURL=script.js.map
