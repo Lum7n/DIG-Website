@@ -56,11 +56,31 @@ namespace DIG_main {
 
     function matchWidth(screenWidth: number): void {
 
-        let bodyWidth: number = screenWidth - 20;
-        console.log("body: ", bodyWidth);
+        if (screenWidth < 400) {
 
-        let body: HTMLBodyElement = document.body;
-        body.style.width = bodyWidth;
+            let bodyWidth: number = screenWidth - 20;
+            console.log("body: ", bodyWidth);
+    
+            let body: HTMLBodyElement = <HTMLBodyElement>document.querySelector("body");
+            body.style.width = bodyWidth + "px";
+
+        } else {
+            
+            let wholeMarginWidth: number = screenWidth * 0.1;
+            let bodyWidth: number = screenWidth - wholeMarginWidth;
+            console.log("body: ", bodyWidth);
+    
+            let body: HTMLBodyElement = <HTMLBodyElement>document.querySelector("body");
+            body.style.width = bodyWidth + "px";
+            body.style.marginLeft = (wholeMarginWidth / 2) + "px";
+            
+            let marginLogo: HTMLElement = <HTMLElement>document.getElementById("logoSize");
+            marginLogo.style.marginLeft = (wholeMarginWidth / 4) + "px";
+
+            let marginStripe: HTMLElement = <HTMLElement>document.getElementById("stripe");
+            marginStripe.style.marginRight = "-" + (wholeMarginWidth / 2 - 1) + "px";
+
+        }
+
     }
-
 }

@@ -15,7 +15,7 @@ body {
     'header'
     'content'
     'footer';
-    grid-template-rows: 160px auto 200px;
+    grid-template-rows: 150px auto 200px;
     gap: 10px;
     width: 595px;
     margin-left: 10px;
@@ -27,20 +27,25 @@ header {
     grid-template-areas:
     'logo language'
     'stripe stripe';
-    grid-template-rows: 122px 8px;
+    grid-template-rows: 124px 8px;
     grid-template-columns: 40% 60%;
     /* background-color: #462a2a; */
     gap: 5px;
     padding: 4px;
-    margin-top: 20px;
+    margin-top: 5px;
     max-height: 200px;
 }
 
 #logoSize {
-    margin-left: 30px;
+    display: block;
+    max-height: 115px;
+    width: auto;
+    height: auto;
+    margin-left: 5px;
+    /* margin-left: 30px;
     width: 90%;
     height: 98%;
-    /* border: 2px solid #e6d1d1; */
+    border: 2px solid #e6d1d1; */
 }
 
 #stripe {

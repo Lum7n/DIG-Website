@@ -38,10 +38,24 @@ var DIG_main;
         head.appendChild(link);
     }
     function matchWidth(screenWidth) {
-        let bodyWidth = screenWidth - 20;
-        console.log("body: ", bodyWidth);
-        let body = document.body;
-        body.style.width = bodyWidth;
+        if (screenWidth < 400) {
+            let bodyWidth = screenWidth - 20;
+            console.log("body: ", bodyWidth);
+            let body = document.querySelector("body");
+            body.style.width = bodyWidth + "px";
+        }
+        else {
+            let wholeMarginWidth = screenWidth * 0.1;
+            let bodyWidth = screenWidth - wholeMarginWidth;
+            console.log("body: ", bodyWidth);
+            let body = document.querySelector("body");
+            body.style.width = bodyWidth + "px";
+            body.style.marginLeft = (wholeMarginWidth / 2) + "px";
+            let marginLogo = document.getElementById("logoSize");
+            marginLogo.style.marginLeft = (wholeMarginWidth / 4) + "px";
+            let marginStripe = document.getElementById("stripe");
+            marginStripe.style.marginRight = "-" + (wholeMarginWidth / 2 - 1) + "px";
+        }
     }
 })(DIG_main || (DIG_main = {}));
 //# sourceMappingURL=script.js.map
