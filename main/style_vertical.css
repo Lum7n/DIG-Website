@@ -73,18 +73,22 @@ header {
 }
 
 .mainItem {
+    background-color: #cc9c86;
     margin-left: -20px;
     margin-right: 20px;
     padding: 10px 10px 7px 10px;
     font-size: 25px;
     font-variant: small-caps;
-    background-color: #cc9c86;
     list-style-type: none;
 }
 
-.mainItem li {
-    color: green;
-    padding: 10px;
+.mainItem+ul li {
+    background-color: blueviolet;
+    margin-left: -40px;
+    margin-right: 20px;
+    padding: 6px;
+    list-style-image: url("Assets/caret-right-solid.svg");
+    list-style-position: inside;
 }
 
 #logoSize {

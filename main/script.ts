@@ -68,20 +68,20 @@ namespace DIG_main {
 
             let bodyWidth: number = screenWidth - 20;
             console.log("body: ", bodyWidth);
-    
+
             let body: HTMLBodyElement = <HTMLBodyElement>document.querySelector("body");
             body.style.width = bodyWidth + "px";
 
         } else {
-            
+
             let wholeMarginWidth: number = screenWidth * 0.1;
             let bodyWidth: number = screenWidth - wholeMarginWidth;
             console.log("body: ", bodyWidth);
-    
+
             let body: HTMLBodyElement = <HTMLBodyElement>document.querySelector("body");
             body.style.width = bodyWidth + "px";
             body.style.marginLeft = (wholeMarginWidth / 2) + "px";
-            
+
             let marginLogo: HTMLElement = <HTMLElement>document.getElementById("logoSize");
             marginLogo.style.marginLeft = (wholeMarginWidth / 4) + "px";
 
@@ -93,7 +93,7 @@ namespace DIG_main {
     }
 
     function openBurgerMenu(): void {
-        
+
         console.log("click");
         console.log(open);
 
@@ -107,11 +107,11 @@ namespace DIG_main {
 
             console.log("fehler");
         }
-      
+
     }
 
     function closeBurgerMenu(): void {
-        
+
         console.log("click");
         console.log(open);
 
@@ -126,7 +126,7 @@ namespace DIG_main {
             console.log("fehler");
         }
 
-      
+
     }
 
 }
