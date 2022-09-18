@@ -2,6 +2,7 @@
 var DIG_main;
 (function (DIG_main) {
     window.addEventListener("load", handleLoad);
+    let open = false;
     function handleLoad() {
         console.log("color");
         // let body: HTMLBodyElement = <HTMLBodyElement>document.querySelector("body");
@@ -9,6 +10,8 @@ var DIG_main;
         sizeTest();
         let burgerMenuBtn = document.querySelector(".itemM");
         burgerMenuBtn.addEventListener("click", openBurgerMenu);
+        let overlay = document.querySelector(".overlay");
+        overlay.addEventListener("click", closeBurgerMenu);
     }
     function sizeTest() {
         let screenWidth = screen.width;
@@ -61,8 +64,27 @@ var DIG_main;
     }
     function openBurgerMenu() {
         console.log("click");
-        let tet = document.querySelector(".overlay");
-        tet.style.width = "100%";
+        console.log(open);
+        if (open == false) {
+            let overlay = document.querySelector(".overlay");
+            overlay.style.width = "100%";
+            open = true;
+        }
+        else {
+            console.log("fehler");
+        }
+    }
+    function closeBurgerMenu() {
+        console.log("click");
+        console.log(open);
+        if (open == true) {
+            let overlay = document.querySelector(".overlay");
+            overlay.style.width = "0%";
+            open = false;
+        }
+        else {
+            console.log("fehler");
+        }
     }
 })(DIG_main || (DIG_main = {}));
 //# sourceMappingURL=script.js.map

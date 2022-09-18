@@ -2,6 +2,8 @@ namespace DIG_main {
 
     window.addEventListener("load", handleLoad);
 
+    let open: boolean = false;
+
 
     function handleLoad(): void {
 
@@ -14,6 +16,9 @@ namespace DIG_main {
 
         let burgerMenuBtn: HTMLDivElement = <HTMLDivElement>document.querySelector(".itemM");
         burgerMenuBtn.addEventListener("click", openBurgerMenu);
+
+        let overlay: HTMLDivElement = <HTMLDivElement>document.querySelector(".overlay");
+        overlay.addEventListener("click", closeBurgerMenu);
 
     }
 
@@ -90,10 +95,38 @@ namespace DIG_main {
     function openBurgerMenu(): void {
         
         console.log("click");
+        console.log(open);
 
-        let tet: HTMLDivElement = <HTMLDivElement>document.querySelector(".overlay");
-        tet.style.width = "100%";
+        if (open == false) {
+
+            let overlay: HTMLDivElement = <HTMLDivElement>document.querySelector(".overlay");
+            overlay.style.width = "100%";
+            open = true;
+
+        } else {
+
+            console.log("fehler");
+        }
+      
     }
 
+    function closeBurgerMenu(): void {
+        
+        console.log("click");
+        console.log(open);
+
+        if (open == true) {
+
+            let overlay: HTMLDivElement = <HTMLDivElement>document.querySelector(".overlay");
+            overlay.style.width = "0%";
+            open = false;
+
+        } else {
+
+            console.log("fehler");
+        }
+
+      
+    }
 
 }
