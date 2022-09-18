@@ -7,6 +7,8 @@ var DIG_main;
         // let body: HTMLBodyElement = <HTMLBodyElement>document.querySelector("body");
         // body.style.color = "white";
         sizeTest();
+        let burgerMenuBtn = document.querySelector(".itemM");
+        burgerMenuBtn.addEventListener("click", openBurgerMenu);
     }
     function sizeTest() {
         let screenWidth = screen.width;
@@ -56,6 +58,11 @@ var DIG_main;
             let marginStripe = document.getElementById("stripe");
             marginStripe.style.marginRight = "-" + (wholeMarginWidth / 2 - 1) + "px";
         }
+    }
+    function openBurgerMenu() {
+        console.log("click");
+        let tet = document.querySelector(".overlay");
+        tet.style.width = "100%";
     }
 })(DIG_main || (DIG_main = {}));
 //# sourceMappingURL=script.js.map

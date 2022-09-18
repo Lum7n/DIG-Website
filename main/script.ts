@@ -12,6 +12,9 @@ namespace DIG_main {
 
         sizeTest();
 
+        let burgerMenuBtn: HTMLDivElement = <HTMLDivElement>document.querySelector(".itemM");
+        burgerMenuBtn.addEventListener("click", openBurgerMenu);
+
     }
 
     function sizeTest(): void {
@@ -83,4 +86,14 @@ namespace DIG_main {
         }
 
     }
+
+    function openBurgerMenu(): void {
+        
+        console.log("click");
+
+        let tet: HTMLDivElement = <HTMLDivElement>document.querySelector(".overlay");
+        tet.style.width = "100%";
+    }
+
+
 }
