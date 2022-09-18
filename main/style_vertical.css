@@ -28,9 +28,8 @@ body {
     position: fixed;
     z-index: 1;
     top: 0;
-    left: 0;
-    background-color: #000000;
-    background-color: #000000e6;
+    right: 0;
+    background-color: #290c0ce6;
     overflow-x: hidden;
     transition: 0.5s;
   }
