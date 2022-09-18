@@ -22,17 +22,6 @@ body {
     margin-left: 10px;
 }
 
-.overlay {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    background-color: #290c0ce6;
-    overflow-x: hidden;
-    transition: 0.5s;
-  }
 
 /* ----------------  header, navigation  ---------------- */
 header {
@@ -68,6 +57,34 @@ header {
     border: #631111 solid 2px;
     padding: 5px 7px;
     background-color: #cc9c86;
+}
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #290c0ce6;
+    overflow-x: hidden;
+    transition: 0.5s;
+    color: #ffffff;
+}
+
+.mainItem {
+    margin-left: -20px;
+    margin-right: 20px;
+    padding: 10px 10px 7px 10px;
+    font-size: 25px;
+    font-variant: small-caps;
+    background-color: #cc9c86;
+    list-style-type: none;
+}
+
+.mainItem li {
+    color: green;
+    padding: 10px;
 }
 
 #logoSize {
