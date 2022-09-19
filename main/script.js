@@ -67,7 +67,7 @@ var DIG_main;
         console.log(open);
         if (open == false) {
             let overlay = document.querySelector(".overlay");
-            overlay.style.width = "100%";
+            overlay.style.width = "320px";
             open = true;
         }
         else {

@@ -100,7 +100,7 @@ namespace DIG_main {
         if (open == false) {
 
             let overlay: HTMLDivElement = <HTMLDivElement>document.querySelector(".overlay");
-            overlay.style.width = "100%";
+            overlay.style.width = "320px";
             open = true;
 
         } else {

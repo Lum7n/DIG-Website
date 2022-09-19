@@ -9,7 +9,7 @@
 .itemM { grid-area: menu;}
 
 body {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     overflow-x: hidden;
     display: grid;
     grid-template-areas:
@@ -38,7 +38,7 @@ header {
     max-height: 200px;
 }
 
-.item2, .item3, .item4 {
+.item2, .item3 {
     display: none;
 }
 
@@ -66,29 +66,47 @@ header {
     z-index: 1;
     top: 0;
     right: 0;
-    background-color: #290c0ce6;
+    background-color: #290c0ce0;
     overflow-x: hidden;
     transition: 0.5s;
-    color: #ffffff;
 }
 
 .mainItem {
-    background-color: #cc9c86;
+    background-color: #cc9c86e0;
     margin-left: -20px;
     margin-right: 20px;
     padding: 10px 10px 7px 10px;
-    font-size: 25px;
-    font-variant: small-caps;
     list-style-type: none;
 }
 
-.mainItem+ul li {
-    background-color: blueviolet;
+.mI_text {
+    color: #310707;
+    text-decoration: none;
+    font-size: 25px;
+    font-variant: small-caps;
+    letter-spacing: 1px;
+}
+
+.mainItem>a:first-child {
+    margin-left: -20px;
+    margin-right: 20px;
+    padding: 0px 20px;
+}
+
+.dropdown-content li {
+    background-color: #e7ccbfe0;
     margin-left: -40px;
     margin-right: 20px;
     padding: 6px;
     list-style-image: url("Assets/caret-right-solid.svg");
     list-style-position: inside;
+}
+
+.dropdown-content a {
+    color: #310707;
+    text-decoration: none;
+    font-size: 18px;
+    font-variant: normal;
 }
 
 #logoSize {
@@ -97,10 +115,6 @@ header {
     width: auto;
     height: auto;
     margin-left: 5px;
-    /* margin-left: 30px;
-    width: 90%;
-    height: 98%;
-    border: 2px solid #e6d1d1; */
 }
 
 #stripe {
