@@ -4,6 +4,13 @@ namespace DIG_main {
 
     let open: boolean = false;
 
+    let germanFlag: HTMLElement;
+    let englishFlag: HTMLElement;
+
+    let language: boolean = true;
+    //true  = initial   = german
+    //false             = english
+
 
     function handleLoad(): void {
 
@@ -19,6 +26,15 @@ namespace DIG_main {
 
         let overlay: HTMLDivElement = <HTMLDivElement>document.querySelector(".overlay");
         overlay.addEventListener("click", closeBurgerMenu);
+
+        germanFlag = <HTMLElement>document.getElementById("DE");
+        germanFlag.addEventListener("click", languageToGerman);
+
+        englishFlag = <HTMLElement>document.getElementById("EN");
+        englishFlag.addEventListener("click", languageToEnglish);
+
+        englishFlag.style.filter = "grayscale(100%)";
+        englishFlag.style.webkitFilter = "grayscale(100%)";
 
     }
 
@@ -128,5 +144,51 @@ namespace DIG_main {
 
 
     }
+
+    function languageToGerman(): void {
+
+        console.log("DE");
+
+        if (language != true) {
+
+            console.log("wechsel auf deutsch");
+
+            englishFlag.style.filter = "grayscale(100%)";
+            englishFlag.style.webkitFilter = "grayscale(100%)";
+
+            germanFlag.style.filter = "";
+            germanFlag.style.webkitFilter = "";
+
+            language = true;
+
+        } else {
+
+            console.log("deutsch grau gewesen");
+        }
+    }
+
+    function languageToEnglish(): void {
+
+        console.log("EN");
+
+        if (language == true) {
+
+            console.log("wechsel auf englisch");
+            
+            germanFlag.style.filter = "grayscale(100%)";
+            germanFlag.style.webkitFilter = "grayscale(100%)";
+
+            englishFlag.style.filter = "";
+            englishFlag.style.webkitFilter = "";
+
+            language = false;
+
+        } else {
+
+            console.log("englisch grau gewesen");
+        }
+    }
+
+
 
 }

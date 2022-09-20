@@ -3,6 +3,11 @@ var DIG_main;
 (function (DIG_main) {
     window.addEventListener("load", handleLoad);
     let open = false;
+    let germanFlag;
+    let englishFlag;
+    let language = true;
+    //true  = initial   = german
+    //false             = english
     function handleLoad() {
         console.log("color");
         // let body: HTMLBodyElement = <HTMLBodyElement>document.querySelector("body");
@@ -12,6 +17,12 @@ var DIG_main;
         burgerMenuBtn.addEventListener("click", openBurgerMenu);
         let overlay = document.querySelector(".overlay");
         overlay.addEventListener("click", closeBurgerMenu);
+        germanFlag = document.getElementById("DE");
+        germanFlag.addEventListener("click", languageToGerman);
+        englishFlag = document.getElementById("EN");
+        englishFlag.addEventListener("click", languageToEnglish);
+        englishFlag.style.filter = "grayscale(100%)";
+        englishFlag.style.webkitFilter = "grayscale(100%)";
     }
     function sizeTest() {
         let screenWidth = screen.width;
@@ -84,6 +95,34 @@ var DIG_main;
         }
         else {
             console.log("fehler");
+        }
+    }
+    function languageToGerman() {
+        console.log("DE");
+        if (language != true) {
+            console.log("wechsel auf deutsch");
+            englishFlag.style.filter = "grayscale(100%)";
+            englishFlag.style.webkitFilter = "grayscale(100%)";
+            germanFlag.style.filter = "";
+            germanFlag.style.webkitFilter = "";
+            language = true;
+        }
+        else {
+            console.log("deutsch grau gewesen");
+        }
+    }
+    function languageToEnglish() {
+        console.log("EN");
+        if (language == true) {
+            console.log("wechsel auf englisch");
+            germanFlag.style.filter = "grayscale(100%)";
+            germanFlag.style.webkitFilter = "grayscale(100%)";
+            englishFlag.style.filter = "";
+            englishFlag.style.webkitFilter = "";
+            language = false;
+        }
+        else {
+            console.log("englisch grau gewesen");
         }
     }
 })(DIG_main || (DIG_main = {}));
