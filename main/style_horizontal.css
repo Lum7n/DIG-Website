@@ -1,7 +1,7 @@
 .item0 { grid-area: header; }
 .item1 { grid-area: logo; }
 .item2 { grid-area: language; }
-.item3 { grid-area: search; }
+.item3 { grid-area: search-bar; }
 .item4 { grid-area: nav; }
 .item5 { grid-area: stripe; }
 .item6 { grid-area: content; }
@@ -26,7 +26,7 @@ header {
     display: grid;
     grid-template-areas:
     'logo language'
-    'logo search'
+    'logo search-bar'
     'logo nav'
     'stripe stripe';
     grid-template-rows: 56px 41px 85px 12px;
@@ -36,6 +36,10 @@ header {
     padding: 4px;
     margin-top: 20px;
     max-height: 200px;
+}
+
+#stripeNav, #languageDiv, .underlay, #searchDiv, .itemI {
+    display: none;
 }
 
 #logoSize {
@@ -59,14 +63,36 @@ header {
     margin-right: 10px;
 }
 
-#search button {
+#search2 button {
     width: 30px;
     height: 38px;
 }
 
-#search input {
+#search2 input {
     width: 20em;
     height: 38px;
+}
+
+.fa-magnifying-glass {
+    color: #500e0e;
+    font-size: 20px;
+    border: #631111 solid 2px;
+    padding: 8px;
+    background-color: #c7978f;
+}
+
+.searchBar {
+    display: flex;
+    justify-content: center;
+    padding: 1px;
+}
+
+.inputSearch {
+    margin-right: 10px;
+    padding: 4px;
+    width: 25em;
+    height: 40px;
+    border: #631111 solid 2px;
 }
 
 .flag {
@@ -105,8 +131,8 @@ header {
     display: block;
     font-size: 20.5px;
     font-weight: 500;
-    color: #000000;
-    background-color: #cc9c86;
+    color: #500e0e;
+    background-color: #ddab9e;
     text-decoration: none;
     padding: 14px;
     margin-left: 10px;
@@ -123,7 +149,7 @@ header {
 
 /* Streifen-Unternavigation */
 .dropdown-content>li:first-child {
-    border-top: 12px solid #a5735c;
+    border-top: 12px solid #a07067;
 }
 
 /* Unternavigation */
@@ -168,11 +194,17 @@ header {
 #mainNav .drop:hover .mI_text {
     color: #ffffff;
     background-color: #631111;
-    padding-bottom: 32.5px;
+    padding-bottom: 32px;
+}
+
+#aktiv {
+color: #ffffff;
+background-color: #631111;
+padding-bottom: 32px;
 }
 
 #stripe {
-    background-color: #a5735c;
+    background-color: #a07067;
     padding: 4px;
     margin-left: -800px;
     margin-right: -800px;
@@ -188,6 +220,6 @@ footer {
 
 /* ----------------  main content  ---------------- */
 section {
-    background-color: lightsalmon;
+    background-color: #a070676b;
     padding: 10px;
 }

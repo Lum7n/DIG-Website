@@ -18,79 +18,85 @@
         <div class="item1">
             <img id="logoSize" src="Assets/DIG.png">
         </div>
-        <div class="itemM">
-            <i class="fa-solid fa-bars"></i>
-        </div>
         <div class="item2">
             <span id="language">
-                <a><img src="Assets/german.png" alt="DE" class="flag" id="DE"></a>
-                <a><img src="Assets/english.png" alt="EN" class="flag" id="EN"></a>
+                <a><img src="Assets/german.png" alt="DE" class="flag" id="DE_h"></a>
+                <a><img src="Assets/english.png" alt="EN" class="flag" id="EN_h"></a>
             </span>
         </div>
         <div class="item3">
-            <span id="search">
-                <input type="text" name="searchbar" value="">
-                <button class="searchbarSbm" type="submit">
-                    <i class="fa-solid fa-magnifying-glass" alt="Suchen"></i>
-                </button>
+            <span class="searchBar">
+                <input type="text" name="searchbar" value="" class="inputSearch">
+                <i class="fa-solid fa-magnifying-glass" alt="Suchen"></i>
             </span>
         </div>
+        <div class="itemI">
+            <span id="search"><a class="fa-solid fa-magnifying-glass"></a></span>
+            <span id="menu"><a class="fa-solid fa-bars"></a></span>
+        </div>
+        <div id="searchDiv">
+            <span class="searchBar">
+                <input type="text" name="searchbar" value="" class="inputSearch">
+                <i class="fa-solid fa-magnifying-glass" alt="Suchen"></i>
+            </span>
+        </div>
+        <div class="underlay"></div>
         <nav id="mainNav" class="item4 overlay">
             <ul>
                 <div class="drop">
-                    <li class="mainItem firstItem"><a class="mI_Text" href="">Infos</a></li>
+                    <li class="mainItem" id="Infos"><a class="mI_Text">Infos</a></li>
                     <ul class="dropdown-content">
-                        <li><a href="">Geschichte der DIG</a></li>
-                        <li><a href="">Ansprechpartner</a></li>
-                        <li><a href="">Termine</a></li>
-                        <li><a href="">Anforderungen</a></li>
+                        <li id="Geschichte"><a>Geschichte der DIG</a></li>
+                        <li id="Ansprechpartner"><a>Ansprechpartner</a></li>
+                        <li id="Termine"><a>Termine</a></li>
+                        <li id="Anforderungen"><a>Anforderungen</a></li>
                     </ul>
                 </div>
                 <div class="drop">
-                    <li class="mainItem"><a class="mI_Text" href="">Blog</a></li>
+                    <li class="mainItem" id="Blog"><a class="mI_Text">Blog</a></li>
                     <ul class="dropdown-content">
-                        <li><a href="">Rundsprüche</a></li>
+                        <li id="Rundspruche"><a>Rundsprüche</a></li>
                         <ul>
-                            <li><a href="">Aktuell</a></li>
-                            <li><a href="">Archiv</a></li>
+                            <li id="Aktuell"><a>Aktuell</a></li>
+                            <li id="Archiv"><a>Archiv</a></li>
                         </ul>
-                        <li><a href="">Forum</a></li>
+                        <li id="Forum"><a>Forum</a></li>
                     </ul>
                 </div>
                 <div class="drop">
-                    <li class="mainItem"><a class="mI_Text" href="">Diplome</a></li>
+                    <li class="mainItem" id="Diplome"><a class="mI_Text">Diplome</a></li>
                     <ul class="dropdown-content">
-                        <li><a href="">Diplombeilage</a></li>
+                        <li id="Diplombeilage"><a>Diplombeilage</a></li>
                     </ul>
                 </div>
                 <div class="drop">
-                    <li class="mainItem"><a class="mI_Text" href="">Contests</a></li>
+                    <li class="mainItem"  id="Contests"><a class="mI_Text">Contests</a></li>
                     <ul class="dropdown-content">
-                        <li><a href="">Ergebnisse</a></li>
+                        <li id="Ergebnisse"><a>Ergebnisse</a></li>
                     </ul>
                 </div>
                 <div class="drop">
-                    <li class="mainItem"><a class="mI_Text" href="">Mitglieder</a></li>
+                    <li class="mainItem"  id="Mitglieder"><a class="mI_Text">Mitglieder</a></li>
                     <ul class="dropdown-content">
-                        <li><a href="">Mitglied werden?</a></li>
-                        <li><a href="">Mitgliederliste</a></li>
-                        <li><a href="">Sektionen</a></li>
+                        <li id="DIGwerden"><a>Mitglied werden?</a></li>
+                        <li id="Mitgliederliste"><a>Mitgliederliste</a></li>
+                        <li id="Sektionen"><a>Sektionen</a></li>
                     </ul>
                 </div>
                 <div class="drop">
-                    <li class="mainItem"><a class="mI_Text" href="">Downloads</a></li>
+                    <li class="mainItem" id="Downloads"><a class="mI_Text">Downloads</a></li>
                     <ul class="dropdown-content right">
-                        <li><a href="">Diplomausschreibungen</a></li>
-                        <li><a href="">Contestergebnisse</a></li>
-                        <li><a href="">GCR-Liste</a></li>
-                        <li><a href="">Mitgliederliste</a></li>
+                        <li id="Dow_Ausschreibungen"><a>Diplomausschreibungen</a></li>
+                        <li id="Dow_Ergebnisse"><a>Contestergebnisse</a></li>
+                        <li id="Dow_GCR"><a>GCR-Liste</a></li>
+                        <li id="Dow_Mitgliederliste"><a>Mitgliederliste</a></li>
                     </ul>
                 </div>
             </ul>
             <div id="stripeNav"></div>
             <div id="languageDiv">
-                <a><img src="Assets/german.png" alt="DE" class="flag" id="DE"></a>
-                <a><img src="Assets/english.png" alt="english" class="flag"></a>
+                <a><img src="Assets/german.png" alt="DE" class="flag" id="DE_v"></a>
+                <a><img src="Assets/english.png" alt="EN" class="flag" id="EN_v"></a>
             </div>
         </nav>
 
@@ -98,6 +104,7 @@
     </header>
 
     <section id="content" class="item6">
+
 
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non, voluptas neque? Doloribus, dignissimos.
         Accusantium praesentium cupiditate facere suscipit provident exercitationem dolore, iusto, fugit omnis officia,

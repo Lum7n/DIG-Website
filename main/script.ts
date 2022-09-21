@@ -2,7 +2,15 @@ namespace DIG_main {
 
     window.addEventListener("load", handleLoad);
 
-    let open: boolean = false;
+    let openMenu: boolean = false;
+    let overlay: HTMLDivElement;
+    let underlay: HTMLDivElement;
+
+    let openSearch: boolean = false;
+    let search: HTMLSpanElement;
+    let searchBar: HTMLDivElement;
+
+    let screenType: string;
 
     let germanFlag: HTMLElement;
     let englishFlag: HTMLElement;
@@ -11,30 +19,33 @@ namespace DIG_main {
     //true  = initial   = german
     //false             = english
 
+    let infos: HTMLElement;
+    let blog: HTMLElement;
+    let certificates: HTMLElement;
+    let contests: HTMLElement;
+    let members: HTMLElement;
+    let downloads: HTMLElement;
 
     function handleLoad(): void {
 
-        console.log("color");
-
-        // let body: HTMLBodyElement = <HTMLBodyElement>document.querySelector("body");
-        // body.style.color = "white";
-
         sizeTest();
 
-        let burgerMenuBtn: HTMLDivElement = <HTMLDivElement>document.querySelector(".itemM");
+        let burgerMenuBtn: HTMLSpanElement = <HTMLSpanElement>document.getElementById("menu");
         burgerMenuBtn.addEventListener("click", openBurgerMenu);
 
-        let overlay: HTMLDivElement = <HTMLDivElement>document.querySelector(".overlay");
+        overlay = <HTMLDivElement>document.querySelector(".overlay");
         overlay.addEventListener("click", closeBurgerMenu);
+        underlay = <HTMLDivElement>document.querySelector(".underlay");
+        underlay.addEventListener("click", closeBurgerMenu);
 
-        germanFlag = <HTMLElement>document.getElementById("DE");
-        germanFlag.addEventListener("click", languageToGerman);
+        flagSet();
 
-        englishFlag = <HTMLElement>document.getElementById("EN");
-        englishFlag.addEventListener("click", languageToEnglish);
+        search = <HTMLSpanElement>document.getElementById("search");
+        search.addEventListener("click", openSearchBar);
+        underlay.addEventListener("click", closeSearchBar);
+        searchBar = <HTMLDivElement>document.getElementById("searchDiv");
 
-        englishFlag.style.filter = "grayscale(100%)";
-        englishFlag.style.webkitFilter = "grayscale(100%)";
+        addNavListeners();
 
     }
 
@@ -46,17 +57,15 @@ namespace DIG_main {
         console.log("Width: ", screenWidth);
         console.log("Height: ", screenHeight);
 
-        let screenType: string;
-
         if (screenWidth < screenHeight) {
-            console.log("vertical");
+            // console.log("vertical");
             screenType = "vertical";
 
             addStylesheet("style_vertical.css");
             matchWidth(screenWidth);
 
         } else if (screenWidth > screenHeight) {
-            console.log("horizontal");
+            // console.log("horizontal");
             screenType = "horizontal";
 
             addStylesheet("style_horizontal.css");
@@ -83,7 +92,7 @@ namespace DIG_main {
         if (screenWidth < 400) {
 
             let bodyWidth: number = screenWidth - 20;
-            console.log("body: ", bodyWidth);
+            // console.log("body: ", bodyWidth);
 
             let body: HTMLBodyElement = <HTMLBodyElement>document.querySelector("body");
             body.style.width = bodyWidth + "px";
@@ -92,7 +101,7 @@ namespace DIG_main {
 
             let wholeMarginWidth: number = screenWidth * 0.1;
             let bodyWidth: number = screenWidth - wholeMarginWidth;
-            console.log("body: ", bodyWidth);
+            // console.log("body: ", bodyWidth);
 
             let body: HTMLBodyElement = <HTMLBodyElement>document.querySelector("body");
             body.style.width = bodyWidth + "px";
@@ -104,20 +113,25 @@ namespace DIG_main {
             let marginStripe: HTMLElement = <HTMLElement>document.getElementById("stripe");
             marginStripe.style.marginRight = "-" + (wholeMarginWidth / 2 - 1) + "px";
 
+            let inputSearch: HTMLCollectionOf<HTMLInputElement> = <HTMLCollectionOf<HTMLInputElement>>document.getElementsByClassName("inputSearch");
+            inputSearch[1].style.width = screenWidth * 0.6 + "px";
+            // inputSearch[2].style.width = screenWidth * 0.6 + "px";
+
         }
 
     }
 
     function openBurgerMenu(): void {
 
-        console.log("click");
-        console.log(open);
+        // console.log("click");
+        // console.log(open);
 
-        if (open == false) {
+        if (openMenu == false) {
 
-            let overlay: HTMLDivElement = <HTMLDivElement>document.querySelector(".overlay");
             overlay.style.width = "320px";
-            open = true;
+            underlay.style.width = "100%";
+
+            openMenu = true;
 
         } else {
 
@@ -128,14 +142,15 @@ namespace DIG_main {
 
     function closeBurgerMenu(): void {
 
-        console.log("click");
-        console.log(open);
+        // console.log("click");
+        // console.log(open);
 
-        if (open == true) {
+        if (openMenu == true) {
 
-            let overlay: HTMLDivElement = <HTMLDivElement>document.querySelector(".overlay");
             overlay.style.width = "0%";
-            open = false;
+            underlay.style.width = "0%";
+
+            openMenu = false;
 
         } else {
 
@@ -145,50 +160,307 @@ namespace DIG_main {
 
     }
 
-    function languageToGerman(): void {
+    function flagSet(): void {
 
-        console.log("DE");
+        // console.log(screenType);
 
-        if (language != true) {
+        if (screenType == "vertical") {
 
-            console.log("wechsel auf deutsch");
+            console.log(screenType);
+
+            germanFlag = <HTMLElement>document.getElementById("DE_v");
+            germanFlag.addEventListener("click", changeLanguage);
+
+            englishFlag = <HTMLElement>document.getElementById("EN_v");
+            englishFlag.addEventListener("click", changeLanguage);
 
             englishFlag.style.filter = "grayscale(100%)";
             englishFlag.style.webkitFilter = "grayscale(100%)";
 
-            germanFlag.style.filter = "";
-            germanFlag.style.webkitFilter = "";
+        } else if (screenType == "horizontal") {
 
-            language = true;
+            console.log(screenType);
+
+            germanFlag = <HTMLElement>document.getElementById("DE_h");
+            germanFlag.addEventListener("click", changeLanguage);
+
+            englishFlag = <HTMLElement>document.getElementById("EN_h");
+            englishFlag.addEventListener("click", changeLanguage);
+
+            englishFlag.style.filter = "grayscale(100%)";
+            englishFlag.style.webkitFilter = "grayscale(100%)";
+
+        }
+
+    }
+
+    function changeLanguage(_event: Event): void {
+
+        let targetSpan: EventTarget = <EventTarget>_event.target;
+        let targetID: string = targetSpan.alt;
+        targetID = targetID.slice(0, 2);
+        console.log(targetID);
+
+        if (targetID == "DE") {
+
+            // console.log("DE");
+
+            if (language != true) {
+
+                console.log("wechsel auf deutsch");
+
+                englishFlag.style.filter = "grayscale(100%)";
+                englishFlag.style.webkitFilter = "grayscale(100%)";
+
+                germanFlag.style.filter = "";
+                germanFlag.style.webkitFilter = "";
+
+                language = true;
+
+            } else {
+
+                console.log("deutsch aktiv gewesen");
+            }
+
+        } else if (targetID == "EN") {
+
+            // console.log("EN");
+
+            if (language == true) {
+
+                console.log("wechsel auf englisch");
+
+                germanFlag.style.filter = "grayscale(100%)";
+                germanFlag.style.webkitFilter = "grayscale(100%)";
+
+                englishFlag.style.filter = "";
+                englishFlag.style.webkitFilter = "";
+
+                language = false;
+
+            } else {
+
+                console.log("englisch aktiv gewesen");
+            }
 
         } else {
 
-            console.log("deutsch grau gewesen");
+            console.log("fehler");
         }
     }
 
-    function languageToEnglish(): void {
+    function openSearchBar(): void {
 
-        console.log("EN");
+        // console.log(openSearch);
 
-        if (language == true) {
+        if (openSearch == false) {
 
-            console.log("wechsel auf englisch");
-            
-            germanFlag.style.filter = "grayscale(100%)";
-            germanFlag.style.webkitFilter = "grayscale(100%)";
+            searchBar.style.height = "146px";
+            underlay.style.width = "100%";
 
-            englishFlag.style.filter = "";
-            englishFlag.style.webkitFilter = "";
-
-            language = false;
+            openSearch = true;
 
         } else {
 
-            console.log("englisch grau gewesen");
+            console.log("fehler");
         }
+
     }
 
+    function closeSearchBar(): void {
 
+        // console.log(openSearch);
 
+        if (openSearch == true) {
+
+            searchBar.style.height = "0px";
+            underlay.style.width = "0%";
+
+            openSearch = false;
+
+        } else {
+
+            console.log("fehler");
+        }
+
+    }
+
+    function addNavListeners(): void {
+
+        //Infos
+        infos = <HTMLElement>document.getElementById("Infos");
+        infos.addEventListener("click", switchToInfos);
+
+        let history: HTMLElement = <HTMLElement>document.getElementById("Geschichte");
+        history.addEventListener("click", switchToInfos);
+
+        let contacts: HTMLElement = <HTMLElement>document.getElementById("Ansprechpartner");
+        contacts.addEventListener("click", switchToInfos);
+
+        let dates: HTMLElement = <HTMLElement>document.getElementById("Termine");
+        dates.addEventListener("click", switchToInfos);
+
+        let requirements: HTMLElement = <HTMLElement>document.getElementById("Anforderungen");
+        requirements.addEventListener("click", switchToInfos);
+
+        //Blog
+        blog = <HTMLElement>document.getElementById("Blog");
+        blog.addEventListener("click", switchToBlog);
+
+        let rundsprueche: HTMLElement = <HTMLElement>document.getElementById("Rundspruche");
+        rundsprueche.addEventListener("click", switchToBlog);
+
+        let latest: HTMLElement = <HTMLElement>document.getElementById("Aktuell");
+        latest.addEventListener("click", switchToBlog);
+
+        let archive: HTMLElement = <HTMLElement>document.getElementById("Archiv");
+        archive.addEventListener("click", switchToBlog);
+
+        let forum: HTMLElement = <HTMLElement>document.getElementById("Forum");
+        forum.addEventListener("click", switchToBlog);
+
+        //Diplome
+        certificates = <HTMLElement>document.getElementById("Diplome");
+        certificates.addEventListener("click", switchToCertificates);
+
+        let insert: HTMLElement = <HTMLElement>document.getElementById("Diplombeilage");
+        insert.addEventListener("click", switchToCertificates);
+
+        //Contests
+        contests = <HTMLElement>document.getElementById("Contests");
+        contests.addEventListener("click", switchToContests);
+
+        let results: HTMLElement = <HTMLElement>document.getElementById("Ergebnisse");
+        results.addEventListener("click", switchToContests);
+
+        //Mitglieder
+        members = <HTMLElement>document.getElementById("Mitglieder");
+        members.addEventListener("click", switchToMembers);
+
+        let become: HTMLElement = <HTMLElement>document.getElementById("DIGwerden");
+        become.addEventListener("click", switchToMembers);
+
+        let memberList: HTMLElement = <HTMLElement>document.getElementById("Mitgliederliste");
+        memberList.addEventListener("click", switchToMembers);
+
+        let departments: HTMLElement = <HTMLElement>document.getElementById("Sektionen");
+        departments.addEventListener("click", switchToMembers);
+
+        //Downloads
+        downloads = <HTMLElement>document.getElementById("Downloads");
+        downloads.addEventListener("click", switchToDownloads);
+
+        let dowRules: HTMLElement = <HTMLElement>document.getElementById("Dow_Ausschreibungen");
+        dowRules.addEventListener("click", switchToDownloads);
+
+        let dowResults: HTMLElement = <HTMLElement>document.getElementById("Dow_Ergebnisse");
+        dowResults.addEventListener("click", switchToDownloads);
+
+        let dowGCR: HTMLElement = <HTMLElement>document.getElementById("Dow_GCR");
+        dowGCR.addEventListener("click", switchToDownloads);
+
+        let dowMemberList: HTMLElement = <HTMLElement>document.getElementById("Dow_Mitgliederliste");
+        dowMemberList.addEventListener("click", switchToDownloads);
+
+    }
+
+    function switchToInfos(_event: Event): void {
+
+        let target: EventTarget = <EventTarget>_event.target;
+        let targetElement: HTMLElement = <HTMLElement>target;
+        let parentElement: HTMLElement = <HTMLElement>targetElement.parentElement;
+        let targetID: string = parentElement.id;
+
+        console.log(targetElement);
+        console.log("parent: ", parentElement);
+        console.log(targetID);
+
+        let childofInfos: HTMLElement = <HTMLElement>infos.firstElementChild;
+        childofInfos.id = "aktiv";
+
+        aktiv();
+    }
+
+    function aktiv(): void {
+
+        let childofInfos: HTMLElement = <HTMLElement>infos.firstElementChild;
+        childofInfos.id = "aktiv";
+
+    }
+
+    function switchToBlog(_event: Event): void {
+
+        let target: EventTarget = <EventTarget>_event.target;
+        let targetElement: HTMLElement = <HTMLElement>target;
+        let parentElement: HTMLElement = <HTMLElement>targetElement.parentElement;
+        let targetID: string = parentElement.id;
+
+        console.log(targetElement);
+        console.log("parent: ", parentElement);
+        console.log(targetID);
+
+        let childofBlog: HTMLElement = <HTMLElement>blog.firstElementChild;
+        childofBlog.id = "aktiv";
+    }
+
+    function switchToCertificates(_event: Event): void {
+
+        let target: EventTarget = <EventTarget>_event.target;
+        let targetElement: HTMLElement = <HTMLElement>target;
+        let parentElement: HTMLElement = <HTMLElement>targetElement.parentElement;
+        let targetID: string = parentElement.id;
+
+        console.log(targetElement);
+        console.log("parent: ", parentElement);
+        console.log(targetID);
+
+        let childofCertificates: HTMLElement = <HTMLElement>certificates.firstElementChild;
+        childofCertificates.id = "aktiv";
+    }
+
+    function switchToContests(_event: Event): void {
+
+        let target: EventTarget = <EventTarget>_event.target;
+        let targetElement: HTMLElement = <HTMLElement>target;
+        let parentElement: HTMLElement = <HTMLElement>targetElement.parentElement;
+        let targetID: string = parentElement.id;
+
+        console.log(targetElement);
+        console.log("parent: ", parentElement);
+        console.log(targetID);
+
+        let childofContests: HTMLElement = <HTMLElement>contests.firstElementChild;
+        childofContests.id = "aktiv";
+    }
+
+    function switchToMembers(_event: Event): void {
+
+        let target: EventTarget = <EventTarget>_event.target;
+        let targetElement: HTMLElement = <HTMLElement>target;
+        let parentElement: HTMLElement = <HTMLElement>targetElement.parentElement;
+        let targetID: string = parentElement.id;
+
+        console.log(targetElement);
+        console.log("parent: ", parentElement);
+        console.log(targetID);
+
+        let childofMembers: HTMLElement = <HTMLElement>members.firstElementChild;
+        childofMembers.id = "aktiv";
+    }
+
+    function switchToDownloads(_event: Event): void {
+
+        let target: EventTarget = <EventTarget>_event.target;
+        let targetElement: HTMLElement = <HTMLElement>target;
+        let parentElement: HTMLElement = <HTMLElement>targetElement.parentElement;
+        let targetID: string = parentElement.id;
+
+        console.log(targetElement);
+        console.log("parent: ", parentElement);
+        console.log(targetID);
+
+        let childofDownloads: HTMLElement = <HTMLElement>downloads.firstElementChild;
+        childofDownloads.id = "aktiv";
+
+    }
 }
