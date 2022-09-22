@@ -285,6 +285,68 @@ namespace DIG_main {
 
     }
 
+    function aktiv(item: string): void {
+
+        let aktiv: HTMLElement = <HTMLElement>document.getElementById("aktiv");
+        if (aktiv != null) {
+            aktiv.id = "";
+        }
+        
+        switch (item) {
+            case "Infos":
+
+                console.log("I");
+
+                let childofInfos: HTMLElement = <HTMLElement>infos.firstElementChild;
+                childofInfos.id = "aktiv";
+
+                break;
+            case "Blog":
+
+                console.log("B");
+
+                let childofBlog: HTMLElement = <HTMLElement>blog.firstElementChild;
+                childofBlog.id = "aktiv";
+
+                break;
+            case "Certificates":
+
+                console.log("Cer");
+
+                let childofCertificates: HTMLElement = <HTMLElement>certificates.firstElementChild;
+                childofCertificates.id = "aktiv";
+
+                break;
+            case "Contests":
+
+                console.log("Con");
+
+                let childofContests: HTMLElement = <HTMLElement>contests.firstElementChild;
+                childofContests.id = "aktiv";
+
+                break;
+            case "Members":
+
+                console.log("Mem");
+
+                let childofMembers: HTMLElement = <HTMLElement>members.firstElementChild;
+                childofMembers.id = "aktiv";
+
+                break;
+            case "Downloads":
+
+                console.log("D");
+
+                let childofDownloads: HTMLElement = <HTMLElement>downloads.firstElementChild;
+                childofDownloads.id = "aktiv";
+
+                break;
+            default:
+                break;
+        }
+
+    }
+
     function addNavListeners(): void {
 
         //Infos
@@ -375,17 +437,7 @@ namespace DIG_main {
         console.log("parent: ", parentElement);
         console.log(targetID);
 
-        let childofInfos: HTMLElement = <HTMLElement>infos.firstElementChild;
-        childofInfos.id = "aktiv";
-
-        aktiv();
-    }
-
-    function aktiv(): void {
-
-        let childofInfos: HTMLElement = <HTMLElement>infos.firstElementChild;
-        childofInfos.id = "aktiv";
-
+        aktiv("Infos");
     }
 
     function switchToBlog(_event: Event): void {
@@ -399,8 +451,8 @@ namespace DIG_main {
         console.log("parent: ", parentElement);
         console.log(targetID);
 
-        let childofBlog: HTMLElement = <HTMLElement>blog.firstElementChild;
-        childofBlog.id = "aktiv";
+        aktiv("Blog");
+
     }
 
     function switchToCertificates(_event: Event): void {
@@ -414,8 +466,8 @@ namespace DIG_main {
         console.log("parent: ", parentElement);
         console.log(targetID);
 
-        let childofCertificates: HTMLElement = <HTMLElement>certificates.firstElementChild;
-        childofCertificates.id = "aktiv";
+        aktiv("Certificates");
+
     }
 
     function switchToContests(_event: Event): void {
@@ -429,8 +481,8 @@ namespace DIG_main {
         console.log("parent: ", parentElement);
         console.log(targetID);
 
-        let childofContests: HTMLElement = <HTMLElement>contests.firstElementChild;
-        childofContests.id = "aktiv";
+        aktiv("Contests");
+
     }
 
     function switchToMembers(_event: Event): void {
@@ -444,8 +496,8 @@ namespace DIG_main {
         console.log("parent: ", parentElement);
         console.log(targetID);
 
-        let childofMembers: HTMLElement = <HTMLElement>members.firstElementChild;
-        childofMembers.id = "aktiv";
+        aktiv("Members");
+
     }
 
     function switchToDownloads(_event: Event): void {
@@ -459,8 +511,8 @@ namespace DIG_main {
         console.log("parent: ", parentElement);
         console.log(targetID);
 
-        let childofDownloads: HTMLElement = <HTMLElement>downloads.firstElementChild;
-        childofDownloads.id = "aktiv";
+        aktiv("Downloads");
+
 
     }
 }

@@ -190,6 +190,46 @@ var DIG_main;
             console.log("fehler");
         }
     }
+    function aktiv(item) {
+        let aktiv = document.getElementById("aktiv");
+        if (aktiv != null) {
+            aktiv.id = "";
+        }
+        switch (item) {
+            case "Infos":
+                console.log("I");
+                let childofInfos = infos.firstElementChild;
+                childofInfos.id = "aktiv";
+                break;
+            case "Blog":
+                console.log("B");
+                let childofBlog = blog.firstElementChild;
+                childofBlog.id = "aktiv";
+                break;
+            case "Certificates":
+                console.log("Cer");
+                let childofCertificates = certificates.firstElementChild;
+                childofCertificates.id = "aktiv";
+                break;
+            case "Contests":
+                console.log("Con");
+                let childofContests = contests.firstElementChild;
+                childofContests.id = "aktiv";
+                break;
+            case "Members":
+                console.log("Mem");
+                let childofMembers = members.firstElementChild;
+                childofMembers.id = "aktiv";
+                break;
+            case "Downloads":
+                console.log("D");
+                let childofDownloads = downloads.firstElementChild;
+                childofDownloads.id = "aktiv";
+                break;
+            default:
+                break;
+        }
+    }
     function addNavListeners() {
         //Infos
         infos = document.getElementById("Infos");
@@ -252,13 +292,7 @@ var DIG_main;
         console.log(targetElement);
         console.log("parent: ", parentElement);
         console.log(targetID);
-        let childofInfos = infos.firstElementChild;
-        childofInfos.id = "aktiv";
-        aktiv();
-    }
-    function aktiv() {
-        let childofInfos = infos.firstElementChild;
-        childofInfos.id = "aktiv";
+        aktiv("Infos");
     }
     function switchToBlog(_event) {
         let target = _event.target;
@@ -268,8 +302,7 @@ var DIG_main;
         console.log(targetElement);
         console.log("parent: ", parentElement);
         console.log(targetID);
-        let childofBlog = blog.firstElementChild;
-        childofBlog.id = "aktiv";
+        aktiv("Blog");
     }
     function switchToCertificates(_event) {
         let target = _event.target;
@@ -279,8 +312,7 @@ var DIG_main;
         console.log(targetElement);
         console.log("parent: ", parentElement);
         console.log(targetID);
-        let childofCertificates = certificates.firstElementChild;
-        childofCertificates.id = "aktiv";
+        aktiv("Certificates");
     }
     function switchToContests(_event) {
         let target = _event.target;
@@ -290,8 +322,7 @@ var DIG_main;
         console.log(targetElement);
         console.log("parent: ", parentElement);
         console.log(targetID);
-        let childofContests = contests.firstElementChild;
-        childofContests.id = "aktiv";
+        aktiv("Contests");
     }
     function switchToMembers(_event) {
         let target = _event.target;
@@ -301,8 +332,7 @@ var DIG_main;
         console.log(targetElement);
         console.log("parent: ", parentElement);
         console.log(targetID);
-        let childofMembers = members.firstElementChild;
-        childofMembers.id = "aktiv";
+        aktiv("Members");
     }
     function switchToDownloads(_event) {
         let target = _event.target;
@@ -312,8 +342,7 @@ var DIG_main;
         console.log(targetElement);
         console.log("parent: ", parentElement);
         console.log(targetID);
-        let childofDownloads = downloads.firstElementChild;
-        childofDownloads.id = "aktiv";
+        aktiv("Downloads");
     }
 })(DIG_main || (DIG_main = {}));
 //# sourceMappingURL=script.js.map
