@@ -19,12 +19,15 @@ namespace DIG_main {
     //true  = initial   = german
     //false             = english
 
+    let logo: HTMLElement;
     let infos: HTMLElement;
     let blog: HTMLElement;
     let certificates: HTMLElement;
     let contests: HTMLElement;
     let members: HTMLElement;
     let downloads: HTMLElement;
+
+    let contentSection: HTMLElement;
 
     function handleLoad(): void {
 
@@ -46,7 +49,7 @@ namespace DIG_main {
         searchBar = <HTMLDivElement>document.getElementById("searchDiv");
 
         addNavListeners();
-
+        contentSection = <HTMLElement>document.getElementById("content");
     }
 
     function sizeTest(): void {
@@ -196,11 +199,13 @@ namespace DIG_main {
 
     function changeLanguage(_event: Event): void {
 
-        let targetSpan: EventTarget = <EventTarget>_event.target;
-        let targetID: string = targetSpan.alt;
+        let target: EventTarget = <EventTarget>_event.target;
+        let targetElement: HTMLImageElement = <HTMLImageElement>target;
+        let targetID: string = targetElement.alt;
         targetID = targetID.slice(0, 2);
         console.log(targetID);
 
+        
         if (targetID == "DE") {
 
             // console.log("DE");
@@ -349,6 +354,10 @@ namespace DIG_main {
 
     function addNavListeners(): void {
 
+        //Logo
+        logo = <HTMLElement>document.getElementById("Logo");
+        logo.addEventListener("click", switchToHome);
+
         //Infos
         infos = <HTMLElement>document.getElementById("Infos");
         infos.addEventListener("click", switchToInfos);
@@ -426,6 +435,12 @@ namespace DIG_main {
 
     }
 
+    function switchToHome(): void {
+
+        contentSection.innerHTML = "Willkommen bei der Diplom Interessen Gruppe.";
+
+    }
+
     function switchToInfos(_event: Event): void {
 
         let target: EventTarget = <EventTarget>_event.target;
@@ -438,6 +453,8 @@ namespace DIG_main {
         console.log(targetID);
 
         aktiv("Infos");
+
+        contentSection.innerHTML = "Info";
     }
 
     function switchToBlog(_event: Event): void {
@@ -453,6 +470,7 @@ namespace DIG_main {
 
         aktiv("Blog");
 
+        contentSection.innerHTML = "Blog";
     }
 
     function switchToCertificates(_event: Event): void {
@@ -468,6 +486,7 @@ namespace DIG_main {
 
         aktiv("Certificates");
 
+        contentSection.innerHTML = "Diplome";
     }
 
     function switchToContests(_event: Event): void {
@@ -483,6 +502,7 @@ namespace DIG_main {
 
         aktiv("Contests");
 
+        contentSection.innerHTML = "Contests";
     }
 
     function switchToMembers(_event: Event): void {
@@ -498,6 +518,7 @@ namespace DIG_main {
 
         aktiv("Members");
 
+        contentSection.innerHTML = "Mitglieder";
     }
 
     function switchToDownloads(_event: Event): void {
@@ -513,6 +534,6 @@ namespace DIG_main {
 
         aktiv("Downloads");
 
-
+        contentSection.innerHTML = "Downloads";
     }
 }

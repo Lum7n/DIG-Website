@@ -14,12 +14,14 @@ var DIG_main;
     let language = true;
     //true  = initial   = german
     //false             = english
+    let logo;
     let infos;
     let blog;
     let certificates;
     let contests;
     let members;
     let downloads;
+    let contentSection;
     function handleLoad() {
         sizeTest();
         let burgerMenuBtn = document.getElementById("menu");
@@ -34,6 +36,7 @@ var DIG_main;
         underlay.addEventListener("click", closeSearchBar);
         searchBar = document.getElementById("searchDiv");
         addNavListeners();
+        contentSection = document.getElementById("content");
     }
     function sizeTest() {
         let screenWidth = screen.width;
@@ -132,8 +135,9 @@ var DIG_main;
         }
     }
     function changeLanguage(_event) {
-        let targetSpan = _event.target;
-        let targetID = targetSpan.alt;
+        let target = _event.target;
+        let targetElement = target;
+        let targetID = targetElement.alt;
         targetID = targetID.slice(0, 2);
         console.log(targetID);
         if (targetID == "DE") {
@@ -231,6 +235,9 @@ var DIG_main;
         }
     }
     function addNavListeners() {
+        //Logo
+        logo = document.getElementById("Logo");
+        logo.addEventListener("click", switchToHome);
         //Infos
         infos = document.getElementById("Infos");
         infos.addEventListener("click", switchToInfos);
@@ -284,6 +291,9 @@ var DIG_main;
         let dowMemberList = document.getElementById("Dow_Mitgliederliste");
         dowMemberList.addEventListener("click", switchToDownloads);
     }
+    function switchToHome() {
+        contentSection.innerHTML = "Willkommen bei der Diplom Interessen Gruppe.";
+    }
     function switchToInfos(_event) {
         let target = _event.target;
         let targetElement = target;
@@ -293,6 +303,7 @@ var DIG_main;
         console.log("parent: ", parentElement);
         console.log(targetID);
         aktiv("Infos");
+        contentSection.innerHTML = "Info";
     }
     function switchToBlog(_event) {
         let target = _event.target;
@@ -303,6 +314,7 @@ var DIG_main;
         console.log("parent: ", parentElement);
         console.log(targetID);
         aktiv("Blog");
+        contentSection.innerHTML = "Blog";
     }
     function switchToCertificates(_event) {
         let target = _event.target;
@@ -313,6 +325,7 @@ var DIG_main;
         console.log("parent: ", parentElement);
         console.log(targetID);
         aktiv("Certificates");
+        contentSection.innerHTML = "Diplome";
     }
     function switchToContests(_event) {
         let target = _event.target;
@@ -323,6 +336,7 @@ var DIG_main;
         console.log("parent: ", parentElement);
         console.log(targetID);
         aktiv("Contests");
+        contentSection.innerHTML = "Contests";
     }
     function switchToMembers(_event) {
         let target = _event.target;
@@ -333,6 +347,7 @@ var DIG_main;
         console.log("parent: ", parentElement);
         console.log(targetID);
         aktiv("Members");
+        contentSection.innerHTML = "Mitglieder";
     }
     function switchToDownloads(_event) {
         let target = _event.target;
@@ -343,6 +358,7 @@ var DIG_main;
         console.log("parent: ", parentElement);
         console.log(targetID);
         aktiv("Downloads");
+        contentSection.innerHTML = "Downloads";
     }
 })(DIG_main || (DIG_main = {}));
 //# sourceMappingURL=script.js.map
