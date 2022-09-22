@@ -14,16 +14,17 @@ var DIG_main;
     let language = true;
     //true  = initial   = german
     //false             = english
-    let logo;
-    let infos;
-    let blog;
-    let certificates;
-    let contests;
-    let members;
-    let downloads;
+    // let logo: HTMLElement;
+    // let infos: HTMLElement;
+    // let blog: HTMLElement;
+    // let certificates: HTMLElement;
+    // let contests: HTMLElement;
+    // let members: HTMLElement;
+    // let downloads: HTMLElement;
     let contentSection;
     function handleLoad() {
         sizeTest();
+        addContentToHeader();
         let burgerMenuBtn = document.getElementById("menu");
         burgerMenuBtn.addEventListener("click", openBurgerMenu);
         overlay = document.querySelector(".overlay");
@@ -35,7 +36,7 @@ var DIG_main;
         search.addEventListener("click", openSearchBar);
         underlay.addEventListener("click", closeSearchBar);
         searchBar = document.getElementById("searchDiv");
-        addNavListeners();
+        // addNavListeners();
         contentSection = document.getElementById("content");
     }
     function sizeTest() {
@@ -88,6 +89,10 @@ var DIG_main;
             inputSearch[1].style.width = screenWidth * 0.6 + "px";
             // inputSearch[2].style.width = screenWidth * 0.6 + "px";
         }
+    }
+    function addContentToHeader() {
+        let header = document.querySelector("header");
+        console.log(header);
     }
     function openBurgerMenu() {
         // console.log("click");
@@ -193,172 +198,6 @@ var DIG_main;
         else {
             console.log("fehler");
         }
-    }
-    function aktiv(item) {
-        let aktiv = document.getElementById("aktiv");
-        if (aktiv != null) {
-            aktiv.id = "";
-        }
-        switch (item) {
-            case "Infos":
-                console.log("I");
-                let childofInfos = infos.firstElementChild;
-                childofInfos.id = "aktiv";
-                break;
-            case "Blog":
-                console.log("B");
-                let childofBlog = blog.firstElementChild;
-                childofBlog.id = "aktiv";
-                break;
-            case "Certificates":
-                console.log("Cer");
-                let childofCertificates = certificates.firstElementChild;
-                childofCertificates.id = "aktiv";
-                break;
-            case "Contests":
-                console.log("Con");
-                let childofContests = contests.firstElementChild;
-                childofContests.id = "aktiv";
-                break;
-            case "Members":
-                console.log("Mem");
-                let childofMembers = members.firstElementChild;
-                childofMembers.id = "aktiv";
-                break;
-            case "Downloads":
-                console.log("D");
-                let childofDownloads = downloads.firstElementChild;
-                childofDownloads.id = "aktiv";
-                break;
-            default:
-                break;
-        }
-    }
-    function addNavListeners() {
-        //Logo
-        logo = document.getElementById("Logo");
-        logo.addEventListener("click", switchToHome);
-        //Infos
-        infos = document.getElementById("Infos");
-        infos.addEventListener("click", switchToInfos);
-        let history = document.getElementById("Geschichte");
-        history.addEventListener("click", switchToInfos);
-        let contacts = document.getElementById("Ansprechpartner");
-        contacts.addEventListener("click", switchToInfos);
-        let dates = document.getElementById("Termine");
-        dates.addEventListener("click", switchToInfos);
-        let requirements = document.getElementById("Anforderungen");
-        requirements.addEventListener("click", switchToInfos);
-        //Blog
-        blog = document.getElementById("Blog");
-        blog.addEventListener("click", switchToBlog);
-        let rundsprueche = document.getElementById("Rundspruche");
-        rundsprueche.addEventListener("click", switchToBlog);
-        let latest = document.getElementById("Aktuell");
-        latest.addEventListener("click", switchToBlog);
-        let archive = document.getElementById("Archiv");
-        archive.addEventListener("click", switchToBlog);
-        let forum = document.getElementById("Forum");
-        forum.addEventListener("click", switchToBlog);
-        //Diplome
-        certificates = document.getElementById("Diplome");
-        certificates.addEventListener("click", switchToCertificates);
-        let insert = document.getElementById("Diplombeilage");
-        insert.addEventListener("click", switchToCertificates);
-        //Contests
-        contests = document.getElementById("Contests");
-        contests.addEventListener("click", switchToContests);
-        let results = document.getElementById("Ergebnisse");
-        results.addEventListener("click", switchToContests);
-        //Mitglieder
-        members = document.getElementById("Mitglieder");
-        members.addEventListener("click", switchToMembers);
-        let become = document.getElementById("DIGwerden");
-        become.addEventListener("click", switchToMembers);
-        let memberList = document.getElementById("Mitgliederliste");
-        memberList.addEventListener("click", switchToMembers);
-        let departments = document.getElementById("Sektionen");
-        departments.addEventListener("click", switchToMembers);
-        //Downloads
-        downloads = document.getElementById("Downloads");
-        downloads.addEventListener("click", switchToDownloads);
-        let dowRules = document.getElementById("Dow_Ausschreibungen");
-        dowRules.addEventListener("click", switchToDownloads);
-        let dowResults = document.getElementById("Dow_Ergebnisse");
-        dowResults.addEventListener("click", switchToDownloads);
-        let dowGCR = document.getElementById("Dow_GCR");
-        dowGCR.addEventListener("click", switchToDownloads);
-        let dowMemberList = document.getElementById("Dow_Mitgliederliste");
-        dowMemberList.addEventListener("click", switchToDownloads);
-    }
-    function switchToHome() {
-        contentSection.innerHTML = "Willkommen bei der Diplom Interessen Gruppe.";
-    }
-    function switchToInfos(_event) {
-        let target = _event.target;
-        let targetElement = target;
-        let parentElement = targetElement.parentElement;
-        let targetID = parentElement.id;
-        console.log(targetElement);
-        console.log("parent: ", parentElement);
-        console.log(targetID);
-        aktiv("Infos");
-        contentSection.innerHTML = "Info";
-    }
-    function switchToBlog(_event) {
-        let target = _event.target;
-        let targetElement = target;
-        let parentElement = targetElement.parentElement;
-        let targetID = parentElement.id;
-        console.log(targetElement);
-        console.log("parent: ", parentElement);
-        console.log(targetID);
-        aktiv("Blog");
-        contentSection.innerHTML = "Blog";
-    }
-    function switchToCertificates(_event) {
-        let target = _event.target;
-        let targetElement = target;
-        let parentElement = targetElement.parentElement;
-        let targetID = parentElement.id;
-        console.log(targetElement);
-        console.log("parent: ", parentElement);
-        console.log(targetID);
-        aktiv("Certificates");
-        contentSection.innerHTML = "Diplome";
-    }
-    function switchToContests(_event) {
-        let target = _event.target;
-        let targetElement = target;
-        let parentElement = targetElement.parentElement;
-        let targetID = parentElement.id;
-        console.log(targetElement);
-        console.log("parent: ", parentElement);
-        console.log(targetID);
-        aktiv("Contests");
-        contentSection.innerHTML = "Contests";
-    }
-    function switchToMembers(_event) {
-        let target = _event.target;
-        let targetElement = target;
-        let parentElement = targetElement.parentElement;
-        let targetID = parentElement.id;
-        console.log(targetElement);
-        console.log("parent: ", parentElement);
-        console.log(targetID);
-        aktiv("Members");
-        contentSection.innerHTML = "Mitglieder";
-    }
-    function switchToDownloads(_event) {
-        let target = _event.target;
-        let targetElement = target;
-        let parentElement = targetElement.parentElement;
-        let targetID = parentElement.id;
-        console.log(targetElement);
-        console.log("parent: ", parentElement);
-        console.log(targetID);
-        aktiv("Downloads");
-        contentSection.innerHTML = "Downloads";
     }
 })(DIG_main || (DIG_main = {}));
 //# sourceMappingURL=script.js.map

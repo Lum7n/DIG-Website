@@ -219,7 +219,40 @@ footer {
 }
 
 /* ----------------  main content  ---------------- */
+.headline { grid-area: headline; }
+.image { grid-area: image; }
+.text { grid-area: text; }
+
 section {
+    display: grid;
+    grid-template-areas:
+    'headline headline'
+    'image text';
+    grid-template-columns: 40% 60%;
     background-color: #a070676b;
-    padding: 10px;
+    padding: 30px;
+}
+
+.headline {
+    display: grid;
+}
+
+#content h1 {
+    font-size: 3em;
+    margin: 0px 0px -20px 0px;
+}
+
+.image img {
+    display: grid;
+    max-width: 100%;
+    padding: 10px 0px 50px 0px;
+}
+
+.text {
+    display: grid;
+    padding: 10px 0px 50px 40px;
+}
+
+.text p {
+    margin: 0px;
 }
