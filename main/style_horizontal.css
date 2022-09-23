@@ -38,7 +38,7 @@ header {
     max-height: 200px;
 }
 
-#stripeNav, #languageDiv, .underlay, #searchDiv, .itemI {
+#stripeNav, #languageDiv, .underlay, #searchDiv, .icons {
     display: none;
 }
 

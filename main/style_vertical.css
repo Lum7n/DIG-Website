@@ -1,14 +1,10 @@
-.item0 { grid-area: header; }
-.item1 { grid-area: logo; }
-.item2 { grid-area: language; }
-.item3 { grid-area: search-bar; }
-.item4 { grid-area: nav; }
-.item5 { grid-area: stripe; }
-.item6 { grid-area: content; }
-.item7 { grid-area: footer; }
-.itemM { grid-area: menu;}
-.itemS { grid-area: search;}
-.itemI { grid-area: icons;}
+    .item0 { grid-area: header; }
+    .item1 { grid-area: logo; }
+    .item5 { grid-area: stripe; }
+    .item6 { grid-area: content; }
+    .item7 { grid-area: footer; }
+
+    .icons { grid-area: icons;}
 
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -44,7 +40,7 @@ header {
     display: none;
 }
 
-.itemI {
+.icons {
     display: inline-flex;
     /* background-color: #8786cc; */
     margin: 35px 0px;
