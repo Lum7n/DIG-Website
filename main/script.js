@@ -26,8 +26,7 @@ var DIG_main;
     function handleLoad() {
         sizeTest();
         flagSet();
-        // addNavListeners();
-        // contentSection = <HTMLElement>document.getElementById("content");
+        addNavListeners();
     }
     function sizeTest() {
         let screenWidth = screen.width;
@@ -40,7 +39,7 @@ var DIG_main;
             addStylesheet("style_vertical.css");
             addContentToHeader("vertical");
             matchWidth(screenWidth);
-            addListener();
+            addListenerForBurgerMenu();
         }
         else if (screenWidth > screenHeight) {
             // console.log("horizontal");
@@ -458,7 +457,7 @@ var DIG_main;
         mainNavUl.appendChild(membersDiv);
         mainNavUl.appendChild(downloadsDiv);
     }
-    function addListener() {
+    function addListenerForBurgerMenu() {
         let burgerMenuBtn = document.getElementById("menu");
         burgerMenuBtn.addEventListener("click", openBurgerMenu);
         overlay = document.querySelector(".overlay");
@@ -570,6 +569,35 @@ var DIG_main;
             searchBar.style.height = "0px";
             underlay.style.width = "0%";
             openSearch = false;
+        }
+        else {
+            console.log("fehler");
+        }
+    }
+    function addNavListeners() {
+        let content = document.querySelector("#content");
+        let subsiteName = content.classList[1];
+        console.log(subsiteName);
+        if (subsiteName == "home") {
+            console.log(subsiteName);
+        }
+        else if (subsiteName == "infos") {
+            console.log(subsiteName);
+        }
+        else if (subsiteName == "blog") {
+            console.log(subsiteName);
+        }
+        else if (subsiteName == "certificates") {
+            console.log(subsiteName);
+        }
+        else if (subsiteName == "contests") {
+            console.log(subsiteName);
+        }
+        else if (subsiteName == "members") {
+            console.log(subsiteName);
+        }
+        else if (subsiteName == "downloads") {
+            console.log(subsiteName);
         }
         else {
             console.log("fehler");

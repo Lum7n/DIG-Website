@@ -38,8 +38,8 @@ namespace DIG_main {
 
         flagSet();
 
-        // addNavListeners();
-        // contentSection = <HTMLElement>document.getElementById("content");
+        addNavListeners();
+
     }
 
     function sizeTest(): void {
@@ -57,7 +57,7 @@ namespace DIG_main {
             addStylesheet("style_vertical.css");
             addContentToHeader("vertical");
             matchWidth(screenWidth);
-            addListener();
+            addListenerForBurgerMenu();
 
         } else if (screenWidth > screenHeight) {
             // console.log("horizontal");
@@ -643,7 +643,7 @@ namespace DIG_main {
 
     }
 
-    function addListener(): void {
+    function addListenerForBurgerMenu(): void {
 
         let burgerMenuBtn: HTMLSpanElement = <HTMLSpanElement>document.getElementById("menu");
         burgerMenuBtn.addEventListener("click", openBurgerMenu);
@@ -824,6 +824,46 @@ namespace DIG_main {
             console.log("fehler");
         }
 
+    }
+
+    function addNavListeners(): void {
+
+        let content: HTMLElement = <HTMLElement>document.querySelector("#content");
+        let subsiteName: string = content.classList[1];
+        console.log(subsiteName);
+
+        if (subsiteName == "home") {
+            
+            console.log(subsiteName);
+
+        } else if (subsiteName == "infos") {
+            
+            console.log(subsiteName);
+
+        } else if (subsiteName == "blog") {
+            
+            console.log(subsiteName);
+
+        } else if (subsiteName == "certificates") {
+            
+            console.log(subsiteName);
+
+        } else if (subsiteName == "contests") {
+            
+            console.log(subsiteName);
+
+        } else if (subsiteName == "members") {
+            
+            console.log(subsiteName);
+
+        } else if (subsiteName == "downloads") {
+            
+            console.log(subsiteName);
+
+        } else {
+
+            console.log("fehler");
+        }
     }
 
 }
