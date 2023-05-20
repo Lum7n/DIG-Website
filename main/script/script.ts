@@ -15,8 +15,8 @@ namespace DIG_main {
     let search: HTMLSpanElement;
     let searchBar: HTMLDivElement;
 
-    let germanFlag: HTMLElement;
-    let englishFlag: HTMLElement;
+    let deFlag: HTMLImageElement;
+    let enFlag: HTMLImageElement;
 
     let language: boolean = true;
     //true  = initial   = german
@@ -41,8 +41,6 @@ namespace DIG_main {
         screenOrientation();
 
         // window.addEventListener("resize", rematchWidth)
-
-        flagSet();
 
         addNavListeners();
 
@@ -72,7 +70,7 @@ namespace DIG_main {
             addContentToHeader(screenType);
 
         } else {
-            console.log("fehler");
+            console.log("error");
         }
     }
 
@@ -123,7 +121,6 @@ namespace DIG_main {
             inputSearch[0].style.width = screenWidth * 0.6 + "px";
 
         }
-
     }
 
     function addContentToHeader(_screenType: string): void {
@@ -154,7 +151,7 @@ namespace DIG_main {
 
         } else {
 
-            console.log("fehler");
+            console.log("error");
         }
 
         //Navigation
@@ -504,9 +501,6 @@ namespace DIG_main {
 
     function openBurgerMenu(): void {
 
-        // console.log("click");
-        // console.log(open);
-
         if (openMenu == false) {
 
             overlay.style.width = "320px";
@@ -515,16 +509,11 @@ namespace DIG_main {
             openMenu = true;
 
         } else {
-
-            console.log("fehler");
+            console.log("error");
         }
-
     }
 
     function closeBurgerMenu(): void {
-
-        // console.log("click");
-        // console.log(open);
 
         if (openMenu == true) {
 
@@ -534,107 +523,11 @@ namespace DIG_main {
             openMenu = false;
 
         } else {
-
-            console.log("fehler");
-        }
-
-
-    }
-
-    function flagSet(): void {
-
-        // console.log(screenType);
-
-        if (screenType == "vertical") {
-
-            console.log(screenType);
-
-            germanFlag = <HTMLElement>document.getElementById("DE_v");
-            germanFlag.addEventListener("click", changeLanguage);
-
-            englishFlag = <HTMLElement>document.getElementById("EN_v");
-            englishFlag.addEventListener("click", changeLanguage);
-
-            englishFlag.style.filter = "grayscale(100%)";
-            englishFlag.style.webkitFilter = "grayscale(100%)";
-
-        } else if (screenType == "horizontal") {
-
-            console.log(screenType);
-
-            germanFlag = <HTMLElement>document.getElementById("DE_h");
-            germanFlag.addEventListener("click", changeLanguage);
-
-            englishFlag = <HTMLElement>document.getElementById("EN_h");
-            englishFlag.addEventListener("click", changeLanguage);
-
-            englishFlag.style.filter = "grayscale(100%)";
-            englishFlag.style.webkitFilter = "grayscale(100%)";
-
-        }
-
-    }
-
-    function changeLanguage(_event: Event): void {
-
-        let target: EventTarget = <EventTarget>_event.target;
-        let targetElement: HTMLImageElement = <HTMLImageElement>target;
-        let targetID: string = targetElement.alt;
-        targetID = targetID.slice(0, 2);
-        console.log(targetID);
-
-
-        if (targetID == "DE") {
-
-            // console.log("DE");
-
-            if (language != true) {
-
-                console.log("wechsel auf deutsch");
-
-                englishFlag.style.filter = "grayscale(100%)";
-                englishFlag.style.webkitFilter = "grayscale(100%)";
-
-                germanFlag.style.filter = "";
-                germanFlag.style.webkitFilter = "";
-
-                language = true;
-
-            } else {
-
-                console.log("deutsch aktiv gewesen");
-            }
-
-        } else if (targetID == "EN") {
-
-            // console.log("EN");
-
-            if (language == true) {
-
-                console.log("wechsel auf englisch");
-
-                germanFlag.style.filter = "grayscale(100%)";
-                germanFlag.style.webkitFilter = "grayscale(100%)";
-
-                englishFlag.style.filter = "";
-                englishFlag.style.webkitFilter = "";
-
-                language = false;
-
-            } else {
-
-                console.log("englisch aktiv gewesen");
-            }
-
-        } else {
-
-            console.log("fehler");
+            console.log("error");
         }
     }
 
     function openSearchBar(): void {
-
-        // console.log(openSearch);
 
         if (openSearch == false) {
 
@@ -644,15 +537,11 @@ namespace DIG_main {
             openSearch = true;
 
         } else {
-
-            console.log("fehler");
+            console.log("error");
         }
-
     }
 
     function closeSearchBar(): void {
-
-        // console.log(openSearch);
 
         if (openSearch == true) {
 
@@ -662,10 +551,67 @@ namespace DIG_main {
             openSearch = false;
 
         } else {
-
-            console.log("fehler");
+            console.log("error");
         }
+    }
 
+    function handleEvent(_event: Event): void {
+
+        let target: HTMLElement = <HTMLImageElement>_event.target;
+        let targetID: string = target.id;
+
+        switch (targetID) {
+            case "DE_v":
+            case "DE_h":
+            case "EN_v":
+            case "EN_h":
+
+                targetID = targetID.slice(0, 2);
+                changeLanguage(targetID);
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    function changeLanguage(_targetID: string): void {
+
+        if (_targetID == "DE") {
+
+            if (language != true) {
+
+                enFlag.style.filter = "grayscale(100%)";
+                enFlag.style.webkitFilter = "grayscale(100%)";
+
+                deFlag.style.filter = "";
+                deFlag.style.webkitFilter = "";
+
+                language = true;
+
+            } else {
+                console.log("already german");
+            }
+
+        } else if (_targetID == "EN") {
+
+            if (language == true) {
+
+                deFlag.style.filter = "grayscale(100%)";
+                deFlag.style.webkitFilter = "grayscale(100%)";
+
+                enFlag.style.filter = "";
+                enFlag.style.webkitFilter = "";
+
+                language = false;
+
+            } else {
+                console.log("already english");
+            }
+
+        } else {
+            console.log("error");
+        }
     }
 
     function addNavListeners(): void {
@@ -704,7 +650,7 @@ namespace DIG_main {
 
         } else {
 
-            console.log("fehler");
+            console.log("error");
         }
     }
 
@@ -712,7 +658,7 @@ namespace DIG_main {
 
         let logoImg: HTMLImageElement = document.createElement("img");
         logoImg.id = "logoSize";
-        logoImg.src = "Assets/DIG.png";
+        logoImg.src = "assets/DIG.png";
 
         let logoA: HTMLAnchorElement = document.createElement("a");
         logoA.href = "Home.html";
@@ -755,25 +701,30 @@ namespace DIG_main {
 
     function addHeader_Language(_screenTypeShort: string): void {
 
-        let deImg: HTMLImageElement = document.createElement("img");
-        deImg.src = "Assets/german.png";
-        deImg.alt = "DE";
-        deImg.classList.add("flag");
-        deImg.id = "DE_" + "h";
+        deFlag = document.createElement("img");
+        deFlag.src = "assets/german.png";
+        deFlag.alt = "DE";
+        deFlag.classList.add("flag");
+        deFlag.id = "DE_" + _screenTypeShort;
+        deFlag.addEventListener("click", handleEvent);
 
-        let enImg: HTMLImageElement = document.createElement("img");
-        enImg.src = "Assets/english.png";
-        enImg.alt = "EN";
-        enImg.classList.add("flag");
-        enImg.id = "EN_" + "h";
+        enFlag = document.createElement("img");
+        enFlag.src = "assets/english.png";
+        enFlag.alt = "EN";
+        enFlag.classList.add("flag");
+        enFlag.id = "EN_" + _screenTypeShort;
+        enFlag.addEventListener("click", handleEvent);
+        enFlag.style.filter = "grayscale(100%)";
+        enFlag.style.webkitFilter = "grayscale(100%)";
+
 
         if (_screenTypeShort == "v") {
 
             flagDiv = document.createElement("div");
             flagDiv.id = "languageDiv";
 
-            flagDiv.appendChild(deImg);
-            flagDiv.appendChild(enImg);
+            flagDiv.appendChild(deFlag);
+            flagDiv.appendChild(enFlag);
 
         } else if (_screenTypeShort == "h") {
 
@@ -783,8 +734,8 @@ namespace DIG_main {
             flagDiv = document.createElement("div");
             flagDiv.classList.add("item2");
 
-            flagSpan.appendChild(deImg);
-            flagSpan.appendChild(enImg);
+            flagSpan.appendChild(deFlag);
+            flagSpan.appendChild(enFlag);
             flagDiv.appendChild(flagSpan);
             header.appendChild(flagDiv);
         }

@@ -11,8 +11,8 @@ var DIG_main;
     let openSearch = false;
     let search;
     let searchBar;
-    let germanFlag;
-    let englishFlag;
+    let deFlag;
+    let enFlag;
     let language = true;
     //true  = initial   = german
     //false             = english
@@ -29,7 +29,6 @@ var DIG_main;
     function handleLoad() {
         screenOrientation();
         // window.addEventListener("resize", rematchWidth)
-        flagSet();
         addNavListeners();
     }
     function screenOrientation() {
@@ -50,7 +49,7 @@ var DIG_main;
             addContentToHeader(screenType);
         }
         else {
-            console.log("fehler");
+            console.log("error");
         }
     }
     function addStylesheet(fileName) {
@@ -106,7 +105,7 @@ var DIG_main;
             header.appendChild(underlayDiv);
         }
         else {
-            console.log("fehler");
+            console.log("error");
         }
         //Navigation
         navigationUl();
@@ -347,108 +346,87 @@ var DIG_main;
         searchBar = document.getElementById("searchDiv");
     }
     function openBurgerMenu() {
-        // console.log("click");
-        // console.log(open);
         if (openMenu == false) {
             overlay.style.width = "320px";
             underlay.style.width = "100%";
             openMenu = true;
         }
         else {
-            console.log("fehler");
+            console.log("error");
         }
     }
     function closeBurgerMenu() {
-        // console.log("click");
-        // console.log(open);
         if (openMenu == true) {
             overlay.style.width = "0%";
             underlay.style.width = "0%";
             openMenu = false;
         }
         else {
-            console.log("fehler");
-        }
-    }
-    function flagSet() {
-        // console.log(screenType);
-        if (screenType == "vertical") {
-            console.log(screenType);
-            germanFlag = document.getElementById("DE_v");
-            germanFlag.addEventListener("click", changeLanguage);
-            englishFlag = document.getElementById("EN_v");
-            englishFlag.addEventListener("click", changeLanguage);
-            englishFlag.style.filter = "grayscale(100%)";
-            englishFlag.style.webkitFilter = "grayscale(100%)";
-        }
-        else if (screenType == "horizontal") {
-            console.log(screenType);
-            germanFlag = document.getElementById("DE_h");
-            germanFlag.addEventListener("click", changeLanguage);
-            englishFlag = document.getElementById("EN_h");
-            englishFlag.addEventListener("click", changeLanguage);
-            englishFlag.style.filter = "grayscale(100%)";
-            englishFlag.style.webkitFilter = "grayscale(100%)";
-        }
-    }
-    function changeLanguage(_event) {
-        let target = _event.target;
-        let targetElement = target;
-        let targetID = targetElement.alt;
-        targetID = targetID.slice(0, 2);
-        console.log(targetID);
-        if (targetID == "DE") {
-            // console.log("DE");
-            if (language != true) {
-                console.log("wechsel auf deutsch");
-                englishFlag.style.filter = "grayscale(100%)";
-                englishFlag.style.webkitFilter = "grayscale(100%)";
-                germanFlag.style.filter = "";
-                germanFlag.style.webkitFilter = "";
-                language = true;
-            }
-            else {
-                console.log("deutsch aktiv gewesen");
-            }
-        }
-        else if (targetID == "EN") {
-            // console.log("EN");
-            if (language == true) {
-                console.log("wechsel auf englisch");
-                germanFlag.style.filter = "grayscale(100%)";
-                germanFlag.style.webkitFilter = "grayscale(100%)";
-                englishFlag.style.filter = "";
-                englishFlag.style.webkitFilter = "";
-                language = false;
-            }
-            else {
-                console.log("englisch aktiv gewesen");
-            }
-        }
-        else {
-            console.log("fehler");
+            console.log("error");
         }
     }
     function openSearchBar() {
-        // console.log(openSearch);
         if (openSearch == false) {
             searchBar.style.height = "146px";
             underlay.style.width = "100%";
             openSearch = true;
         }
         else {
-            console.log("fehler");
+            console.log("error");
         }
     }
     function closeSearchBar() {
-        // console.log(openSearch);
         if (openSearch == true) {
             searchBar.style.height = "0px";
             underlay.style.width = "0%";
             openSearch = false;
         }
         else {
-            console.log("fehler");
+            console.log("error");
+        }
+    }
+    function handleEvent(_event) {
+        let target = _event.target;
+        let targetID = target.id;
+        switch (targetID) {
+            case "DE_v":
+            case "DE_h":
+            case "EN_v":
+            case "EN_h":
+                targetID = targetID.slice(0, 2);
+                changeLanguage(targetID);
+                break;
+            default:
+                break;
+        }
+    }
+    function changeLanguage(_targetID) {
+        if (_targetID == "DE") {
+            if (language != true) {
+                enFlag.style.filter = "grayscale(100%)";
+                enFlag.style.webkitFilter = "grayscale(100%)";
+                deFlag.style.filter = "";
+                deFlag.style.webkitFilter = "";
+                language = true;
+            }
+            else {
+                console.log("already german");
+            }
+        }
+        else if (_targetID == "EN") {
+            if (language == true) {
+                deFlag.style.filter = "grayscale(100%)";
+                deFlag.style.webkitFilter = "grayscale(100%)";
+                enFlag.style.filter = "";
+                enFlag.style.webkitFilter = "";
+                language = false;
+            }
+            else {
+                console.log("already english");
+            }
+        }
+        else {
+            console.log("error");
         }
     }
     function addNavListeners() {
@@ -477,13 +455,13 @@ var DIG_main;
             console.log(subsiteName);
         }
         else {
-            console.log("fehler");
+            console.log("error");
         }
     }
     function addHeader_Logo() {
         let logoImg = document.createElement("img");
         logoImg.id = "logoSize";
-        logoImg.src = "Assets/DIG.png";
+        logoImg.src = "assets/DIG.png";
         let logoA = document.createElement("a");
         logoA.href = "Home.html";
         let logoDiv = document.createElement("div");
@@ -513,29 +491,33 @@ var DIG_main;
         header.appendChild(iconsDiv);
     }
     function addHeader_Language(_screenTypeShort) {
-        let deImg = document.createElement("img");
-        deImg.src = "Assets/german.png";
-        deImg.alt = "DE";
-        deImg.classList.add("flag");
-        deImg.id = "DE_" + "h";
-        let enImg = document.createElement("img");
-        enImg.src = "Assets/english.png";
-        enImg.alt = "EN";
-        enImg.classList.add("flag");
-        enImg.id = "EN_" + "h";
+        deFlag = document.createElement("img");
+        deFlag.src = "assets/german.png";
+        deFlag.alt = "DE";
+        deFlag.classList.add("flag");
+        deFlag.id = "DE_" + _screenTypeShort;
+        deFlag.addEventListener("click", handleEvent);
+        enFlag = document.createElement("img");
+        enFlag.src = "assets/english.png";
+        enFlag.alt = "EN";
+        enFlag.classList.add("flag");
+        enFlag.id = "EN_" + _screenTypeShort;
+        enFlag.addEventListener("click", handleEvent);
+        enFlag.style.filter = "grayscale(100%)";
+        enFlag.style.webkitFilter = "grayscale(100%)";
         if (_screenTypeShort == "v") {
             flagDiv = document.createElement("div");
             flagDiv.id = "languageDiv";
-            flagDiv.appendChild(deImg);
-            flagDiv.appendChild(enImg);
+            flagDiv.appendChild(deFlag);
+            flagDiv.appendChild(enFlag);
         }
         else if (_screenTypeShort == "h") {
             let flagSpan = document.createElement("span");
             flagSpan.id = "language";
             flagDiv = document.createElement("div");
             flagDiv.classList.add("item2");
-            flagSpan.appendChild(deImg);
-            flagSpan.appendChild(enImg);
+            flagSpan.appendChild(deFlag);
+            flagSpan.appendChild(enFlag);
             flagDiv.appendChild(flagSpan);
             header.appendChild(flagDiv);
         }
