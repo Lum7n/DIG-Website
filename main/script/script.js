@@ -4,20 +4,12 @@ var DIG_main;
     window.addEventListener("load", handleLoad);
     let screenType;
     let screenWidth = screen.width;
-    let mainNavUl;
     let openMenu = false;
     let overlay;
     let underlay;
     let openSearch = false;
     let search;
     let searchBar;
-    let deFlag;
-    let enFlag;
-    let language = true;
-    //true  = initial   = german
-    //false             = english
-    let header;
-    let flagDiv;
     // let logo: HTMLElement;
     // let infos: HTMLElement;
     // let blog: HTMLElement;
@@ -38,14 +30,14 @@ var DIG_main;
         // console.log("Height: ", screenHeight);
         if (screenWidth < screenHeight) {
             screenType = "vertical";
-            addStylesheet("style_vertical.css");
+            addStylesheet("style/style_vertical.css");
             addContentToHeader(screenType);
             matchWidth(screenWidth);
             addListenerForBurgerMenu();
         }
         else if (screenWidth > screenHeight) {
             screenType = "horizontal";
-            addStylesheet("style_horizontal.css");
+            addStylesheet("style/style_horizontal.css");
             addContentToHeader(screenType);
         }
         else {
@@ -60,10 +52,31 @@ var DIG_main;
         link.href = fileName;
         head.appendChild(link);
     }
-    // function rematchWidth(): void {
-    //     console.log(screenWidth);
-    //     matchWidth(screenWidth);
-    // }
+    function addContentToHeader(_screenType) {
+        DIG_main.header = document.querySelector("header");
+        let screenTypeShort = _screenType.slice(0, 1);
+        //Logo
+        DIG_main.addHeader_Logo();
+        //Language
+        DIG_main.addHeader_Language(screenTypeShort);
+        //Search
+        DIG_main.addHeader_Search();
+        if (_screenType == "vertical") {
+            //Icons
+            DIG_main.addHeader_Icons();
+            //underlay for navigation
+            let underlayDiv = document.createElement("div");
+            underlayDiv.classList.add("underlay");
+            DIG_main.header.appendChild(underlayDiv);
+        }
+        else {
+            console.log("horizontal");
+        }
+        //Navigation
+        navigationUl();
+        //main_NavElement + Stripe
+        DIG_main.addHeader_mainNav(_screenType);
+    }
     function matchWidth(screenWidth) {
         if (screenWidth < 400) {
             let bodyWidth = screenWidth - 20;
@@ -85,32 +98,6 @@ var DIG_main;
             let inputSearch = document.getElementsByClassName("inputSearch");
             inputSearch[0].style.width = screenWidth * 0.6 + "px";
         }
-    }
-    function addContentToHeader(_screenType) {
-        header = document.querySelector("header");
-        console.log(header);
-        let screenTypeShort = _screenType.slice(0, 1);
-        //Logo
-        addHeader_Logo();
-        //Language
-        addHeader_Language(screenTypeShort);
-        //Search
-        addHeader_Search();
-        if (_screenType == "vertical") {
-            //Icons
-            addHeader_Icons();
-            //underlay for navigation
-            let underlayDiv = document.createElement("div");
-            underlayDiv.classList.add("underlay");
-            header.appendChild(underlayDiv);
-        }
-        else {
-            console.log("error");
-        }
-        //Navigation
-        navigationUl();
-        //main_NavElement + Stripe
-        addHeader_mainNav(_screenType);
     }
     function navigationUl() {
         //Navigation Infos
@@ -325,13 +312,13 @@ var DIG_main;
         downloadsDiv.classList.add("drop");
         downloadsDiv.appendChild(downloadsLi);
         downloadsDiv.appendChild(downloadsUl);
-        mainNavUl = document.createElement("ul");
-        mainNavUl.appendChild(infosDiv);
-        mainNavUl.appendChild(blogDiv);
-        mainNavUl.appendChild(certificatesDiv);
-        mainNavUl.appendChild(contestsDiv);
-        mainNavUl.appendChild(membersDiv);
-        mainNavUl.appendChild(downloadsDiv);
+        DIG_main.mainNavUl = document.createElement("ul");
+        DIG_main.mainNavUl.appendChild(infosDiv);
+        DIG_main.mainNavUl.appendChild(blogDiv);
+        DIG_main.mainNavUl.appendChild(certificatesDiv);
+        DIG_main.mainNavUl.appendChild(contestsDiv);
+        DIG_main.mainNavUl.appendChild(membersDiv);
+        DIG_main.mainNavUl.appendChild(downloadsDiv);
     }
     function addListenerForBurgerMenu() {
         let burgerMenuBtn = document.getElementById("menu");
@@ -385,50 +372,6 @@ var DIG_main;
             console.log("error");
         }
     }
-    function handleEvent(_event) {
-        let target = _event.target;
-        let targetID = target.id;
-        switch (targetID) {
-            case "DE_v":
-            case "DE_h":
-            case "EN_v":
-            case "EN_h":
-                targetID = targetID.slice(0, 2);
-                changeLanguage(targetID);
-                break;
-            default:
-                break;
-        }
-    }
-    function changeLanguage(_targetID) {
-        if (_targetID == "DE") {
-            if (language != true) {
-                enFlag.style.filter = "grayscale(100%)";
-                enFlag.style.webkitFilter = "grayscale(100%)";
-                deFlag.style.filter = "";
-                deFlag.style.webkitFilter = "";
-                language = true;
-            }
-            else {
-                console.log("already german");
-            }
-        }
-        else if (_targetID == "EN") {
-            if (language == true) {
-                deFlag.style.filter = "grayscale(100%)";
-                deFlag.style.webkitFilter = "grayscale(100%)";
-                enFlag.style.filter = "";
-                enFlag.style.webkitFilter = "";
-                language = false;
-            }
-            else {
-                console.log("already english");
-            }
-        }
-        else {
-            console.log("error");
-        }
-    }
     function addNavListeners() {
         let content = document.querySelector("#content");
         let subsiteName = content.classList[1];
@@ -457,108 +400,6 @@ var DIG_main;
         else {
             console.log("error");
         }
-    }
-    function addHeader_Logo() {
-        let logoImg = document.createElement("img");
-        logoImg.id = "logoSize";
-        logoImg.src = "assets/DIG.png";
-        let logoA = document.createElement("a");
-        logoA.href = "Home.html";
-        let logoDiv = document.createElement("div");
-        logoDiv.classList.add("item1");
-        logoDiv.id = "Logo";
-        logoA.appendChild(logoImg);
-        logoDiv.appendChild(logoA);
-        header.appendChild(logoDiv);
-    }
-    function addHeader_Icons() {
-        let iconsSearchA = document.createElement("a");
-        iconsSearchA.classList.add("fa-solid");
-        iconsSearchA.classList.add("fa-magnifying-glass");
-        let iconsSearchSpan = document.createElement("span");
-        iconsSearchSpan.id = "search";
-        let iconsMenuA = document.createElement("a");
-        iconsMenuA.classList.add("fa-solid");
-        iconsMenuA.classList.add("fa-bars");
-        let iconsMenuSpan = document.createElement("span");
-        iconsMenuSpan.id = "menu";
-        let iconsDiv = document.createElement("div");
-        iconsDiv.classList.add("icons");
-        iconsSearchSpan.appendChild(iconsSearchA);
-        iconsMenuSpan.appendChild(iconsMenuA);
-        iconsDiv.appendChild(iconsSearchSpan);
-        iconsDiv.appendChild(iconsMenuSpan);
-        header.appendChild(iconsDiv);
-    }
-    function addHeader_Language(_screenTypeShort) {
-        deFlag = document.createElement("img");
-        deFlag.src = "assets/german.png";
-        deFlag.alt = "DE";
-        deFlag.classList.add("flag");
-        deFlag.id = "DE_" + _screenTypeShort;
-        deFlag.addEventListener("click", handleEvent);
-        enFlag = document.createElement("img");
-        enFlag.src = "assets/english.png";
-        enFlag.alt = "EN";
-        enFlag.classList.add("flag");
-        enFlag.id = "EN_" + _screenTypeShort;
-        enFlag.addEventListener("click", handleEvent);
-        enFlag.style.filter = "grayscale(100%)";
-        enFlag.style.webkitFilter = "grayscale(100%)";
-        if (_screenTypeShort == "v") {
-            flagDiv = document.createElement("div");
-            flagDiv.id = "languageDiv";
-            flagDiv.appendChild(deFlag);
-            flagDiv.appendChild(enFlag);
-        }
-        else if (_screenTypeShort == "h") {
-            let flagSpan = document.createElement("span");
-            flagSpan.id = "language";
-            flagDiv = document.createElement("div");
-            flagDiv.classList.add("item2");
-            flagSpan.appendChild(deFlag);
-            flagSpan.appendChild(enFlag);
-            flagDiv.appendChild(flagSpan);
-            header.appendChild(flagDiv);
-        }
-    }
-    function addHeader_Search() {
-        let searchInput = document.createElement("input");
-        searchInput.type = "text";
-        searchInput.name = "searchbar";
-        searchInput.classList.add("inputSearch");
-        let searchI = document.createElement("i");
-        searchI.classList.add("fa-solid");
-        searchI.classList.add("fa-magnifying-glass");
-        let searchSpan = document.createElement("span");
-        searchSpan.classList.add("searchBar");
-        let searchDiv = document.createElement("div");
-        searchDiv.classList.add("item3");
-        searchSpan.appendChild(searchInput);
-        searchSpan.appendChild(searchI);
-        searchDiv.appendChild(searchSpan);
-        header.appendChild(searchDiv);
-    }
-    function addHeader_mainNav(_screenType) {
-        //main_NavElement
-        let nav = document.createElement("nav");
-        nav.id = "mainNav";
-        nav.classList.add("item4");
-        nav.classList.add("overlay");
-        nav.appendChild(mainNavUl);
-        if (_screenType == "vertical") {
-            let smallStripeDiv = document.createElement("div");
-            smallStripeDiv.id = "stripeNav";
-            nav.appendChild(smallStripeDiv);
-            nav.appendChild(flagDiv);
-            header.appendChild(nav);
-        }
-        header.appendChild(nav);
-        //MainStripe
-        let stripeDiv = document.createElement("div");
-        stripeDiv.id = "stripe";
-        stripeDiv.classList.add("item5");
-        header.appendChild(stripeDiv);
     }
 })(DIG_main || (DIG_main = {}));
 //# sourceMappingURL=script.js.map

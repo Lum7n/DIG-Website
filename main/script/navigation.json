@@ -1,0 +1,30 @@
+{
+
+    "eStepper": [
+        {"title": "1", "type": "number", "price": 0, "id": "" }
+    ],
+    "eRadio": [
+        { "title": "kg", "type": "radio", "price": 0, "id": "eR1" },
+        { "title": "g", "type": "radio", "price": 0, "id": "eR2" },
+        { "title": "Stück", "type": "radio", "price": 0, "id": "eR3" },
+        { "title": "sixpack", "type": "radio", "price": 0, "id": "eR4" }
+    ],
+    "hStepper": [
+        {"title": "1", "type": "number", "price": 0, "id": "" }
+    ],
+    "hRadio": [
+        { "title": "Zimmer, Fenster, Beete", "type": "radio", "price": 0, "id": "hR1" },
+        { "title": "qm", "type": "radio", "price": 0, "id": "hR2" }
+    ],
+    "aDatalist": [
+        { "title": "Post", "type": "", "price": 5, "id": "" },
+        { "title": "Medikamente", "type": "", "price": 5, "id": "" },
+        { "title": "Lieferungen", "type": "", "price": 5, "id": "" },
+        { "title": "mit Hund gehen", "type": "", "price": 5, "id": "" }
+    ],
+    "aRadio": [
+        { "title": "wegbringen", "type": "radio", "price": 0, "id": "aR1" },
+        { "title": "abholen", "type": "radio", "price": 0, "id": "aR2" }
+    ]
+
+}
