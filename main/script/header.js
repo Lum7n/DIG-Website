@@ -144,7 +144,7 @@ var DIG_main;
         rundspruecheA.href = "Blog.html";
         rundspruecheA.innerText = "Rundsprüche";
         let rundspruecheLi = document.createElement("li");
-        rundspruecheLi.id = "Rundspruche";
+        rundspruecheLi.id = "Rundsprueche";
         rundspruecheLi.appendChild(rundspruecheA);
         let latestA = document.createElement("a");
         latestA.href = "Blog.html";

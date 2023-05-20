@@ -196,7 +196,7 @@ namespace DIG_main {
         rundspruecheA.innerText = "Rundsprüche";
 
         let rundspruecheLi: HTMLLIElement = document.createElement("li");
-        rundspruecheLi.id = "Rundspruche";
+        rundspruecheLi.id = "Rundsprueche";
 
         rundspruecheLi.appendChild(rundspruecheA);
 

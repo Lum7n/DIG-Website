@@ -1,6 +1,7 @@
 namespace DIG_main {
 
     export interface Listitem {
+        name: string;
         element: string;
         class: string;
         id: string;

@@ -1,30 +1,62 @@
 {
 
     "Infos": [
-        {"element": "1", "class": "number", "id": 0, "href": "", "text": "eR1" }
+        {"name": "infosA", "element": "a", "class": "mI_text", "href": "Infos.html", "text": "Infos" },
+        {"name": "infosLi", "element": "li", "class": "mainItem", "id": "Infos"},
+        {"name": "historyA", "element": "a", "href": "Infos.html", "text": "Geschichte der DIG" },
+        {"name": "historyLi", "element": "li", "id": "Geschichte" },
+        {"name": "contactsA", "element": "a", "href": "Infos.html", "text": "Ansprechpartner" },
+        {"name": "contactsLi", "element": "li", "id": "Ansprechpartner" },
+        {"name": "datesA", "element": "a", "href": "Infos.html", "text": "Termine" },
+        {"name": "datesLi", "element": "li", "id": "Termine" },
+        {"name": "requirementsA", "element": "a", "href": "Infos.html", "text": "Anforderungen" },
+        {"name": "requirementsLi", "element": "li", "id": "Anforderungen" }
     ],
     "Blog": [
-        { "element": "kg", "class": "radio", "id": 0, "href": "eR1", "text": "eR1" },
-        { "element": "g", "class": "radio", "id": 0, "href": "eR2", "text": "eR1" },
-        { "element": "Stück", "class": "radio", "id": 0, "href": "eR3", "text": "eR1" },
-        { "element": "sixpack", "class": "radio", "id": 0, "href": "eR4", "text": "eR1" }
+        {"name": "blogA", "element": "a", "class": "mI_text", "href": "Blog.html", "text": "Blog" },
+        {"name": "blogLi", "element": "li", "class": "mainItem", "id": "Blog"},
+        {"name": "rundspruecheA", "element": "a", "href": "Blog.html", "text": "Rundsprüche" },
+        {"name": "rundspruecheLi", "element": "li", "id": "Rundsprueche" },
+        {"name": "latestA", "element": "a", "href": "Blog.html", "text": "Aktuell" },
+        {"name": "latestLi", "element": "li", "id": "Aktuell" },
+        {"name": "archiveA", "element": "a", "href": "Blog.html", "text": "Archiv" },
+        {"name": "archiveLi", "element": "li", "id": "Archiv" },
+        {"name": "forumA", "element": "a", "href": "Blog.html", "text": "Forum" },
+        {"name": "forumLi", "element": "li", "id": "Forum" }
     ],
     "Diplome": [
-        {"element": "1", "class": "number", "id": 0, "href": "", "text": "eR1" }
+        {"name": "certificatesA", "element": "a", "class": "mI_text", "href": "Certificates.html", "text": "Diplome" },
+        {"name": "certificatesLi", "element": "li", "class": "mainItem", "id": "Diplome"},
+        {"name": "insertA", "element": "a", "href": "Certificates.html", "text": "Diplombeilage" },
+        {"name": "insertLi", "element": "li", "id": "Diplombeilage" }
     ],
     "Contests": [
-        { "element": "Zimmer, Fenster, Beete", "class": "radio", "id": 0, "href": "hR1", "text": "eR1" },
-        { "element": "qm",  "class": "radio", "id": 0, "href": "hR2", "text": "eR1" }
+        {"name": "contestsA", "element": "a", "class": "mI_text", "href": "Contests.html", "text": "Contests" },
+        {"name": "contestsLi", "element": "li", "class": "mainItem", "id": "Contests"},
+        {"name": "resultsA", "element": "a", "href": "Contests.html", "text": "Ergebnisse" },
+        {"name": "resultsLi", "element": "li", "id": "Ergebnisse" }
     ],
     "Mitglieder": [
-        { "element": "Post", "class": "", "id": 5, "href": "", "text": "eR1" },
-        { "element": "Medikamente", "class": "", "id": 5, "href": "", "text": "eR1" },
-        { "element": "Lieferungen", "class": "", "id": 5, "href": "", "text": "eR1" },
-        { "element": "mit Hund gehen", "class": "", "id": 5, "href": "", "text": "eR1" }
+        {"name": "membersA", "element": "a", "class": "mI_text", "href": "Members.html", "text": "Mitglieder" },
+        {"name": "membersLi", "element": "li", "class": "mainItem", "id": "Mitglieder"},
+        {"name": "becomeA", "element": "a", "href": "Members.html", "text": "Mitglied werden?" },
+        {"name": "becomeLi", "element": "li", "id": "DIGwerden" },
+        {"name": "memberListA", "element": "a", "href": "Members.html", "text": "Mitgliederliste" },
+        {"name": "memberListLi", "element": "li", "id": "Mitgliederliste" },
+        {"name": "departmentsA", "element": "a", "href": "Members.html", "text": "Sektionen" },
+        {"name": "departmentsLi", "element": "li", "id": "Sektionen" }
     ],
     "Downloads": [
-        { "element": "wegbringen", "class": "radio", "id": 0, "href": "aR1", "text": "eR1" },
-        { "element": "abholen", "class": "radio", "id": 0, "href": "aR2", "text": "eR1" }
+        {"name": "downloadsA", "element": "a", "class": "mI_text", "href": "Downloads.html", "text": "Downloads" },
+        {"name": "downloadsLi", "element": "li", "class": "mainItem", "id": "Downloads"},
+        {"name": "dowRulesA", "element": "a", "href": "Downloads.html", "text": "Diplomausschreibung" },
+        {"name": "dowRulesLi", "element": "li", "id": "Dow_Ausschreibung" },
+        {"name": "dowResultsA", "element": "a", "href": "Downloads.html", "text": "Contestergebnisse" },
+        {"name": "dowResultsLi", "element": "li", "id": "Dow_Ergebnisse" },
+        {"name": "dowGCRA", "element": "a", "href": "Downloads.html", "text": "GCR-Liste" },
+        {"name": "dowGCRLi", "element": "li", "id": "Dow_GCR" },
+        {"name": "dowMemberListA", "element": "a", "href": "Downloads.html", "text": "Mitgliederliste" },
+        {"name": "dowMemberListLi", "element": "li", "id": "Dow_Mitgliederliste" }
     ]
 
 }
