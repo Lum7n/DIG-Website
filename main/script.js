@@ -3,6 +3,7 @@ var DIG_main;
 (function (DIG_main) {
     window.addEventListener("load", handleLoad);
     let screenType;
+    let screenWidth = screen.width;
     let mainNavUl;
     let openMenu = false;
     let overlay;
@@ -15,6 +16,8 @@ var DIG_main;
     let language = true;
     //true  = initial   = german
     //false             = english
+    let header;
+    let flagDiv;
     // let logo: HTMLElement;
     // let infos: HTMLElement;
     // let blog: HTMLElement;
@@ -24,28 +27,27 @@ var DIG_main;
     // let downloads: HTMLElement;
     // let contentSection: HTMLElement;
     function handleLoad() {
-        sizeTest();
+        screenOrientation();
+        // window.addEventListener("resize", rematchWidth)
         flagSet();
         addNavListeners();
     }
-    function sizeTest() {
-        let screenWidth = screen.width;
+    function screenOrientation() {
+        screenWidth = screen.width;
         let screenHeight = screen.height;
-        console.log("Width: ", screenWidth);
-        console.log("Height: ", screenHeight);
+        // console.log("Width: ", screenWidth);
+        // console.log("Height: ", screenHeight);
         if (screenWidth < screenHeight) {
-            // console.log("vertical");
             screenType = "vertical";
             addStylesheet("style_vertical.css");
-            addContentToHeader("vertical");
+            addContentToHeader(screenType);
             matchWidth(screenWidth);
             addListenerForBurgerMenu();
         }
         else if (screenWidth > screenHeight) {
-            // console.log("horizontal");
             screenType = "horizontal";
             addStylesheet("style_horizontal.css");
-            addContentToHeader("horizontal");
+            addContentToHeader(screenType);
         }
         else {
             console.log("fehler");
@@ -59,6 +61,10 @@ var DIG_main;
         link.href = fileName;
         head.appendChild(link);
     }
+    // function rematchWidth(): void {
+    //     console.log(screenWidth);
+    //     matchWidth(screenWidth);
+    // }
     function matchWidth(screenWidth) {
         if (screenWidth < 400) {
             let bodyWidth = screenWidth - 20;
@@ -81,160 +87,31 @@ var DIG_main;
             inputSearch[0].style.width = screenWidth * 0.6 + "px";
         }
     }
-    function addContentToHeader(screenType) {
-        let header = document.querySelector("header");
+    function addContentToHeader(_screenType) {
+        header = document.querySelector("header");
         console.log(header);
-        if (screenType == "vertical") {
-            //Logo
-            let logoImg = document.createElement("img");
-            logoImg.id = "logoSize";
-            logoImg.src = "Assets/DIG.png";
-            let logoA = document.createElement("a");
-            logoA.href = "Home.html";
-            let logoDiv = document.createElement("div");
-            logoDiv.classList.add("item1");
-            logoDiv.id = "Logo";
-            logoA.appendChild(logoImg);
-            logoDiv.appendChild(logoA);
-            header.appendChild(logoDiv);
+        let screenTypeShort = _screenType.slice(0, 1);
+        //Logo
+        addHeader_Logo();
+        //Language
+        addHeader_Language(screenTypeShort);
+        //Search
+        addHeader_Search();
+        if (_screenType == "vertical") {
             //Icons
-            let iconsSearchA = document.createElement("a");
-            iconsSearchA.classList.add("fa-solid");
-            iconsSearchA.classList.add("fa-magnifying-glass");
-            let iconsSearchSpan = document.createElement("span");
-            iconsSearchSpan.id = "search";
-            let iconsMenuA = document.createElement("a");
-            iconsMenuA.classList.add("fa-solid");
-            iconsMenuA.classList.add("fa-bars");
-            let iconsMenuSpan = document.createElement("span");
-            iconsMenuSpan.id = "menu";
-            let iconsDiv = document.createElement("div");
-            iconsDiv.classList.add("icons");
-            iconsSearchSpan.appendChild(iconsSearchA);
-            iconsMenuSpan.appendChild(iconsMenuA);
-            iconsDiv.appendChild(iconsSearchSpan);
-            iconsDiv.appendChild(iconsMenuSpan);
-            header.appendChild(iconsDiv);
-            //searchDiv
-            let searchInput = document.createElement("input");
-            searchInput.type = "text";
-            searchInput.name = "searchbar";
-            searchInput.classList.add("inputSearch");
-            let searchI = document.createElement("i");
-            searchI.classList.add("fa-solid");
-            searchI.classList.add("fa-magnifying-glass");
-            let searchSpan = document.createElement("span");
-            searchSpan.classList.add("searchBar");
-            let searchDiv = document.createElement("div");
-            searchDiv.id = "searchDiv";
-            searchSpan.appendChild(searchInput);
-            searchSpan.appendChild(searchI);
-            searchDiv.appendChild(searchSpan);
-            header.appendChild(searchDiv);
-            //Underlay SearchDiv
+            addHeader_Icons();
+            //underlay for navigation
             let underlayDiv = document.createElement("div");
             underlayDiv.classList.add("underlay");
             header.appendChild(underlayDiv);
-            //Navigation        
-            navigationUl();
-            let smallStripeDiv = document.createElement("div");
-            smallStripeDiv.id = "stripeNav";
-            //languageDiv
-            let deImg = document.createElement("img");
-            deImg.src = "Assets/german.png";
-            deImg.alt = "DE";
-            deImg.classList.add("flag");
-            deImg.id = "DE_v";
-            let enImg = document.createElement("img");
-            enImg.src = "Assets/english.png";
-            enImg.alt = "EN";
-            enImg.classList.add("flag");
-            enImg.id = "EN_v";
-            let flagDiv = document.createElement("div");
-            flagDiv.id = "languageDiv";
-            flagDiv.appendChild(deImg);
-            flagDiv.appendChild(enImg);
-            //main_NavElement
-            let nav = document.createElement("nav");
-            nav.id = "mainNav";
-            nav.classList.add("item4");
-            nav.classList.add("overlay");
-            nav.appendChild(mainNavUl);
-            nav.appendChild(smallStripeDiv);
-            nav.appendChild(flagDiv);
-            header.appendChild(nav);
-            //MainStripe
-            let stripeDiv = document.createElement("div");
-            stripeDiv.id = "stripe";
-            stripeDiv.classList.add("item5");
-            header.appendChild(stripeDiv);
-        }
-        else if (screenType == "horizontal") {
-            //Logo
-            let logoImg = document.createElement("img");
-            logoImg.id = "logoSize";
-            logoImg.src = "Assets/DIG.png";
-            let logoA = document.createElement("a");
-            logoA.href = "Home.html";
-            let logoDiv = document.createElement("div");
-            logoDiv.classList.add("item1");
-            logoDiv.id = "Logo";
-            logoA.appendChild(logoImg);
-            logoDiv.appendChild(logoA);
-            header.appendChild(logoDiv);
-            //Language
-            let deImg = document.createElement("img");
-            deImg.src = "Assets/german.png";
-            deImg.alt = "DE";
-            deImg.classList.add("flag");
-            deImg.id = "DE_h";
-            let enImg = document.createElement("img");
-            enImg.src = "Assets/english.png";
-            enImg.alt = "EN";
-            enImg.classList.add("flag");
-            enImg.id = "EN_h";
-            let flagSpan = document.createElement("span");
-            flagSpan.id = "language";
-            let flagDiv = document.createElement("div");
-            flagDiv.classList.add("item2");
-            flagSpan.appendChild(deImg);
-            flagSpan.appendChild(enImg);
-            flagDiv.appendChild(flagSpan);
-            header.appendChild(flagDiv);
-            //SearchBar
-            let searchInput = document.createElement("input");
-            searchInput.type = "text";
-            searchInput.name = "searchbar";
-            searchInput.classList.add("inputSearch");
-            let searchI = document.createElement("i");
-            searchI.classList.add("fa-solid");
-            searchI.classList.add("fa-magnifying-glass");
-            let searchSpan = document.createElement("span");
-            searchSpan.classList.add("searchBar");
-            let searchDiv = document.createElement("div");
-            searchDiv.classList.add("item3");
-            searchSpan.appendChild(searchInput);
-            searchSpan.appendChild(searchI);
-            searchDiv.appendChild(searchSpan);
-            header.appendChild(searchDiv);
-            //Navigation
-            navigationUl();
-            //main_NavElement
-            let nav = document.createElement("nav");
-            nav.id = "mainNav";
-            nav.classList.add("item4");
-            nav.classList.add("overlay");
-            nav.appendChild(mainNavUl);
-            header.appendChild(nav);
-            //MainStripe
-            let stripeDiv = document.createElement("div");
-            stripeDiv.id = "stripe";
-            stripeDiv.classList.add("item5");
-            header.appendChild(stripeDiv);
         }
         else {
             console.log("fehler");
         }
+        //Navigation
+        navigationUl();
+        //main_NavElement + Stripe
+        addHeader_mainNav(_screenType);
     }
     function navigationUl() {
         //Navigation Infos
@@ -602,6 +479,104 @@ var DIG_main;
         else {
             console.log("fehler");
         }
+    }
+    function addHeader_Logo() {
+        let logoImg = document.createElement("img");
+        logoImg.id = "logoSize";
+        logoImg.src = "Assets/DIG.png";
+        let logoA = document.createElement("a");
+        logoA.href = "Home.html";
+        let logoDiv = document.createElement("div");
+        logoDiv.classList.add("item1");
+        logoDiv.id = "Logo";
+        logoA.appendChild(logoImg);
+        logoDiv.appendChild(logoA);
+        header.appendChild(logoDiv);
+    }
+    function addHeader_Icons() {
+        let iconsSearchA = document.createElement("a");
+        iconsSearchA.classList.add("fa-solid");
+        iconsSearchA.classList.add("fa-magnifying-glass");
+        let iconsSearchSpan = document.createElement("span");
+        iconsSearchSpan.id = "search";
+        let iconsMenuA = document.createElement("a");
+        iconsMenuA.classList.add("fa-solid");
+        iconsMenuA.classList.add("fa-bars");
+        let iconsMenuSpan = document.createElement("span");
+        iconsMenuSpan.id = "menu";
+        let iconsDiv = document.createElement("div");
+        iconsDiv.classList.add("icons");
+        iconsSearchSpan.appendChild(iconsSearchA);
+        iconsMenuSpan.appendChild(iconsMenuA);
+        iconsDiv.appendChild(iconsSearchSpan);
+        iconsDiv.appendChild(iconsMenuSpan);
+        header.appendChild(iconsDiv);
+    }
+    function addHeader_Language(_screenTypeShort) {
+        let deImg = document.createElement("img");
+        deImg.src = "Assets/german.png";
+        deImg.alt = "DE";
+        deImg.classList.add("flag");
+        deImg.id = "DE_" + "h";
+        let enImg = document.createElement("img");
+        enImg.src = "Assets/english.png";
+        enImg.alt = "EN";
+        enImg.classList.add("flag");
+        enImg.id = "EN_" + "h";
+        if (_screenTypeShort == "v") {
+            flagDiv = document.createElement("div");
+            flagDiv.id = "languageDiv";
+            flagDiv.appendChild(deImg);
+            flagDiv.appendChild(enImg);
+        }
+        else if (_screenTypeShort == "h") {
+            let flagSpan = document.createElement("span");
+            flagSpan.id = "language";
+            flagDiv = document.createElement("div");
+            flagDiv.classList.add("item2");
+            flagSpan.appendChild(deImg);
+            flagSpan.appendChild(enImg);
+            flagDiv.appendChild(flagSpan);
+            header.appendChild(flagDiv);
+        }
+    }
+    function addHeader_Search() {
+        let searchInput = document.createElement("input");
+        searchInput.type = "text";
+        searchInput.name = "searchbar";
+        searchInput.classList.add("inputSearch");
+        let searchI = document.createElement("i");
+        searchI.classList.add("fa-solid");
+        searchI.classList.add("fa-magnifying-glass");
+        let searchSpan = document.createElement("span");
+        searchSpan.classList.add("searchBar");
+        let searchDiv = document.createElement("div");
+        searchDiv.classList.add("item3");
+        searchSpan.appendChild(searchInput);
+        searchSpan.appendChild(searchI);
+        searchDiv.appendChild(searchSpan);
+        header.appendChild(searchDiv);
+    }
+    function addHeader_mainNav(_screenType) {
+        //main_NavElement
+        let nav = document.createElement("nav");
+        nav.id = "mainNav";
+        nav.classList.add("item4");
+        nav.classList.add("overlay");
+        nav.appendChild(mainNavUl);
+        if (_screenType == "vertical") {
+            let smallStripeDiv = document.createElement("div");
+            smallStripeDiv.id = "stripeNav";
+            nav.appendChild(smallStripeDiv);
+            nav.appendChild(flagDiv);
+            header.appendChild(nav);
+        }
+        header.appendChild(nav);
+        //MainStripe
+        let stripeDiv = document.createElement("div");
+        stripeDiv.id = "stripe";
+        stripeDiv.classList.add("item5");
+        header.appendChild(stripeDiv);
     }
 })(DIG_main || (DIG_main = {}));
 //# sourceMappingURL=script.js.map
