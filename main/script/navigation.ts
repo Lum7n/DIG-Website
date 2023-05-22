@@ -54,7 +54,7 @@ namespace DIG_main {
                 // case "aRadio":
                 //     group = createRadio(listitems, category);
                 //     break;
-                    
+
                 default:
                     break;
             }
