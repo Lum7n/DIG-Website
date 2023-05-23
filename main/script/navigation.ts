@@ -19,41 +19,24 @@ namespace DIG_main {
             let group: HTMLElement | null = null;
             switch (category) {
 
-                // // Einkaufen
+                // case "":
+                // a, href, text, class
+                // break;
+                // case "":
+                // li, class, id
+                // break;
+                // case "":
+                // a, href, text
+                // break;
+                // case "":
+                // li, id
+                // break;
+
+
                 // case "eArtikel":
                 //     group = createDatalist(listitems, category);
                 //     break;
-                // case "eStepper":
-                //     group = createStepper(listitems, category);
-                //     break;
-                // case "eRadio":
-                //     group = createRadio(listitems, category);
-                //     break;
-                // case "eLaden":
-                //     group = createDatalist(listitems, category);
-                //     break;
 
-                // //Haushalt
-                // case "hSelect":
-                //     group = createSelect(listitems, category);
-                //     break;
-                // case "hStepper":
-                //     group = createStepper(listitems, category);
-                //     break;
-                // case "hRadio":
-                //     group = createRadio(listitems, category);
-                //     break;
-                // case "hCheckbox":
-                //     group = createCheckbox(listitems, category);
-                //     break;
-
-                // //Anderes
-                // case "aDatalist":
-                //     group = createDatalist(listitems, category);
-                //     break;
-                // case "aRadio":
-                //     group = createRadio(listitems, category);
-                //     break;
 
                 default:
                     break;
