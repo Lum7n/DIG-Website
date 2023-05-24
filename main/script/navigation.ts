@@ -1,6 +1,6 @@
 namespace DIG_main {
 
-    export interface Listitem {
+    export interface NavItem {
         element: string;
         class: string;
         id: string;
@@ -10,7 +10,7 @@ namespace DIG_main {
     }
 
     export interface Data {
-        [category: string]: Listitem[];
+        [category: string]: NavItem[];
     }
 
     export function generateNav(_data: Data): void {
@@ -18,7 +18,7 @@ namespace DIG_main {
         mainNavUl = document.createElement("ul");
 
         for (let category in _data) {
-            let listitems: Listitem[] = _data[category];
+            let navItems: NavItem[] = _data[category];
 
             let navItem_Div: HTMLDivElement = document.createElement("div");
             navItem_Div.classList.add("drop");
@@ -34,7 +34,7 @@ namespace DIG_main {
 
             let navItem_rundspruecheUl: HTMLUListElement = document.createElement("ul");
 
-            let length: number = (listitems.length) - 1;
+            let length: number = (navItems.length) - 1;
             let index: number = 0;
 
             let li_is_assigned: boolean = false;
@@ -51,14 +51,15 @@ namespace DIG_main {
                 if (index == 0 || index == 1) {
                     if (index == 0) {
 
-                        mainA.classList.add(listitems[0].class);
-                        mainA.href = listitems[0].href;
-                        mainA.innerText = listitems[0].textDE;
+                        mainA.classList.add(navItems[0].class);
+                        mainA.classList.add("languageText");
+                        mainA.href = navItems[0].href;
+                        mainA.innerText = navItems[0].textDE;
 
                     } else if (index == 1) {
 
-                        navItem_mainLi.classList.add(listitems[1].class);
-                        navItem_mainLi.id = listitems[1].id;
+                        navItem_mainLi.classList.add(navItems[1].class);
+                        navItem_mainLi.id = navItems[1].id;
 
                     } else {
                         console.log("error")
@@ -66,18 +67,19 @@ namespace DIG_main {
 
                 } else if (index > 1) {
 
-                    if (listitems[index].element == "a") {
+                    if (navItems[index].element == "a") {
 
                         let otherA: HTMLAnchorElement = document.createElement("a");
-                        otherA.href = listitems[index].href;
-                        otherA.innerText = listitems[index].textDE;
+                        otherA.classList.add("languageText");
+                        otherA.href = navItems[index].href;
+                        otherA.innerText = navItems[index].textDE;
                         otherLi.appendChild(otherA);
 
                         li_has_a = true;
 
-                    } else if (listitems[index].element == "li") {
+                    } else if (navItems[index].element == "li") {
 
-                        otherLi.id = listitems[index].id;
+                        otherLi.id = navItems[index].id;
 
                         li_is_assigned = true;
 

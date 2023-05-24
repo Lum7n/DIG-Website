@@ -1,0 +1,29 @@
+{
+    
+    "LanguageText": [
+        {"textDE": "Infos",                 "textEN": "Infos"},
+        {"textDE": "Geschichte der DIG",    "textEN": "History of the DIG"},
+        {"textDE": "Ansprechpartner",       "textEN": "Contacts"},
+        {"textDE": "Termine",               "textEN": "Dates"},
+        {"textDE": "Anforderungen",         "textEN": "Requirements"},
+        {"textDE": "Blog",                  "textEN": "Blog"},
+        {"textDE": "Rundsprüche",           "textEN": "Rundsprueche"},
+        {"textDE": "Aktuell",               "textEN": "Latest"},
+        {"textDE": "Archiv",                "textEN": "Archive"},
+        {"textDE": "Forum",                 "textEN": "Forum"},
+        {"textDE": "Diplome",               "textEN": "Awards"},
+        {"textDE": "Diplombeilage",         "textEN": "Award-Insert"},
+        {"textDE": "Contests",              "textEN": "Contests"},
+        {"textDE": "Ergebnisse",            "textEN": "Results"},
+        {"textDE": "Mitglieder",            "textEN": "Members"},
+        {"textDE": "Mitglied werden?",      "textEN": "Become a member?"},
+        {"textDE": "Mitgliederliste",       "textEN": "Memberlist"},
+        {"textDE": "Sektionen",             "textEN": "Departments"},
+        {"textDE": "Downloads",             "textEN": "Downloads"},
+        {"textDE": "Diplomausschreibung",   "textEN": "Award-Rules"},
+        {"textDE": "Contestergebnisse",     "textEN": "Contestresults"},
+        {"textDE": "GCR-Liste",             "textEN": "GCR-List"},
+        {"textDE": "Mitgliederliste",       "textEN": "Memberlist"}
+    ]
+
+}

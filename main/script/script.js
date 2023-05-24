@@ -19,11 +19,16 @@ var DIG_main;
     // let downloads: HTMLElement;
     // let contentSection: HTMLElement;
     async function handleLoad() {
-        let response = await fetch("script/navigation.json");
-        let offer = await response.text();
-        DIG_main.data = JSON.parse(offer);
+        let responseNav = await fetch("script/navigation.json");
+        let offerNav = await responseNav.text();
+        DIG_main.data = JSON.parse(offerNav);
+        let responseLanguage = await fetch("script/nav_language.json");
+        let offerLanguage = await responseLanguage.text();
+        DIG_main.languageData = JSON.parse(offerLanguage);
         screenOrientation();
         addNavListeners();
+        // let google: HTMLDivElement = <HTMLDivElement>document.getElementById("google_translate_element");
+        // google.addEventListener("click", googleTranslateElementInit);
     }
     function screenOrientation() {
         screenWidth = screen.width;

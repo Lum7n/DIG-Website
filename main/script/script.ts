@@ -3,6 +3,7 @@ namespace DIG_main {
     window.addEventListener("load", handleLoad);
 
     export let data: Data;
+    export let languageData: LanguageData;
 
     let screenType: string;
     let screenWidth: number = screen.width;
@@ -31,12 +32,19 @@ namespace DIG_main {
 
     async function handleLoad(): Promise<void> {
 
-        let response: Response = await fetch("script/navigation.json");
-        let offer: string = await response.text();
-        data = JSON.parse(offer);
+        let responseNav: Response = await fetch("script/navigation.json");
+        let offerNav: string = await responseNav.text();
+        data = JSON.parse(offerNav);
+
+        let responseLanguage: Response = await fetch("script/nav_language.json");
+        let offerLanguage: string = await responseLanguage.text();
+        languageData = JSON.parse(offerLanguage);
 
         screenOrientation();
         addNavListeners();
+
+        // let google: HTMLDivElement = <HTMLDivElement>document.getElementById("google_translate_element");
+        // google.addEventListener("click", googleTranslateElementInit);
 
     }
 

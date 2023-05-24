@@ -4,7 +4,7 @@ var DIG_main;
     function generateNav(_data) {
         DIG_main.mainNavUl = document.createElement("ul");
         for (let category in _data) {
-            let listitems = _data[category];
+            let navItems = _data[category];
             let navItem_Div = document.createElement("div");
             navItem_Div.classList.add("drop");
             let mainA = document.createElement("a");
@@ -14,7 +14,7 @@ var DIG_main;
             if (category == "Downloads")
                 navItem_Ul.classList.add("right");
             let navItem_rundspruecheUl = document.createElement("ul");
-            let length = (listitems.length) - 1;
+            let length = (navItems.length) - 1;
             let index = 0;
             let li_is_assigned = false;
             let otherLi = document.createElement("li");
@@ -25,28 +25,30 @@ var DIG_main;
                 }
                 if (index == 0 || index == 1) {
                     if (index == 0) {
-                        mainA.classList.add(listitems[0].class);
-                        mainA.href = listitems[0].href;
-                        mainA.innerText = listitems[0].textDE;
+                        mainA.classList.add(navItems[0].class);
+                        mainA.classList.add("languageText");
+                        mainA.href = navItems[0].href;
+                        mainA.innerText = navItems[0].textDE;
                     }
                     else if (index == 1) {
-                        navItem_mainLi.classList.add(listitems[1].class);
-                        navItem_mainLi.id = listitems[1].id;
+                        navItem_mainLi.classList.add(navItems[1].class);
+                        navItem_mainLi.id = navItems[1].id;
                     }
                     else {
                         console.log("error");
                     }
                 }
                 else if (index > 1) {
-                    if (listitems[index].element == "a") {
+                    if (navItems[index].element == "a") {
                         let otherA = document.createElement("a");
-                        otherA.href = listitems[index].href;
-                        otherA.innerText = listitems[index].textDE;
+                        otherA.classList.add("languageText");
+                        otherA.href = navItems[index].href;
+                        otherA.innerText = navItems[index].textDE;
                         otherLi.appendChild(otherA);
                         li_has_a = true;
                     }
-                    else if (listitems[index].element == "li") {
-                        otherLi.id = listitems[index].id;
+                    else if (navItems[index].element == "li") {
+                        otherLi.id = navItems[index].id;
                         li_is_assigned = true;
                     }
                     else {

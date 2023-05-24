@@ -96,11 +96,13 @@ namespace DIG_main {
         let searchInput: HTMLInputElement = document.createElement("input");
         searchInput.type = "text";
         searchInput.name = "searchbar";
-        searchInput.classList.add("inputSearch");
+        searchInput.id = "inputSearch";
 
         let searchI: HTMLElement = document.createElement("i");
         searchI.classList.add("fa-solid");
         searchI.classList.add("fa-magnifying-glass");
+        searchI.id = "SearchButton"
+        searchI.addEventListener("click", handleEvent)
 
         let searchSpan: HTMLSpanElement = document.createElement("span");
         searchSpan.classList.add("searchBar");
