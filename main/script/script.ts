@@ -109,11 +109,8 @@ namespace DIG_main {
             console.log("horizontal");
         }
 
-        //Navigation
-        addHeader_Navigation(data);
-
-        //main_NavElement + Stripe
-        addHeader_mainNav(_screenType);
+        //Navigation + main_NavElement + Stripe
+        addHeader_Navigation(_screenType);
 
     }
 

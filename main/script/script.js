@@ -74,10 +74,8 @@ var DIG_main;
         else {
             console.log("horizontal");
         }
-        //Navigation
-        DIG_main.addHeader_Navigation(DIG_main.data);
-        //main_NavElement + Stripe
-        DIG_main.addHeader_mainNav(_screenType);
+        //Navigation + main_NavElement + Stripe
+        DIG_main.addHeader_Navigation(_screenType);
     }
     function matchWidth(screenWidth) {
         if (screenWidth < 400) {

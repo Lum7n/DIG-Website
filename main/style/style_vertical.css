@@ -157,6 +157,10 @@ header {
     font-variant: normal;
 }
 
+.dropdown-content>li>a:hover {
+    background-color: #E7CCBF;
+}
+
 #stripeNav {
     background-color: #c7978fe0;
     margin: 20px 20px 0px 20px;

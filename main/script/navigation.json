@@ -1,62 +1,62 @@
 {
     
     "Infos": [
-        {"name": "infosA", "element": "a", "class": "mI_text", "href": "Infos.html", "text": "Infos" },
-        {"name": "infosLi", "element": "li", "class": "mainItem", "id": "Infos"},
-        {"name": "historyA", "element": "a", "href": "Infos.html", "text": "Geschichte der DIG" },
-        {"name": "historyLi", "element": "li", "id": "Geschichte" },
-        {"name": "contactsA", "element": "a", "href": "Infos.html", "text": "Ansprechpartner" },
-        {"name": "contactsLi", "element": "li", "id": "Ansprechpartner" },
-        {"name": "datesA", "element": "a", "href": "Infos.html", "text": "Termine" },
-        {"name": "datesLi", "element": "li", "id": "Termine" },
-        {"name": "requirementsA", "element": "a", "href": "Infos.html", "text": "Anforderungen" },
-        {"name": "requirementsLi", "element": "li", "id": "Anforderungen" }
+        {"element": "a", "class": "mI_text", "href": "Infos.html", "text": "Infos"},
+        {"element": "li", "class": "mainItem", "id": "Infos"},
+        {"element": "a", "href": "Infos.html", "text": "Geschichte der DIG"},
+        {"element": "li", "id": "Geschichte"},
+        {"element": "a", "href": "Infos.html", "text": "Ansprechpartner"},
+        {"element": "li", "id": "Ansprechpartner"},
+        {"element": "a", "href": "Infos.html", "text": "Termine"},
+        {"element": "li", "id": "Termine"},
+        {"element": "a", "href": "Infos.html", "text": "Anforderungen"},
+        {"element": "li", "id": "Anforderungen"}
     ],
     "Blog": [
-        {"name": "blogA", "element": "a", "class": "mI_text", "href": "Blog.html", "text": "Blog" },
-        {"name": "blogLi", "element": "li", "class": "mainItem", "id": "Blog"},
-        {"name": "rundspruecheA", "element": "a", "href": "Blog.html", "text": "Rundsprüche" },
-        {"name": "rundspruecheLi", "element": "li", "id": "Rundsprueche" },
-        {"name": "latestA", "element": "a", "href": "Blog.html", "text": "Aktuell" },
-        {"name": "latestLi", "element": "li", "id": "Aktuell" },
-        {"name": "archiveA", "element": "a", "href": "Blog.html", "text": "Archiv" },
-        {"name": "archiveLi", "element": "li", "id": "Archiv" },
-        {"name": "forumA", "element": "a", "href": "Blog.html", "text": "Forum" },
-        {"name": "forumLi", "element": "li", "id": "Forum" }
+        {"element": "a", "class": "mI_text", "href": "Blog.html", "text": "Blog"},
+        {"element": "li", "class": "mainItem", "id": "Blog"},
+        {"element": "a", "href": "Blog.html", "text": "Rundsprüche"},
+        {"element": "li", "id": "Rundsprueche"},
+        {"element": "a", "href": "Blog.html", "text": "Aktuell"},
+        {"element": "li", "id": "Aktuell"},
+        {"element": "a", "href": "Blog.html", "text": "Archiv"},
+        {"element": "li", "id": "Archiv"},
+        {"element": "a", "href": "Blog.html", "text": "Forum"},
+        {"element": "li", "id": "Forum"}
     ],
     "Diplome": [
-        {"name": "certificatesA", "element": "a", "class": "mI_text", "href": "Certificates.html", "text": "Diplome" },
-        {"name": "certificatesLi", "element": "li", "class": "mainItem", "id": "Diplome"},
-        {"name": "insertA", "element": "a", "href": "Certificates.html", "text": "Diplombeilage" },
-        {"name": "insertLi", "element": "li", "id": "Diplombeilage" }
+        {"element": "a", "class": "mI_text", "href": "Certificates.html", "text": "Diplome"},
+        {"element": "li", "class": "mainItem", "id": "Diplome"},
+        {"element": "a", "href": "Certificates.html", "text": "Diplombeilage"},
+        {"element": "li", "id": "Diplombeilage"}
     ],
     "Contests": [
-        {"name": "contestsA", "element": "a", "class": "mI_text", "href": "Contests.html", "text": "Contests" },
-        {"name": "contestsLi", "element": "li", "class": "mainItem", "id": "Contests"},
-        {"name": "resultsA", "element": "a", "href": "Contests.html", "text": "Ergebnisse" },
-        {"name": "resultsLi", "element": "li", "id": "Ergebnisse" }
+        {"element": "a", "class": "mI_text", "href": "Contests.html", "text": "Contests"},
+        {"element": "li", "class": "mainItem", "id": "Contests"},
+        {"element": "a", "href": "Contests.html", "text": "Ergebnisse"},
+        {"element": "li", "id": "Ergebnisse"}
     ],
     "Mitglieder": [
-        {"name": "membersA", "element": "a", "class": "mI_text", "href": "Members.html", "text": "Mitglieder" },
-        {"name": "membersLi", "element": "li", "class": "mainItem", "id": "Mitglieder"},
-        {"name": "becomeA", "element": "a", "href": "Members.html", "text": "Mitglied werden?" },
-        {"name": "becomeLi", "element": "li", "id": "DIGwerden" },
-        {"name": "memberListA", "element": "a", "href": "Members.html", "text": "Mitgliederliste" },
-        {"name": "memberListLi", "element": "li", "id": "Mitgliederliste" },
-        {"name": "departmentsA", "element": "a", "href": "Members.html", "text": "Sektionen" },
-        {"name": "departmentsLi", "element": "li", "id": "Sektionen" }
+        {"element": "a", "class": "mI_text", "href": "Members.html", "text": "Mitglieder"},
+        {"element": "li", "class": "mainItem", "id": "Mitglieder"},
+        {"element": "a", "href": "Members.html", "text": "Mitglied werden?"},
+        {"element": "li", "id": "DIGwerden"},
+        {"element": "a", "href": "Members.html", "text": "Mitgliederliste"},
+        {"element": "li", "id": "Mitgliederliste"},
+        {"element": "a", "href": "Members.html", "text": "Sektionen"},
+        {"element": "li", "id": "Sektionen"}
     ],
     "Downloads": [
-        {"name": "downloadsA", "element": "a", "class": "mI_text", "href": "Downloads.html", "text": "Downloads" },
-        {"name": "downloadsLi", "element": "li", "class": "mainItem", "id": "Downloads"},
-        {"name": "dowRulesA", "element": "a", "href": "Downloads.html", "text": "Diplomausschreibung" },
-        {"name": "dowRulesLi", "element": "li", "id": "Dow_Ausschreibung" },
-        {"name": "dowResultsA", "element": "a", "href": "Downloads.html", "text": "Contestergebnisse" },
-        {"name": "dowResultsLi", "element": "li", "id": "Dow_Ergebnisse" },
-        {"name": "dowGCRA", "element": "a", "href": "Downloads.html", "text": "GCR-Liste" },
-        {"name": "dowGCRLi", "element": "li", "id": "Dow_GCR" },
-        {"name": "dowMemberListA", "element": "a", "href": "Downloads.html", "text": "Mitgliederliste" },
-        {"name": "dowMemberListLi", "element": "li", "id": "Dow_Mitgliederliste" }
+        {"element": "a", "class": "mI_text", "href": "Downloads.html", "text": "Downloads"},
+        {"element": "li", "class": "mainItem", "id": "Downloads"},
+        {"element": "a", "href": "Downloads.html", "text": "Diplomausschreibung"},
+        {"element": "li", "id": "Dow_Ausschreibung"},
+        {"element": "a", "href": "Downloads.html", "text": "Contestergebnisse"},
+        {"element": "li", "id": "Dow_Ergebnisse"},
+        {"element": "a", "href": "Downloads.html", "text": "GCR-Liste"},
+        {"element": "li", "id": "Dow_GCR"},
+        {"element": "a", "href": "Downloads.html", "text": "Mitgliederliste"},
+        {"element": "li", "id": "Dow_Mitgliederliste"}
     ]
 
 }
