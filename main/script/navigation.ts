@@ -5,7 +5,8 @@ namespace DIG_main {
         class: string;
         id: string;
         href: string;
-        text: string;
+        textDE: string;
+        textEN: string;
     }
 
     export interface Data {
@@ -31,6 +32,8 @@ namespace DIG_main {
             if (category == "Downloads")
                 navItem_Ul.classList.add("right");
 
+            let navItem_rundspruecheUl: HTMLUListElement = document.createElement("ul");
+
             let length: number = (listitems.length) - 1;
             let index: number = 0;
 
@@ -50,7 +53,7 @@ namespace DIG_main {
 
                         mainA.classList.add(listitems[0].class);
                         mainA.href = listitems[0].href;
-                        mainA.innerText = listitems[0].text;
+                        mainA.innerText = listitems[0].textDE;
 
                     } else if (index == 1) {
 
@@ -67,7 +70,7 @@ namespace DIG_main {
 
                         let otherA: HTMLAnchorElement = document.createElement("a");
                         otherA.href = listitems[index].href;
-                        otherA.innerText = listitems[index].text;
+                        otherA.innerText = listitems[index].textDE;
                         otherLi.appendChild(otherA);
 
                         li_has_a = true;
@@ -83,7 +86,21 @@ namespace DIG_main {
                     }
 
                     if (li_is_assigned == true) {
-                        navItem_Ul.appendChild(otherLi);
+
+                        if (otherLi.id == "Aktuell") {
+
+                            navItem_rundspruecheUl.appendChild(otherLi);
+
+                        } else if (otherLi.id == "Archiv") {
+
+                            navItem_rundspruecheUl.appendChild(otherLi);
+                            navItem_Ul.appendChild(navItem_rundspruecheUl);
+
+                        } else {
+
+                            navItem_Ul.appendChild(otherLi);
+                            // console.log(navItem_Ul);
+                        }
                         li_is_assigned = false;
                         li_has_a = false;
                     }
@@ -102,3 +119,69 @@ namespace DIG_main {
         }
     }
 }
+
+// //Navigation Blog
+// let blogA: HTMLAnchorElement = document.createElement("a");
+// blogA.classList.add("mI_Text");
+// blogA.href = "Blog.html";
+// blogA.innerText = "Blog";
+
+// let blogLi: HTMLLIElement = document.createElement("li");
+// blogLi.classList.add("mainItem");
+// blogLi.id = "Blog";
+
+// blogLi.appendChild(blogA);
+
+// let rundspruecheA: HTMLAnchorElement = document.createElement("a");
+// rundspruecheA.href = "Blog.html";
+// rundspruecheA.innerText = "Rundsprüche";
+
+// let rundspruecheLi: HTMLLIElement = document.createElement("li");
+// rundspruecheLi.id = "Rundsprueche";
+
+// rundspruecheLi.appendChild(rundspruecheA);
+
+// let latestA: HTMLAnchorElement = document.createElement("a");
+// latestA.href = "Blog.html";
+// latestA.innerText = "Aktuell";
+
+// let latestLi: HTMLLIElement = document.createElement("li");
+// latestLi.id = "Aktuell";
+
+// latestLi.appendChild(latestA);
+
+// let archiveA: HTMLAnchorElement = document.createElement("a");
+// archiveA.href = "Blog.html";
+// archiveA.innerHTML = "Archiv";
+
+// let archiveLi: HTMLLIElement = document.createElement("li");
+// archiveLi.id = "Archiv";
+
+// archiveLi.appendChild(archiveA);
+
+// let rundspruecheUl: HTMLUListElement = document.createElement("ul");
+
+// rundspruecheUl.appendChild(latestLi);
+// rundspruecheUl.appendChild(archiveLi);
+
+// let forumA: HTMLAnchorElement = document.createElement("a");
+// forumA.href = "Blog.html";
+// forumA.innerText = "Forum";
+
+// let forumLi: HTMLLIElement = document.createElement("li");
+// forumLi.id = "Forum";
+
+// forumLi.appendChild(forumA);
+
+// let blogUl: HTMLUListElement = document.createElement("ul");
+// blogUl.classList.add("dropdown-content");
+
+// blogUl.appendChild(rundspruecheLi);
+// blogUl.appendChild(rundspruecheUl);
+// blogUl.appendChild(forumLi);
+
+// let blogDiv: HTMLDivElement = document.createElement("div");
+// blogDiv.classList.add("drop");
+
+// blogDiv.appendChild(blogLi);
+// blogDiv.appendChild(blogUl);

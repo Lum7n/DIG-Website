@@ -13,7 +13,7 @@ var DIG_main;
     // let logo: HTMLElement;
     // let infos: HTMLElement;
     // let blog: HTMLElement;
-    // let certificates: HTMLElement;
+    // let awards: HTMLElement;
     // let contests: HTMLElement;
     // let members: HTMLElement;
     // let downloads: HTMLElement;
@@ -164,7 +164,7 @@ var DIG_main;
         else if (subsiteName == "blog") {
             console.log(subsiteName);
         }
-        else if (subsiteName == "certificates") {
+        else if (subsiteName == "awards") {
             console.log(subsiteName);
         }
         else if (subsiteName == "contests") {

@@ -138,6 +138,13 @@ header {
     margin-left: 10px;
 }
 
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 210px;
+    z-index: 1;
+}
+
 .dropdown-content a {
     display: block;
     font-size: 20.5px;
@@ -145,6 +152,10 @@ header {
     text-decoration: none;
     padding: 14px;
     margin-left: -30px;
+}
+
+.dropdown-content a:hover {
+    background-color: #E7CCBF;
 }
 
 /* Streifen-Unternavigation */
@@ -164,10 +175,6 @@ header {
     -webkit-box-shadow: 0px 14px 25px -5px #000000bf;
 }
 
-.dropdown-content>li>a:hover {
-    background-color: #E7CCBF;
-}
-
 /* aktuell + archiv */
 .dropdown-content>ul>li {
     background-color: #f7eae5;
@@ -182,13 +189,6 @@ header {
     color: #631111;
     background-color: #ffffff;
     margin-left: 10px;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    min-width: 210px;
-    z-index: 1;
 }
    
 #mainNav .drop:hover .dropdown-content {

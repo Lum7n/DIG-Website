@@ -156,7 +156,7 @@ header {
     font-size: 20px;
     padding-right: 5px;
     color: #500e0e;
-  }
+}
 
 .dropdown-content a {
     color: #500e0e;
@@ -165,8 +165,15 @@ header {
     font-variant: normal;
 }
 
-.dropdown-content>li:hover {
+.dropdown-content a:hover {
     background-color: #E7CCBF;
+}
+
+.dropdown-content>ul>li::before {
+    content: "›"; /* ► */
+    font-size: 20px;
+    padding-right: 5px;
+    color: #500e0e;
 }
 
 #stripeNav {
