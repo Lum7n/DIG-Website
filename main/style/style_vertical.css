@@ -146,9 +146,17 @@ header {
     margin-left: -40px;
     margin-right: 20px;
     padding: 6px;
-    list-style-image: url("Assets/caret-right-solid.svg");
+    list-style: none;
     list-style-position: inside;
 }
+
+
+.dropdown-content>li::before {
+    content: "›"; /* ► */
+    font-size: 20px;
+    padding-right: 5px;
+    color: #500e0e;
+  }
 
 .dropdown-content a {
     color: #500e0e;
@@ -157,7 +165,7 @@ header {
     font-variant: normal;
 }
 
-.dropdown-content>li>a:hover {
+.dropdown-content>li:hover {
     background-color: #E7CCBF;
 }
 
