@@ -2,6 +2,8 @@
 var DIG_main;
 (function (DIG_main) {
     window.addEventListener("load", handleLoad);
+    DIG_main.srcAdd = "";
+    DIG_main.srcAddNav = "";
     let screenType;
     let screenWidth = screen.width;
     let openMenu = false;
@@ -20,10 +22,10 @@ var DIG_main;
     // let contentSection: HTMLElement;
     async function handleLoad() {
         getLayer();
-        let responseNav = await fetch("../script/navigation.json");
+        let responseNav = await fetch(DIG_main.srcAdd + "script/navigation.json");
         let offerNav = await responseNav.text();
         DIG_main.data = JSON.parse(offerNav);
-        let responseLanguage = await fetch("../script/nav_language.json");
+        let responseLanguage = await fetch(DIG_main.srcAdd + "script/nav_language.json");
         let offerLanguage = await responseLanguage.text();
         DIG_main.languageData = JSON.parse(offerLanguage);
         screenOrientation();
@@ -31,8 +33,37 @@ var DIG_main;
     }
     function getLayer() {
         console.log("test");
-        let layerAtt = document.getElementsByTagName("layer");
-        console.log(layerAtt);
+        let body = document.querySelector("body");
+        let layerString = body.getAttribute("data-layer");
+        DIG_main.layer = parseFloat(layerString);
+        switch (DIG_main.layer) {
+            case 1:
+                DIG_main.srcAdd = "../";
+                DIG_main.srcAddNav = "";
+                console.log(DIG_main.layer + DIG_main.srcAdd);
+                console.log(DIG_main.srcAddNav);
+                break;
+            case 2:
+                DIG_main.srcAdd = "../../";
+                DIG_main.srcAddNav = "../";
+                console.log(DIG_main.layer + DIG_main.srcAdd);
+                console.log(DIG_main.srcAddNav);
+                break;
+            case 3:
+                DIG_main.srcAdd = "../../../";
+                DIG_main.srcAddNav = "../../";
+                console.log(DIG_main.layer + DIG_main.srcAdd);
+                console.log(DIG_main.srcAddNav);
+                break;
+            case 4:
+                DIG_main.srcAdd = "../../../../";
+                DIG_main.srcAddNav = "../../../";
+                console.log(DIG_main.layer + DIG_main.srcAdd);
+                console.log(DIG_main.srcAddNav);
+                break;
+            default:
+                break;
+        }
     }
     function screenOrientation() {
         screenWidth = screen.width;
@@ -41,14 +72,14 @@ var DIG_main;
         // console.log("Height: ", screenHeight);
         if (screenWidth < screenHeight) {
             screenType = "vertical";
-            addStylesheet("../style/style_vertical.css");
+            addStylesheet(DIG_main.srcAdd + "style/style_vertical.css");
             addContentToHeader(screenType);
             matchWidth(screenWidth);
             addListenerForBurgerMenu();
         }
         else if (screenWidth > screenHeight) {
             screenType = "horizontal";
-            addStylesheet("../style/style_horizontal.css");
+            addStylesheet(DIG_main.srcAdd + "style/style_horizontal.css");
             addContentToHeader(screenType);
         }
         else {

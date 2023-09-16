@@ -53,7 +53,15 @@ namespace DIG_main {
 
                         mainA.classList.add(navItems[0].class);
                         mainA.classList.add("languageText");
-                        mainA.href = navItems[0].href;
+
+                        if (layer == 1) {
+                            mainA.href = navItems[0].href;
+                        } else if (layer != 1) {
+                            mainA.href = srcAddNav + (navItems[0].href);
+                        } else {
+                            console.log("error");
+                        }
+
                         mainA.innerText = navItems[0].textDE;
 
                     } else if (index == 1) {
@@ -71,7 +79,15 @@ namespace DIG_main {
 
                         let otherA: HTMLAnchorElement = document.createElement("a");
                         otherA.classList.add("languageText");
-                        otherA.href = navItems[index].href;
+
+                        if (layer == 1) {
+                            otherA.href = navItems[index].href;
+                        } else if (layer != 1) {
+                            otherA.href = srcAddNav + (navItems[index].href);
+                        } else {
+                            console.log("error");
+                        }
+
                         otherA.innerText = navItems[index].textDE;
                         otherLi.appendChild(otherA);
 

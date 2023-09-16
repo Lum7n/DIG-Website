@@ -27,7 +27,15 @@ var DIG_main;
                     if (index == 0) {
                         mainA.classList.add(navItems[0].class);
                         mainA.classList.add("languageText");
-                        mainA.href = navItems[0].href;
+                        if (DIG_main.layer == 1) {
+                            mainA.href = navItems[0].href;
+                        }
+                        else if (DIG_main.layer != 1) {
+                            mainA.href = DIG_main.srcAddNav + (navItems[0].href);
+                        }
+                        else {
+                            console.log("error");
+                        }
                         mainA.innerText = navItems[0].textDE;
                     }
                     else if (index == 1) {
@@ -42,7 +50,15 @@ var DIG_main;
                     if (navItems[index].element == "a") {
                         let otherA = document.createElement("a");
                         otherA.classList.add("languageText");
-                        otherA.href = navItems[index].href;
+                        if (DIG_main.layer == 1) {
+                            otherA.href = navItems[index].href;
+                        }
+                        else if (DIG_main.layer != 1) {
+                            otherA.href = DIG_main.srcAddNav + (navItems[index].href);
+                        }
+                        else {
+                            console.log("error");
+                        }
                         otherA.innerText = navItems[index].textDE;
                         otherLi.appendChild(otherA);
                         li_has_a = true;

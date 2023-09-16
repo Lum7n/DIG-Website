@@ -5,6 +5,10 @@ namespace DIG_main {
     export let data: Data;
     export let languageData: LanguageData;
 
+    export let layer: number;
+    export let srcAdd: string = "";
+    export let srcAddNav: string = "";
+
     let screenType: string;
     let screenWidth: number = screen.width;
 
@@ -34,11 +38,11 @@ namespace DIG_main {
 
         getLayer();
 
-        let responseNav: Response = await fetch("../script/navigation.json");
+        let responseNav: Response = await fetch(srcAdd + "script/navigation.json");
         let offerNav: string = await responseNav.text();
         data = JSON.parse(offerNav);
 
-        let responseLanguage: Response = await fetch("../script/nav_language.json");
+        let responseLanguage: Response = await fetch(srcAdd + "script/nav_language.json");
         let offerLanguage: string = await responseLanguage.text();
         languageData = JSON.parse(offerLanguage);
 
@@ -52,9 +56,38 @@ namespace DIG_main {
 
         console.log("test");
 
-        let layerAtt = document.getElementsByTagName("layer");
-        console.log(layerAtt);
+        let body: HTMLBodyElement = <HTMLBodyElement>document.querySelector("body");
+        let layerString: string = <string>body.getAttribute("data-layer");
+        layer = parseFloat(layerString);
 
+        switch (layer) {
+            case 1:
+                srcAdd = "../";
+                srcAddNav = "";
+                console.log(layer + srcAdd);
+                console.log(srcAddNav);
+                break;
+            case 2:
+                srcAdd = "../../";
+                srcAddNav = "../";
+                console.log(layer + srcAdd);
+                console.log(srcAddNav);
+                break;
+            case 3:
+                srcAdd = "../../../";
+                srcAddNav = "../../";
+                console.log(layer + srcAdd);
+                console.log(srcAddNav);
+                break;
+            case 4:
+                srcAdd = "../../../../";
+                srcAddNav = "../../../";
+                console.log(layer + srcAdd);
+                console.log(srcAddNav);
+                break;
+            default:
+                break;
+        }
     }
 
     function screenOrientation(): void {
@@ -68,7 +101,7 @@ namespace DIG_main {
 
             screenType = "vertical";
 
-            addStylesheet("../style/style_vertical.css");
+            addStylesheet(srcAdd + "style/style_vertical.css");
             addContentToHeader(screenType);
             matchWidth(screenWidth);
             addListenerForBurgerMenu();
@@ -77,7 +110,7 @@ namespace DIG_main {
 
             screenType = "horizontal";
 
-            addStylesheet("../style/style_horizontal.css");
+            addStylesheet(srcAdd + "style/style_horizontal.css");
             addContentToHeader(screenType);
 
         } else {
