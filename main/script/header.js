@@ -5,7 +5,7 @@ var DIG_main;
     function addHeader_Logo() {
         let logoImg = document.createElement("img");
         logoImg.id = "logoSize";
-        logoImg.src = "assets/DIG.png";
+        logoImg.src = "../assets/DIG.png";
         let logoA = document.createElement("a");
         logoA.href = "Home.html";
         let logoDiv = document.createElement("div");
@@ -38,13 +38,13 @@ var DIG_main;
     DIG_main.addHeader_Icons = addHeader_Icons;
     function addHeader_Language(_screenTypeShort) {
         DIG_main.deFlag = document.createElement("img");
-        DIG_main.deFlag.src = "assets/german.png";
+        DIG_main.deFlag.src = "../assets/german.png";
         DIG_main.deFlag.alt = "DE";
         DIG_main.deFlag.classList.add("flag");
         DIG_main.deFlag.id = "DE_" + _screenTypeShort;
         DIG_main.deFlag.addEventListener("click", DIG_main.handleEvent);
         DIG_main.enFlag = document.createElement("img");
-        DIG_main.enFlag.src = "assets/english.png";
+        DIG_main.enFlag.src = "../assets/english.png";
         DIG_main.enFlag.alt = "EN";
         DIG_main.enFlag.classList.add("flag");
         DIG_main.enFlag.id = "EN_" + _screenTypeShort;

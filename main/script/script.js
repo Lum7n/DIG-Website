@@ -19,16 +19,20 @@ var DIG_main;
     // let downloads: HTMLElement;
     // let contentSection: HTMLElement;
     async function handleLoad() {
-        let responseNav = await fetch("script/navigation.json");
+        getLayer();
+        let responseNav = await fetch("../script/navigation.json");
         let offerNav = await responseNav.text();
         DIG_main.data = JSON.parse(offerNav);
-        let responseLanguage = await fetch("script/nav_language.json");
+        let responseLanguage = await fetch("../script/nav_language.json");
         let offerLanguage = await responseLanguage.text();
         DIG_main.languageData = JSON.parse(offerLanguage);
         screenOrientation();
         addNavListeners();
-        // let google: HTMLDivElement = <HTMLDivElement>document.getElementById("google_translate_element");
-        // google.addEventListener("click", googleTranslateElementInit);
+    }
+    function getLayer() {
+        console.log("test");
+        let layerAtt = document.getElementsByTagName("layer");
+        console.log(layerAtt);
     }
     function screenOrientation() {
         screenWidth = screen.width;
@@ -37,14 +41,14 @@ var DIG_main;
         // console.log("Height: ", screenHeight);
         if (screenWidth < screenHeight) {
             screenType = "vertical";
-            addStylesheet("style/style_vertical.css");
+            addStylesheet("../style/style_vertical.css");
             addContentToHeader(screenType);
             matchWidth(screenWidth);
             addListenerForBurgerMenu();
         }
         else if (screenWidth > screenHeight) {
             screenType = "horizontal";
-            addStylesheet("style/style_horizontal.css");
+            addStylesheet("../style/style_horizontal.css");
             addContentToHeader(screenType);
         }
         else {

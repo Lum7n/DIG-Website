@@ -32,19 +32,28 @@ namespace DIG_main {
 
     async function handleLoad(): Promise<void> {
 
-        let responseNav: Response = await fetch("script/navigation.json");
+        getLayer();
+
+        let responseNav: Response = await fetch("../script/navigation.json");
         let offerNav: string = await responseNav.text();
         data = JSON.parse(offerNav);
 
-        let responseLanguage: Response = await fetch("script/nav_language.json");
+        let responseLanguage: Response = await fetch("../script/nav_language.json");
         let offerLanguage: string = await responseLanguage.text();
         languageData = JSON.parse(offerLanguage);
 
         screenOrientation();
         addNavListeners();
 
-        // let google: HTMLDivElement = <HTMLDivElement>document.getElementById("google_translate_element");
-        // google.addEventListener("click", googleTranslateElementInit);
+
+    }
+
+    function getLayer(): void {
+
+        console.log("test");
+
+        let layerAtt = document.getElementsByTagName("layer");
+        console.log(layerAtt);
 
     }
 
@@ -59,7 +68,7 @@ namespace DIG_main {
 
             screenType = "vertical";
 
-            addStylesheet("style/style_vertical.css");
+            addStylesheet("../style/style_vertical.css");
             addContentToHeader(screenType);
             matchWidth(screenWidth);
             addListenerForBurgerMenu();
@@ -68,7 +77,7 @@ namespace DIG_main {
 
             screenType = "horizontal";
 
-            addStylesheet("style/style_horizontal.css");
+            addStylesheet("../style/style_horizontal.css");
             addContentToHeader(screenType);
 
         } else {

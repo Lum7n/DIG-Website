@@ -8,7 +8,7 @@ namespace DIG_main {
 
         let logoImg: HTMLImageElement = document.createElement("img");
         logoImg.id = "logoSize";
-        logoImg.src = "assets/DIG.png";
+        logoImg.src = "../assets/DIG.png";
 
         let logoA: HTMLAnchorElement = document.createElement("a");
         logoA.href = "Home.html";
@@ -52,14 +52,14 @@ namespace DIG_main {
     export function addHeader_Language(_screenTypeShort: string): void {
 
         deFlag = document.createElement("img");
-        deFlag.src = "assets/german.png";
+        deFlag.src = "../assets/german.png";
         deFlag.alt = "DE";
         deFlag.classList.add("flag");
         deFlag.id = "DE_" + _screenTypeShort;
         deFlag.addEventListener("click", handleEvent);
 
         enFlag = document.createElement("img");
-        enFlag.src = "assets/english.png";
+        enFlag.src = "../assets/english.png";
         enFlag.alt = "EN";
         enFlag.classList.add("flag");
         enFlag.id = "EN_" + _screenTypeShort;

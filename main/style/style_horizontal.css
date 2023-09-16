@@ -227,14 +227,17 @@ footer {
 .image { grid-area: image; }
 .text { grid-area: text; }
 
-section {
+main {
+    background-color: #a070676b;
+    padding: 30px;
+}
+
+.awards {
     display: grid;
     grid-template-areas:
     'headline headline'
     'image text';
     grid-template-columns: 40% 60%;
-    background-color: #a070676b;
-    padding: 30px;
 }
 
 .headline {
