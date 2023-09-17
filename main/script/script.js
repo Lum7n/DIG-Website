@@ -32,7 +32,6 @@ var DIG_main;
         addNavListeners();
     }
     function getLayer() {
-        console.log("test");
         let body = document.querySelector("body");
         let layerString = body.getAttribute("data-layer");
         DIG_main.layer = parseFloat(layerString);
@@ -40,30 +39,24 @@ var DIG_main;
             case 1:
                 DIG_main.srcAdd = "../";
                 DIG_main.srcAddNav = "";
-                console.log(DIG_main.layer + DIG_main.srcAdd);
-                console.log(DIG_main.srcAddNav);
                 break;
             case 2:
                 DIG_main.srcAdd = "../../";
                 DIG_main.srcAddNav = "../";
-                console.log(DIG_main.layer + DIG_main.srcAdd);
-                console.log(DIG_main.srcAddNav);
                 break;
             case 3:
                 DIG_main.srcAdd = "../../../";
                 DIG_main.srcAddNav = "../../";
-                console.log(DIG_main.layer + DIG_main.srcAdd);
-                console.log(DIG_main.srcAddNav);
                 break;
             case 4:
                 DIG_main.srcAdd = "../../../../";
                 DIG_main.srcAddNav = "../../../";
-                console.log(DIG_main.layer + DIG_main.srcAdd);
-                console.log(DIG_main.srcAddNav);
                 break;
             default:
                 break;
         }
+        // console.log(layer + srcAdd);
+        // console.log(srcAddNav);
     }
     function screenOrientation() {
         screenWidth = screen.width;
@@ -194,7 +187,6 @@ var DIG_main;
     function addNavListeners() {
         let content = document.querySelector("#content");
         let subsiteName = content.classList[1];
-        console.log(subsiteName);
         if (subsiteName == "home") {
             console.log(subsiteName);
         }

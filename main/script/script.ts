@@ -54,8 +54,6 @@ namespace DIG_main {
 
     function getLayer(): void {
 
-        console.log("test");
-
         let body: HTMLBodyElement = <HTMLBodyElement>document.querySelector("body");
         let layerString: string = <string>body.getAttribute("data-layer");
         layer = parseFloat(layerString);
@@ -64,30 +62,24 @@ namespace DIG_main {
             case 1:
                 srcAdd = "../";
                 srcAddNav = "";
-                console.log(layer + srcAdd);
-                console.log(srcAddNav);
                 break;
             case 2:
                 srcAdd = "../../";
                 srcAddNav = "../";
-                console.log(layer + srcAdd);
-                console.log(srcAddNav);
                 break;
             case 3:
                 srcAdd = "../../../";
                 srcAddNav = "../../";
-                console.log(layer + srcAdd);
-                console.log(srcAddNav);
                 break;
             case 4:
                 srcAdd = "../../../../";
                 srcAddNav = "../../../";
-                console.log(layer + srcAdd);
-                console.log(srcAddNav);
                 break;
             default:
                 break;
         }
+        // console.log(layer + srcAdd);
+        // console.log(srcAddNav);
     }
 
     function screenOrientation(): void {
@@ -273,7 +265,6 @@ namespace DIG_main {
 
         let content: HTMLElement = <HTMLElement>document.querySelector("#content");
         let subsiteName: string = content.classList[1];
-        console.log(subsiteName);
 
         if (subsiteName == "home") {
 

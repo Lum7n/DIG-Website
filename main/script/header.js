@@ -8,7 +8,15 @@ var DIG_main;
         logoImg.src = DIG_main.srcAdd + "assets/DIG.png";
         let logoA = document.createElement("a");
         logoA.href = "Home.html";
-        console.log("text: " + DIG_main.srcAddNav);
+        if (DIG_main.layer == 1) {
+            logoA.href = "Home.html";
+        }
+        else if (DIG_main.layer != 1) {
+            logoA.href = DIG_main.srcAddNav + "Home.html";
+        }
+        else {
+            console.log("error");
+        }
         let logoDiv = document.createElement("div");
         logoDiv.classList.add("item1");
         logoDiv.id = "Logo";

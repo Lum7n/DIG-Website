@@ -3,59 +3,59 @@
     "Infos": [
         {"element": "a", "class": "mI_text", "href": "Infos.html", "textDE": "Infos", "textEN": "Infos"},
         {"element": "li", "class": "mainItem", "id": "Infos"},
-        {"element": "a", "href": "Infos.html", "textDE": "Geschichte der DIG", "textEN": "History"},
+        {"element": "a", "href": "Infos/History.html", "textDE": "Geschichte der DIG", "textEN": "History"},
         {"element": "li", "id": "Geschichte"},
-        {"element": "a", "href": "Infos.html", "textDE": "Ansprechpartner", "textEN": "Contacts"},
+        {"element": "a", "href": "Infos/Contacts.html", "textDE": "Ansprechpartner", "textEN": "Contacts"},
         {"element": "li", "id": "Ansprechpartner"},
-        {"element": "a", "href": "Infos.html", "textDE": "Termine", "textEN": "Dates"},
+        {"element": "a", "href": "Infos/Dates.html", "textDE": "Termine", "textEN": "Dates"},
         {"element": "li", "id": "Termine"},
-        {"element": "a", "href": "Infos.html", "textDE": "Anforderungen", "textEN": "Requirements"},
+        {"element": "a", "href": "Infos/Requirements.html", "textDE": "Anforderungen", "textEN": "Requirements"},
         {"element": "li", "id": "Anforderungen"}
     ],
     "Blog": [
         {"element": "a", "class": "mI_text", "href": "Blog.html", "textDE": "Blog", "textEN": "Blog"},
         {"element": "li", "class": "mainItem", "id": "Blog"},
-        {"element": "a", "href": "Blog.html", "textDE": "Rundsprüche", "textEN": "Rundsprueche"},
+        {"element": "a", "href": "Blog/Rundsprueche.html", "textDE": "Rundsprüche", "textEN": "Rundsprueche"},
         {"element": "li", "id": "Rundsprueche"},
-        {"element": "a", "href": "Blog.html", "textDE": "Aktuell", "textEN": "Latest"},
+        {"element": "a", "href": "Blog/Rundsprueche/Rundsprueche_latest.html", "textDE": "Aktuell", "textEN": "Latest"},
         {"element": "li", "id": "Aktuell"},
-        {"element": "a", "href": "Blog.html", "textDE": "Archiv", "textEN": "Archive"},
+        {"element": "a", "href": "Blog/Rundsprueche/Rundsprueche_archive.html", "textDE": "Archiv", "textEN": "Archive"},
         {"element": "li", "id": "Archiv"},
-        {"element": "a", "href": "Blog.html", "textDE": "Forum", "textEN": "Forum"},
+        {"element": "a", "href": "Blog/Forum.html", "textDE": "Forum", "textEN": "Forum"},
         {"element": "li", "id": "Forum"}
     ],
     "Diplome": [
         {"element": "a", "class": "mI_text", "href": "Awards.html", "textDE": "Diplome", "textEN": "Awards"},
         {"element": "li", "class": "mainItem", "id": "Diplome"},
-        {"element": "a", "href": "Awards.html", "textDE": "Diplombeilage", "textEN": "Award-Insert"},
+        {"element": "a", "href": "Awards/Award-Insert.html", "textDE": "Diplombeilage", "textEN": "Award-Insert"},
         {"element": "li", "id": "Diplombeilage"}
     ],
     "Contests": [
         {"element": "a", "class": "mI_text", "href": "Contests.html", "textDE": "Contests", "textEN": "Contests"},
         {"element": "li", "class": "mainItem", "id": "Contests"},
-        {"element": "a", "href": "Contests.html", "textDE": "Ergebnisse", "textEN": "Results"},
+        {"element": "a", "href": "Contests/Results.html", "textDE": "Ergebnisse", "textEN": "Results"},
         {"element": "li", "id": "Ergebnisse"}
     ],
     "Mitglieder": [
         {"element": "a", "class": "mI_text", "href": "Members.html", "textDE": "Mitglieder", "textEN": "Members"},
         {"element": "li", "class": "mainItem", "id": "Mitglieder"},
-        {"element": "a", "href": "Members.html", "textDE": "Mitglied werden?", "textEN": "How to get a member?"},
+        {"element": "a", "href": "Members/Become_A_Member.html", "textDE": "Mitglied werden?", "textEN": "How to get a member?"},
         {"element": "li", "id": "DIGwerden"},
-        {"element": "a", "href": "Members.html", "textDE": "Mitgliederliste", "textEN": "Memberlist"},
+        {"element": "a", "href": "Members/Memberlist.html", "textDE": "Mitgliederliste", "textEN": "Memberlist"},
         {"element": "li", "id": "Mitgliederliste"},
-        {"element": "a", "href": "Members.html", "textDE": "Sektionen", "textEN": "Departments"},
+        {"element": "a", "href": "Members/Departments.html", "textDE": "Sektionen", "textEN": "Departments"},
         {"element": "li", "id": "Sektionen"}
     ],
     "Downloads": [
         {"element": "a", "class": "mI_text", "href": "Downloads.html", "textDE": "Downloads", "textEN": "Downloads"},
         {"element": "li", "class": "mainItem", "id": "Downloads"},
-        {"element": "a", "href": "Downloads.html", "textDE": "Diplomausschreibung", "textEN": "Award-Rules"},
+        {"element": "a", "href": "Downloads/Award-Rules.html", "textDE": "Diplomausschreibung", "textEN": "Award-Rules"},
         {"element": "li", "id": "Dow_Ausschreibung"},
-        {"element": "a", "href": "Downloads.html", "textDE": "Contestergebnisse", "textEN": "Contestresults"},
+        {"element": "a", "href": "Downloads/Contestresults.html", "textDE": "Contestergebnisse", "textEN": "Contestresults"},
         {"element": "li", "id": "Dow_Ergebnisse"},
-        {"element": "a", "href": "Downloads.html", "textDE": "GCR-Liste", "textEN": "GCR-List"},
+        {"element": "a", "href": "Downloads/GCR-List.html", "textDE": "GCR-Liste", "textEN": "GCR-List"},
         {"element": "li", "id": "Dow_GCR"},
-        {"element": "a", "href": "Downloads.html", "textDE": "Mitgliederliste", "textEN": "Memberlist"},
+        {"element": "a", "href": "Downloads/Memberlist.html", "textDE": "Mitgliederliste", "textEN": "Memberlist"},
         {"element": "li", "id": "Dow_Mitgliederliste"}
     ]
 

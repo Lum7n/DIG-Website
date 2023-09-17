@@ -238,6 +238,7 @@ main {
     'headline headline'
     'image text';
     grid-template-columns: 40% 60%;
+    grid-template-rows: 12% 58%;
 }
 
 .headline {

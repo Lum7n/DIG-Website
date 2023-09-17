@@ -12,7 +12,14 @@ namespace DIG_main {
 
         let logoA: HTMLAnchorElement = document.createElement("a");
         logoA.href = "Home.html";
-        console.log("text: " + srcAddNav);
+
+        if (layer == 1) {
+            logoA.href = "Home.html";
+        } else if (layer != 1) {
+            logoA.href = srcAddNav + "Home.html";
+        } else {
+            console.log("error");
+        }
 
         let logoDiv: HTMLDivElement = document.createElement("div");
         logoDiv.classList.add("item1");
