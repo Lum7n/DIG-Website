@@ -238,7 +238,7 @@ main {
     'headline headline'
     'image text';
     grid-template-columns: 40% 60%;
-    grid-template-rows: 12% 58%;
+    grid-template-rows: 12%;
 }
 
 .headline {
@@ -257,10 +257,12 @@ main {
 }
 
 .text {
-    display: grid;
     padding: 10px 0px 50px 40px;
+    hyphens: auto;
+    text-align: justify;  
 }
 
-.text p {
-    margin: 0px;
+.text dl {
+    margin-top: 2px;
+    margin-bottom: 4px;
 }
