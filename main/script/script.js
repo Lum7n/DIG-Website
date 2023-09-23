@@ -214,8 +214,20 @@ var DIG_main;
         }
     }
     function addContactInfo() {
-        let contactDiv = document.querySelector("#contact");
-        let div = new HTMLDivElement;
+        let contactFooter = document.querySelector("footer");
+        let contactDiv = document.createElement("div");
+        contactDiv.id = "contact";
+        contactDiv.innerHTML = "Die <b>DIG - Diplom Interessen Gruppe -</b> ist ein Zusammenschluß von lizensierte Funkamateure und SWLs die an Amateurfunk - Diplomen interessiert sind. Die DIG informiert über Diplome und die Bedingungen, die zur Verleihung erfüllt werden müssen. <br> Jeder kann Mitglied in dieser Gruppe werden.";
+        let contactLine = document.createElement("hr");
+        contactLine.classList.add("line");
+        let contactB = document.createElement("b");
+        contactB.innerText = "Kontakt: DIG - Sekretär, DL0DIG";
+        let contactParagraph = document.createElement("p");
+        contactParagraph.innerHTML = "Werner Theis, DH1PAL <br> Luxemburger Straße 59 <br> D-53881 Euskirchen <br> E-Mail: <a href='mailto:dh1pal@darc.de' target='_blank'>dh1pal@darc.de</a> <br> Tel.: 02251 / 71666 (kein Fax)";
+        contactDiv.appendChild(contactLine);
+        contactDiv.appendChild(contactB);
+        contactDiv.appendChild(contactParagraph);
+        contactFooter.appendChild(contactDiv);
     }
 })(DIG_main || (DIG_main = {}));
 //# sourceMappingURL=script.js.map
