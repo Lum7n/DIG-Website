@@ -30,6 +30,7 @@ var DIG_main;
         DIG_main.languageData = JSON.parse(offerLanguage);
         screenOrientation();
         addNavListeners();
+        addContactInfo();
     }
     function getLayer() {
         let body = document.querySelector("body");
@@ -211,6 +212,10 @@ var DIG_main;
         else {
             console.log("error");
         }
+    }
+    function addContactInfo() {
+        let contactDiv = document.querySelector("#contact");
+        let div = new HTMLDivElement;
     }
 })(DIG_main || (DIG_main = {}));
 //# sourceMappingURL=script.js.map

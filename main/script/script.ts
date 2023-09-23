@@ -48,7 +48,7 @@ namespace DIG_main {
 
         screenOrientation();
         addNavListeners();
-
+        addContactInfo();
 
     }
 
@@ -298,6 +298,13 @@ namespace DIG_main {
 
             console.log("error");
         }
+    }
+
+    function addContactInfo(): void {
+
+        let contactDiv: HTMLDivElement = <HTMLDivElement>document.querySelector("#contact");
+
+        let div: HTMLDivElement = new HTMLDivElement;
     }
 
 }
