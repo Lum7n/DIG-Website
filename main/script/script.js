@@ -37,9 +37,15 @@ var DIG_main;
         let layerString = body.getAttribute("data-layer");
         DIG_main.layer = parseFloat(layerString);
         switch (DIG_main.layer) {
+            // von 1/2/3 auf 0 geht noch nicht
+            // von 0 auf 0 geht nicht
+            case 0:
+                DIG_main.srcAdd = "";
+                DIG_main.srcAddNav = "/main/html/";
+                break;
             case 1:
-                DIG_main.srcAdd = "../";
-                DIG_main.srcAddNav = "";
+                DIG_main.srcAdd = "../"; //Elemente die von der aktuellen Seite aus, auf Ebene 0 liegen - scripts, json, Home.html, etc.
+                DIG_main.srcAddNav = ""; //Elemente die von der aktuellen Seite aus, auf Ebene 1 liegen - alle 1. Unterseiten - Infos, Blog, Diplome, etc.
                 break;
             case 2:
                 DIG_main.srcAdd = "../../";
@@ -56,8 +62,8 @@ var DIG_main;
             default:
                 break;
         }
-        // console.log(layer + srcAdd);
-        // console.log(srcAddNav);
+        console.log(DIG_main.layer + DIG_main.srcAdd);
+        console.log(DIG_main.srcAddNav);
     }
     function screenOrientation() {
         screenWidth = screen.width;

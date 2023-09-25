@@ -59,9 +59,16 @@ namespace DIG_main {
         layer = parseFloat(layerString);
 
         switch (layer) {
+
+            // von 1/2/3 auf 0 geht noch nicht
+            // von 0 auf 0 geht nicht
+            case 0:
+                srcAdd = "";
+                srcAddNav = "/main/html/";
+                break
             case 1:
-                srcAdd = "../";
-                srcAddNav = "";
+                srcAdd = "../";             //Elemente die von der aktuellen Seite aus, auf Ebene 0 liegen - scripts, json, Home.html, etc.
+                srcAddNav = "";             //Elemente die von der aktuellen Seite aus, auf Ebene 1 liegen - alle 1. Unterseiten - Infos, Blog, Diplome, etc.
                 break;
             case 2:
                 srcAdd = "../../";
@@ -78,8 +85,8 @@ namespace DIG_main {
             default:
                 break;
         }
-        // console.log(layer + srcAdd);
-        // console.log(srcAddNav);
+        console.log(layer + srcAdd);
+        console.log(srcAddNav);
     }
 
     function screenOrientation(): void {
