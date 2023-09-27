@@ -11,12 +11,11 @@ namespace DIG_main {
         logoImg.src = srcAdd + "assets/DIG.png";
 
         let logoA: HTMLAnchorElement = document.createElement("a");
-        logoA.href = "Home.html";
 
         if (layer == 1) {
-            logoA.href = "Home.html";
-        } else if (layer != 1) {
-            logoA.href = srcAddNav + "Home.html";
+            logoA.href = "../Home.html";
+        } else if (layer > 1) {
+            logoA.href = srcAddNav + "../../main/Home.html";
         } else {
             console.log("error");
         }

@@ -7,12 +7,11 @@ var DIG_main;
         logoImg.id = "logoSize";
         logoImg.src = DIG_main.srcAdd + "assets/DIG.png";
         let logoA = document.createElement("a");
-        logoA.href = "Home.html";
         if (DIG_main.layer == 1) {
-            logoA.href = "Home.html";
+            logoA.href = "../Home.html";
         }
-        else if (DIG_main.layer != 1) {
-            logoA.href = DIG_main.srcAddNav + "Home.html";
+        else if (DIG_main.layer > 1) {
+            logoA.href = DIG_main.srcAddNav + "../../main/Home.html";
         }
         else {
             console.log("error");
