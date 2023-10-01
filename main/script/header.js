@@ -7,6 +7,7 @@ var DIG_main;
         logoImg.id = "logoSize";
         logoImg.src = DIG_main.srcAdd + "assets/DIG.png";
         let logoA = document.createElement("a");
+        //appends the rigth su
         if (DIG_main.layer == 1) {
             logoA.href = "../Home.html";
         }

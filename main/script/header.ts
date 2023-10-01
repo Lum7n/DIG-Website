@@ -12,6 +12,7 @@ namespace DIG_main {
 
         let logoA: HTMLAnchorElement = document.createElement("a");
 
+        //appends the rigth su
         if (layer == 1) {
             logoA.href = "../Home.html";
         } else if (layer > 1) {
