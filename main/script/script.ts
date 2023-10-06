@@ -64,7 +64,7 @@ namespace DIG_main {
             // von 0 auf 0 geht nicht
             case 0:
                 srcAdd = "";
-                srcAddNav = "/main/html/";
+                srcAddNav = "html/";
                 break
             case 1:
                 srcAdd = "../";             //Elemente die von der aktuellen Seite aus, auf Ebene 0 liegen - scripts, json, Home.html, etc.

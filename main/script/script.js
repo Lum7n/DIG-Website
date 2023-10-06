@@ -41,7 +41,7 @@ var DIG_main;
             // von 0 auf 0 geht nicht
             case 0:
                 DIG_main.srcAdd = "";
-                DIG_main.srcAddNav = "/main/html/";
+                DIG_main.srcAddNav = "html/";
                 break;
             case 1:
                 DIG_main.srcAdd = "../"; //Elemente die von der aktuellen Seite aus, auf Ebene 0 liegen - scripts, json, Home.html, etc.
