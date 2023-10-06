@@ -80,13 +80,15 @@ namespace DIG_main {
                         let otherA: HTMLAnchorElement = document.createElement("a");
                         otherA.classList.add("languageText");
 
-                        if (layer == 1) {
-                            otherA.href = navItems[index].href;
-                        } else if (layer != 1) {
-                            otherA.href = srcAddNav + (navItems[index].href);
-                        } else {
-                            console.log("error");
-                        }
+                        otherA.href = srcAddNav + navItems[index].href;
+
+                        // if (layer == 1) {
+                        //     otherA.href = srcAddNav + navItems[index].href;
+                        // } else if (layer != 1) {
+                        //     otherA.href = srcAddNav + navItems[index].href;
+                        // } else {
+                        //     console.log("error");
+                        // }
 
                         otherA.innerText = navItems[index].textDE;
                         otherLi.appendChild(otherA);

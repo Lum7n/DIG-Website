@@ -50,15 +50,14 @@ var DIG_main;
                     if (navItems[index].element == "a") {
                         let otherA = document.createElement("a");
                         otherA.classList.add("languageText");
-                        if (DIG_main.layer == 1) {
-                            otherA.href = navItems[index].href;
-                        }
-                        else if (DIG_main.layer != 1) {
-                            otherA.href = DIG_main.srcAddNav + (navItems[index].href);
-                        }
-                        else {
-                            console.log("error");
-                        }
+                        otherA.href = DIG_main.srcAddNav + navItems[index].href;
+                        // if (layer == 1) {
+                        //     otherA.href = srcAddNav + navItems[index].href;
+                        // } else if (layer != 1) {
+                        //     otherA.href = srcAddNav + navItems[index].href;
+                        // } else {
+                        //     console.log("error");
+                        // }
                         otherA.innerText = navItems[index].textDE;
                         otherLi.appendChild(otherA);
                         li_has_a = true;
