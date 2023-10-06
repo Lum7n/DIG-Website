@@ -1,12 +1,38 @@
-.item0 {grid-area: header;}
-.item1 {grid-area: logo;}
-.item2 {grid-area: language;}
-.item3 {grid-area: search-bar;}
-.item4 {grid-area: nav;}
-.item5 {grid-area: stripe;}
-.item6 {grid-area: breadcrumb;}
-.item7 {grid-area: content;}
-.item8 {grid-area: footer;}
+.item0 {
+    grid-area: header;
+}
+
+.item1 {
+    grid-area: logo;
+}
+
+.item2 {
+    grid-area: language;
+}
+
+.item3 {
+    grid-area: search-bar;
+}
+
+.item4 {
+    grid-area: nav;
+}
+
+.item5 {
+    grid-area: stripe;
+}
+
+.item6 {
+    grid-area: breadcrumb;
+}
+
+.item7 {
+    grid-area: content;
+}
+
+.item8 {
+    grid-area: footer;
+}
 
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -287,6 +313,14 @@ footer {
     grid-area: headline;
 }
 
+.headline.one {
+    grid-area: headline1;
+}
+
+.headline.two {
+    grid-area: headline2;
+}
+
 .image {
     grid-area: image;
 }
@@ -295,12 +329,33 @@ footer {
     grid-area: text;
 }
 
+.text.one.left {
+    grid-area: text1L;
+}
+
+.text.one.right {
+    grid-area: text1R;
+}
+
+.text.two {
+    grid-area: text2;
+}
+
 main {
     background-color: #a171681a;
     padding: 30px;
 }
 
-.awards {
+.awards.menu {
+    display: grid;
+    grid-template-areas:
+        'headline1 text1L text1R'
+        'headline2 text2 text2';
+    grid-template-columns: 30% 35% 35%;
+    grid-template-rows: 45%;
+}
+
+.awards.subpage {
     display: grid;
     grid-template-areas:
         'headline headline'
@@ -309,28 +364,28 @@ main {
     grid-template-rows: 12%;
 }
 
-.headline {
-    display: grid;
-}
-
-#content h1 {
-    font-size: 3em;
+.awards h1 {
+    font-size: 2.5em;
     margin: 0px 0px -20px 0px;
 }
 
-.image img {
+.awards.subpage .image img {
     display: grid;
     max-width: 100%;
     padding: 10px 0px 50px 0px;
 }
 
-.text {
+.awards.subpage .text {
     padding: 10px 0px 50px 40px;
     hyphens: auto;
     text-align: justify;
 }
 
-.text dl {
+.awards.subpage .text dl {
     margin-top: 2px;
     margin-bottom: 4px;
+}
+
+.awards.menu li {
+    list-style-type: square;
 }
