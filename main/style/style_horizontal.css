@@ -360,8 +360,16 @@ main {
     grid-template-areas:
         'headline headline'
         'image text';
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 30% 70%;
     grid-template-rows: 12%;
+}
+
+.awards.subpage.h {
+    grid-template-columns: 30% 70%;
+}
+
+.awards.subpage.v {
+    grid-template-columns: 40% 60%;
 }
 
 .awards h1 {
@@ -375,6 +383,10 @@ main {
     padding: 10px 0px 50px 0px;
 }
 
+.image#horizontal img {
+    max-width: 350px;
+}
+
 .awards.subpage .text {
     padding: 10px 0px 50px 40px;
     hyphens: auto;
@@ -386,6 +398,31 @@ main {
     margin-bottom: 4px;
 }
 
+.awards.subpage .text table{
+    padding-bottom: 5px;
+}
+
+.awards.subpage .text th{
+    font-weight: normal;
+    font-style: italic;
+    text-align: left;
+    padding-top: 5px;
+    border-bottom: 1px dashed black;
+}
+
+.awards.subpage .text td{
+    padding-right: 30px;
+}
+
+#WDXS td:first-child{
+    width: 75px;
+    padding-right: 15px;
+}
+
 .awards.menu li {
     list-style-type: square;
+}
+
+.bald {
+    background-color: rebeccapurple;
 }

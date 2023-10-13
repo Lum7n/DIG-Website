@@ -30,7 +30,7 @@
         {"element": "a", "href": "Awards/Award-Insert.html", "textDE": "Diplombeilage", "textEN": "Award-Insert"},
         {"element": "li", "id": "Diplombeilage"}
     ],
-    "Contests": [
+    "Conteste": [
         {"element": "a", "class": "mI_text", "href": "Contests.html", "textDE": "Contests", "textEN": "Contests"},
         {"element": "li", "class": "mainItem", "id": "Contests"},
         {"element": "a", "href": "Contests/Results.html", "textDE": "Ergebnisse", "textEN": "Results"},
