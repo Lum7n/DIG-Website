@@ -360,8 +360,7 @@ main {
     grid-template-areas:
         'headline headline'
         'image text';
-    grid-template-columns: 30% 70%;
-    grid-template-rows: 12%;
+    grid-template-rows: 70px;
 }
 
 .awards.subpage.h {
@@ -398,11 +397,11 @@ main {
     margin-bottom: 4px;
 }
 
-.awards.subpage .text table{
+.awards.subpage .text table {
     padding-bottom: 5px;
 }
 
-.awards.subpage .text th{
+.awards.subpage .text th {
     font-weight: normal;
     font-style: italic;
     text-align: left;
@@ -410,13 +409,24 @@ main {
     border-bottom: 1px dashed black;
 }
 
-.awards.subpage .text td{
+.awards.subpage .text td {
     padding-right: 30px;
 }
 
-#WDXS td:first-child{
+#WDXS td:first-child {
     width: 75px;
     padding-right: 15px;
+}
+
+#WGLC dl:first-of-type dd {
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+#ZODIAC table {
+    font-size: 0.9em;
+    font-style: italic;
+    padding-left: 40px;
 }
 
 .awards.menu li {
