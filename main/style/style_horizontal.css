@@ -313,6 +313,7 @@ footer {
     grid-area: headline;
 }
 
+.specials.one,
 .headline.one {
     grid-area: headline1;
 }
@@ -352,7 +353,11 @@ main {
         'headline1 text1L text1R'
         'headline2 text2 text2';
     grid-template-columns: 30% 35% 35%;
-    grid-template-rows: 45%;
+    /* grid-template-rows: 45%; */
+}
+
+.awards .specials {
+    padding-top: 50px;
 }
 
 .awards.subpage {
@@ -411,6 +416,10 @@ main {
 
 .awards.subpage .text td {
     padding-right: 30px;
+}
+
+#Euro th:nth-child(2) {
+    padding-right: 60px;
 }
 
 #WDXS td:first-child {
