@@ -302,6 +302,22 @@ footer {
     width: 1145px;
 }
 
+.btn {
+    font-size: 18px;
+    font-weight: 500;
+    color: #500e0e;
+    background-color: #ddab9e;
+    text-decoration: none;
+    border: 1px solid #500e0e;
+    padding: 8px;
+    margin-top: 4px;
+}
+
+.btn:hover {
+    color: #ffffff;
+    background-color: #631111;
+}
+
 .line {
     border-top: 5px solid #ddab9e;
     border-radius: 3px;
@@ -346,6 +362,31 @@ main {
     background-color: #a171681a;
     padding: 30px;
 }
+
+/* home */
+
+/* .home {
+} */
+
+#new {
+    color: #500e0e;
+    background-color: #ffffff;
+    text-decoration: none;
+    border: 1px solid #500e0e;
+    padding: 20px;
+    margin: 10px 0px;
+}
+
+#new h2 {
+    margin-top: 0px;
+}
+
+#new span {
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+/* awards */
 
 .awards.menu {
     display: grid;
@@ -440,8 +481,4 @@ main {
 
 .awards.menu li {
     list-style-type: square;
-}
-
-.bald {
-    background-color: rebeccapurple;
 }
