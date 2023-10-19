@@ -313,7 +313,7 @@ namespace DIG_main {
 
         let contactDiv: HTMLDivElement = document.createElement("div");
         contactDiv.id = "contact";
-        contactDiv.innerHTML = "Die <b>DIG - Diplom Interessen Gruppe -</b> ist ein Zusammenschluß von lizensierte Funkamateure und SWLs die an Amateurfunk - Diplomen interessiert sind. Die DIG informiert über Diplome und die Bedingungen, die zur Verleihung erfüllt werden müssen. <br> Jeder kann Mitglied in dieser Gruppe werden. "
+        contactDiv.innerHTML = "Die <b>DIG - Diplom Interessen Gruppe -</b> ist ein Zusammenschluß von lizensierten Funkamateuren und SWLs die an Amateurfunk - Diplomen interessiert sind. Die DIG informiert über Diplome und die Bedingungen, die zur Verleihung erfüllt werden müssen. <br> Jeder, der die Aufnahmebedingungen erfüllt hat, kann Mitglied in dieser Gruppe werden. "
         let contactButton: HTMLButtonElement = document.createElement("button");
         contactButton.innerText = "Mitglied werden?";
         contactButton.classList.add("btn");
