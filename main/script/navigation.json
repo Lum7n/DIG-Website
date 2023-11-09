@@ -8,9 +8,7 @@
         {"element": "a", "href": "Infos/Contacts.html", "textDE": "Ansprechpartner", "textEN": "Contacts"},
         {"element": "li", "id": "Ansprechpartner"},
         {"element": "a", "href": "Infos/Dates.html", "textDE": "Termine", "textEN": "Dates"},
-        {"element": "li", "id": "Termine"},
-        {"element": "a", "href": "Infos/Requirements.html", "textDE": "Anforderungen", "textEN": "Requirements"},
-        {"element": "li", "id": "Anforderungen"}
+        {"element": "li", "id": "Termine"}
     ],
     "Blog": [
         {"element": "a", "class": "mI_text", "href": "Blog.html", "textDE": "Blog", "textEN": "Blog"},
@@ -28,10 +26,12 @@
         {"element": "a", "class": "mI_text", "href": "Awards.html", "textDE": "Diplome", "textEN": "Awards"},
         {"element": "li", "class": "mainItem", "id": "Diplome"},
         {"element": "a", "href": "Awards/Award-Insert.html", "textDE": "Diplombeilage", "textEN": "Award-Insert"},
-        {"element": "li", "id": "Diplombeilage"}
+        {"element": "li", "id": "Diplombeilage"},
+        {"element": "a", "href": "Awards/Award-Insert/Award-Insert_archive.html", "textDE": "Archiv", "textEN": "Archive"},
+        {"element": "li", "id": "Archiv"}
     ],
     "Conteste": [
-        {"element": "a", "class": "mI_text", "href": "Contests.html", "textDE": "Contests", "textEN": "Contests"},
+        {"element": "a", "class": "mI_text", "href": "Contests.html", "textDE": "Conteste", "textEN": "Contests"},
         {"element": "li", "class": "mainItem", "id": "Contests"},
         {"element": "a", "href": "Contests/Results.html", "textDE": "Ergebnisse", "textEN": "Results"},
         {"element": "li", "id": "Ergebnisse"}
@@ -49,13 +49,13 @@
     "Downloads": [
         {"element": "a", "class": "mI_text", "href": "Downloads.html", "textDE": "Downloads", "textEN": "Downloads"},
         {"element": "li", "class": "mainItem", "id": "Downloads"},
-        {"element": "a", "href": "Downloads/Award-Rules.html", "textDE": "Diplomausschreibung", "textEN": "Award-Rules"},
-        {"element": "li", "id": "Dow_Ausschreibung"},
-        {"element": "a", "href": "Downloads/Contestresults.html", "textDE": "Contestergebnisse", "textEN": "Contestresults"},
-        {"element": "li", "id": "Dow_Ergebnisse"},
-        {"element": "a", "href": "Downloads/GCR-List.html", "textDE": "GCR-Liste", "textEN": "GCR-List"},
+        {"element": "a", "href": "../assets/Awards/GCR-List.pdf", "textDE": "GCR-Liste", "textEN": "GCR-List", "target": "_blank"},
         {"element": "li", "id": "Dow_GCR"},
-        {"element": "a", "href": "Downloads/Memberlist.html", "textDE": "Mitgliederliste", "textEN": "Memberlist"},
+        {"element": "a", "href": "Downloads/aaAwards.html", "textDE": "rundum Diplome", "textEN": "all-around Awards"},
+        {"element": "li", "id": "Dow_Ausschreibung"},
+        {"element": "a", "href": "Downloads/aaContests.html", "textDE": "rundum Conteste", "textEN": "all-around Contests"},
+        {"element": "li", "id": "Dow_Ergebnisse"},
+        {"element": "a", "href": "Downloads/aaMembers.html", "textDE": "rundum Mitglieder", "textEN": "all-around the Members"},
         {"element": "li", "id": "Dow_Mitgliederliste"}
     ]
 

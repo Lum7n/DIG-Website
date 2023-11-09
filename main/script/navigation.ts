@@ -91,6 +91,9 @@ namespace DIG_main {
                         // }
 
                         otherA.innerText = navItems[index].textDE;
+                        if (navItems[index].textDE == "GCR-Liste") { //nur bei der GCR-Nav soll eine neue Seite geöffnet werden
+                            otherA.target = "_blank";
+                        }
                         otherLi.appendChild(otherA);
 
                         li_has_a = true;

@@ -43,7 +43,7 @@ body {
         'breadcrumb'
         'content'
         'footer';
-    grid-template-rows: 230px 34px auto 330px;
+    grid-template-rows: 230px 34px auto 340px;
     gap: 10px;
     width: 1205px;
     margin: auto;
@@ -297,12 +297,17 @@ footer {
 }
 
 #contact {
-    padding: 30px 30px 20px 30px;
+    padding: 30px 30px 0px 30px;
     margin: auto;
     width: 1145px;
 }
 
 .btn {
+    display: inline-block;
+    padding: 10px 10px 0px 0px;
+}
+
+.btn a {
     font-size: 18px;
     font-weight: 500;
     color: #500e0e;
@@ -310,12 +315,13 @@ footer {
     text-decoration: none;
     border: 1px solid #500e0e;
     padding: 8px;
-    margin-top: 4px;
 }
 
-.btn:hover {
+.btn a:hover {
+    font-weight: 500;
     color: #ffffff;
     background-color: #631111;
+    text-decoration: none;
 }
 
 .line {
@@ -354,6 +360,10 @@ footer {
     grid-area: text1R;
 }
 
+.text.one {
+    grid-area: text1;
+}
+
 .text.two {
     grid-area: text2;
 }
@@ -361,6 +371,18 @@ footer {
 main {
     background-color: #a171681a;
     padding: 30px;
+}
+
+main h1 {
+    margin: 0px 0px -20px 0px;
+}
+
+main h2 {
+    margin: 0px 0px 15px 0px;
+}
+
+main li {
+    list-style-type: square;
 }
 
 /* home */
@@ -426,9 +448,8 @@ main {
     grid-template-columns: 40% 60%;
 }
 
-.awards h1 {
+.awards.subpage h1 {
     font-size: 2.5em;
-    margin: 0px 0px -20px 0px;
 }
 
 .awards.subpage .image img {
@@ -488,6 +509,38 @@ main {
     padding-left: 40px;
 }
 
-.awards.menu li {
-    list-style-type: square;
+.awards.insert {
+    display: grid;
+    grid-template-areas:
+        'text1 headline2'
+        'headline1 headline1'
+        'text2 text2';
+    grid-template-rows: 140px 70px;
+    grid-template-columns: 50% 50%;
+    height: 1405px;
 }
+
+.insert embed.text {
+    width: 1140px;
+    height: 1195px;
+}
+
+.awards.insertA {
+    display: grid;
+    grid-template-areas:
+        'headline headline'
+        'text1 text2';
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 70px;
+    line-height: 1.6;
+}
+
+/* downloads */
+
+.downloads h2 {
+    margin: 0px 0px 20px 0px;
+}
+.downloads span {
+    margin: 0px 0px 30px 0px;
+}
+

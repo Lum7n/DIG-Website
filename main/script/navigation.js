@@ -59,6 +59,9 @@ var DIG_main;
                         //     console.log("error");
                         // }
                         otherA.innerText = navItems[index].textDE;
+                        if (navItems[index].textDE == "GCR-Liste") {
+                            otherA.target = "_blank";
+                        }
                         otherLi.appendChild(otherA);
                         li_has_a = true;
                     }

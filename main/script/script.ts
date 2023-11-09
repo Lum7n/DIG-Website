@@ -314,9 +314,11 @@ namespace DIG_main {
         let contactDiv: HTMLDivElement = document.createElement("div");
         contactDiv.id = "contact";
         contactDiv.innerHTML = "Die <b>DIG - Diplom Interessen Gruppe -</b> ist ein Zusammenschluß von lizensierten Funkamateuren und SWLs die an Amateurfunk - Diplomen interessiert sind. Die DIG informiert über Diplome und die Bedingungen, die zur Verleihung erfüllt werden müssen. <br> Jeder, der die Aufnahmebedingungen erfüllt hat, kann Mitglied in dieser Gruppe werden. "
-        let contactButton: HTMLButtonElement = document.createElement("button");
-        contactButton.innerText = "Mitglied werden?";
+        let contactButton: HTMLSpanElement = document.createElement("span");
         contactButton.classList.add("btn");
+        let contactButtonLink: HTMLAnchorElement = document.createElement("a");
+        contactButtonLink.href = "../../assets/Missing.pdf",
+        contactButtonLink.innerText = "Mitglied werden?";
 
         let contactLine: HTMLHRElement = document.createElement("hr");
         contactLine.classList.add("line");
@@ -327,6 +329,7 @@ namespace DIG_main {
         let contactParagraph: HTMLParagraphElement = document.createElement("p");
         contactParagraph.innerHTML = "Werner Theis, DH1PAL <br> Luxemburger Straße 59 <br> D-53881 Euskirchen <br> E-Mail: <a href='mailto:dh1pal@darc.de' target='_blank'>dh1pal@darc.de</a> <br> Tel.: 02251 / 71666 (kein Fax)"
 
+        contactButton.appendChild(contactButtonLink);
         contactDiv.appendChild(contactButton);
         contactDiv.appendChild(contactLine);
         contactDiv.appendChild(contactB);
