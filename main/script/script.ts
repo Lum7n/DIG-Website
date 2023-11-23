@@ -46,7 +46,8 @@ namespace DIG_main {
         let offerLanguage: string = await responseLanguage.text();
         languageData = JSON.parse(offerLanguage);
 
-        screenOrientation();
+        getScreenOrientation();
+        getBrowserInfos();
         addNavListeners();
         addContactInfo();
 
@@ -89,7 +90,7 @@ namespace DIG_main {
         console.log(srcAddNav);
     }
 
-    function screenOrientation(): void {
+    function getScreenOrientation(): void {
 
         screenWidth = screen.width;
         let screenHeight: number = screen.height;
@@ -268,6 +269,17 @@ namespace DIG_main {
         }
     }
 
+    function getBrowserInfos(): void {
+
+        if ((navigator.userAgent.indexOf("Firefox")) != -1) {
+            console.log("der aktuelle Browser ist Firefox")
+
+        } else {
+            console.log("der aktuelle Browser ist nicht Firefox")
+        }
+
+    }
+
     function addNavListeners(): void {
 
         let content: HTMLElement = <HTMLElement>document.querySelector("#content");
@@ -318,11 +330,11 @@ namespace DIG_main {
         contactButton.classList.add("btn");
         let contactButtonLink: HTMLAnchorElement = document.createElement("a");
         contactButtonLink.href = "../../assets/Missing.pdf",
-        contactButtonLink.innerText = "Mitglied werden?";
+            contactButtonLink.innerText = "Mitglied werden?";
 
         let contactLine: HTMLHRElement = document.createElement("hr");
         contactLine.classList.add("line");
-        
+
         let contactB: HTMLElement = document.createElement("b");
         contactB.innerText = "Kontakt: DIG - Sekretär, DL0DIG";
 

@@ -59,7 +59,7 @@ var DIG_main;
                         //     console.log("error");
                         // }
                         otherA.innerText = navItems[index].textDE;
-                        if (navItems[index].textDE == "GCR-Liste") {
+                        if (navItems[index].textDE == "GCR-Liste") { //nur bei der GCR-Nav soll eine neue Seite geöffnet werden
                             otherA.target = "_blank";
                         }
                         otherLi.appendChild(otherA);

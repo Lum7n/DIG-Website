@@ -28,7 +28,8 @@ var DIG_main;
         let responseLanguage = await fetch(DIG_main.srcAdd + "script/nav_language.json");
         let offerLanguage = await responseLanguage.text();
         DIG_main.languageData = JSON.parse(offerLanguage);
-        screenOrientation();
+        getScreenOrientation();
+        getBrowserInfos();
         addNavListeners();
         addContactInfo();
     }
@@ -65,7 +66,7 @@ var DIG_main;
         console.log(DIG_main.layer + DIG_main.srcAdd);
         console.log(DIG_main.srcAddNav);
     }
-    function screenOrientation() {
+    function getScreenOrientation() {
         screenWidth = screen.width;
         let screenHeight = screen.height;
         // console.log("Width: ", screenWidth);
@@ -189,6 +190,14 @@ var DIG_main;
         }
         else {
             console.log("error");
+        }
+    }
+    function getBrowserInfos() {
+        if ((navigator.userAgent.indexOf("Firefox")) != -1) {
+            console.log("der aktuelle Browser ist Firefox");
+        }
+        else {
+            console.log("der aktuelle Browser ist nicht Firefox");
         }
     }
     function addNavListeners() {
