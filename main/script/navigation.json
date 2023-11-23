@@ -49,8 +49,6 @@
     "Downloads": [
         {"element": "a", "class": "mI_text", "href": "Downloads.html", "textDE": "Downloads", "textEN": "Downloads"},
         {"element": "li", "class": "mainItem", "id": "Downloads"},
-        {"element": "a", "href": "../assets/Awards/GCR-List.pdf", "textDE": "GCR-Liste", "textEN": "GCR-List", "target": "_blank"},
-        {"element": "li", "id": "Dow_GCR"},
         {"element": "a", "href": "Downloads/aaAwards.html", "textDE": "rund um Diplome", "textEN": "all-around Awards"},
         {"element": "li", "id": "Dow_Ausschreibung"},
         {"element": "a", "href": "Downloads/aaContests.html", "textDE": "rund um Conteste", "textEN": "all-around Contests"},
