@@ -39,6 +39,8 @@
     "Mitglieder": [
         {"element": "a", "class": "mI_text", "href": "Members.html", "textDE": "Mitglieder", "textEN": "Members"},
         {"element": "li", "class": "mainItem", "id": "Mitglieder"},
+        {"element": "a", "href": "Members/Rules.html", "textDE": "Regelungen", "textEN": "Rules"},
+        {"element": "li", "id": "Rules"},
         {"element": "a", "href": "Members/Become_A_Member.html", "textDE": "Mitglied werden?", "textEN": "How to get a member?"},
         {"element": "li", "id": "DIGwerden"},
         {"element": "a", "href": "Members/Memberlist.html", "textDE": "Mitgliederliste", "textEN": "Memberlist"},
