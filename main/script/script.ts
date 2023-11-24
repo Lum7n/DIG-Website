@@ -51,6 +51,8 @@ namespace DIG_main {
         addNavListeners();
         addContactInfo();
 
+        addAndchangeLinks();
+
     }
 
     function getLayer(): void {
@@ -348,6 +350,16 @@ namespace DIG_main {
         contactDiv.appendChild(contactParagraph);
 
         contactFooter.appendChild(contactDiv);
+    }
+
+    function addAndchangeLinks():void {
+
+        let latestProgram: HTMLAnchorElement = <HTMLAnchorElement>document.getElementById("latestProgram");
+        latestProgram.href = "../../assets/Awards/Dokuments/DIG-Diplomprogramm_2022_DE.pdf";
+
+        let linkGCR: HTMLAnchorElement = <HTMLAnchorElement>document.getElementById("linkGCR");
+        linkGCR.href = "../../assets/Awards/Dokuments/GCR-List.pdf";
+        
     }
 
 }

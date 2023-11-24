@@ -497,6 +497,14 @@ main li {
     padding-right: 30px;
 }
 
+.awards.subpage div.text > a {
+    display: block;
+}
+
+.awards.subpage div.text > p+a {
+    padding-bottom: 18px;
+}
+
 #Euro th:nth-child(2) {
     padding-right: 60px;
 }

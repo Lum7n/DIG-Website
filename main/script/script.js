@@ -32,6 +32,7 @@ var DIG_main;
         getBrowserInfos();
         addNavListeners();
         addContactInfo();
+        addAndchangeLinks();
     }
     function getLayer() {
         let body = document.querySelector("body");
@@ -250,6 +251,12 @@ var DIG_main;
         contactDiv.appendChild(contactB);
         contactDiv.appendChild(contactParagraph);
         contactFooter.appendChild(contactDiv);
+    }
+    function addAndchangeLinks() {
+        let latestProgram = document.getElementById("latestProgram");
+        latestProgram.href = "../../assets/Awards/Dokuments/DIG-Diplomprogramm_2022_DE.pdf";
+        let linkGCR = document.getElementById("linkGCR");
+        linkGCR.href = "../../assets/Awards/Dokuments/GCR-List.pdf";
     }
 })(DIG_main || (DIG_main = {}));
 //# sourceMappingURL=script.js.map
