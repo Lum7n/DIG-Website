@@ -385,6 +385,10 @@ main p:first-child {
     margin-top: 0px;
 }
 
+main h3 {
+    margin: 8px 0px;
+}
+
 main li {
     list-style-type: square;
 }
@@ -542,9 +546,26 @@ main li {
 /* downloads */
 
 .downloads h2 {
-    margin: 0px 0px 20px 0px;
+    margin: 0px 0px 30px 0px;
 }
 .downloads span {
     margin: 0px 0px 30px 0px;
+}
+
+.downloads .heading3 {
+    font-size: 1.17em;
+    margin-right: 20px;
+}
+
+.downloads .heading3.v2 {
+    display: block;
+    margin-top: -15px;
+    margin-bottom: 20px;
+}
+
+.downloads .heading3.v3 {
+    display: block;
+    margin-top: -15px;
+    margin-bottom: 15px;
 }
 
