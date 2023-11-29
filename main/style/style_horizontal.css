@@ -505,6 +505,15 @@ main li {
     padding-bottom: 18px;
 }
 
+.awards.subpage div.text > b+a {
+    padding-bottom: 18px;
+}
+
+.awards.subpage div.text #adress {
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
 #Euro th:nth-child(2) {
     padding-right: 60px;
 }
