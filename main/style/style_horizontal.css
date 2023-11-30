@@ -374,7 +374,7 @@ main {
 }
 
 main h1 {
-    margin: 0px 0px -20px 0px;
+    margin: 0px 0px 0px 0px;
 }
 
 main h2 {
@@ -558,6 +558,51 @@ main li {
         grid-template-columns: 50% 50%;
         grid-template-rows: 70px;
     line-height: 1.6;
+}
+
+/* contests */
+
+.contests span {
+    display: block;
+    margin: 0px 0px 10px 0px;
+}
+
+.contests a {
+    font-size: 1.2em;
+    padding: 10px;
+    width: fit-content;
+}
+
+.contests .headlink {
+    font-size: 1.2em;
+    margin: 10px 0px 20px 0px;
+}
+
+.contests .headlink.first {
+    margin-top: 25px;
+}
+
+.contests.subpage h2 {
+    margin-top: 20px;
+}
+
+.contests .underlink {
+    padding-left: 20px;
+}
+
+.contests.subpage .headlink {
+    margin: 30px 0px;
+}
+
+/* members */
+
+.members .headline {
+    margin: 0px 0px 25px 0px;
+}
+
+.members iframe {
+    width: 1140px;
+    height: 1195px;
 }
 
 /* downloads */
