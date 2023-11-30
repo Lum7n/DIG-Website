@@ -583,7 +583,13 @@ main li {
 }
 
 .contests.subpage h2 {
-    margin-top: 20px;
+    margin-top: 25px;
+}
+
+.contests.subpage .thicker {
+    font-size: 1.1em;
+    margin-top: 40px;
+    margin: 40px 0px 20px 0px;
 }
 
 .contests .underlink {
