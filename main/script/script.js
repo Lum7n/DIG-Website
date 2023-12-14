@@ -277,10 +277,12 @@ var DIG_main;
     }
     function addAndchangeLinks() {
         let latestProgram = document.getElementById("latestProgram");
+        console.log(latestProgram);
         if (latestProgram != null) {
             latestProgram.href = "../../assets/Awards/Dokuments/DIG-Diplomprogramm_2022_DE.pdf";
         }
         let linkGCR = document.getElementById("linkGCR");
+        console.log(latestProgram);
         if (latestProgram != null) {
             linkGCR.href = "../../assets/Awards/Dokuments/GCR-List.pdf";
         }

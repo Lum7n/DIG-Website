@@ -380,11 +380,13 @@ namespace DIG_main {
     function addAndchangeLinks(): void {
 
         let latestProgram: HTMLAnchorElement = <HTMLAnchorElement>document.getElementById("latestProgram");
+        console.log(latestProgram);
         if (latestProgram != null) {
             latestProgram.href = "../../assets/Awards/Dokuments/DIG-Diplomprogramm_2022_DE.pdf";
         }
 
         let linkGCR: HTMLAnchorElement = <HTMLAnchorElement>document.getElementById("linkGCR");
+        console.log(latestProgram);
         if (latestProgram != null) {
             linkGCR.href = "../../assets/Awards/Dokuments/GCR-List.pdf";
         }
