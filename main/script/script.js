@@ -12,14 +12,7 @@ var DIG_main;
     let openSearch = false;
     let search;
     let searchBar;
-    // let logo: HTMLElement;
-    // let infos: HTMLElement;
-    // let blog: HTMLElement;
-    // let awards: HTMLElement;
-    // let contests: HTMLElement;
-    // let members: HTMLElement;
-    // let downloads: HTMLElement;
-    // let contentSection: HTMLElement;
+    let slideIndex = 1;
     async function handleLoad() {
         getLayer();
         let responseNav = await fetch(DIG_main.srcAdd + "script/navigation.json");
@@ -32,6 +25,12 @@ var DIG_main;
         getBrowserInfos();
         addNavListeners();
         addContactInfo();
+        //Slideshow
+        showSlides(slideIndex);
+        let slidecontrolPrev = document.getElementById("prev");
+        slidecontrolPrev.addEventListener("click", slideSub);
+        let slidecontrolNext = document.getElementById("next");
+        slidecontrolNext.addEventListener("click", slideAdd);
         addAndchangeLinks();
     }
     function getLayer() {
@@ -252,11 +251,39 @@ var DIG_main;
         contactDiv.appendChild(contactParagraph);
         contactFooter.appendChild(contactDiv);
     }
+    // Slideshow
+    function slideSub() {
+        slideIndex--;
+        showSlides(slideIndex);
+    }
+    function slideAdd() {
+        slideIndex++;
+        showSlides(slideIndex);
+    }
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        if (n > slides.length) {
+            slideIndex = 1;
+        }
+        if (n < 1) {
+            slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(slideAdd, 4000); // Change image every 2 seconds
+    }
     function addAndchangeLinks() {
         let latestProgram = document.getElementById("latestProgram");
-        latestProgram.href = "../../assets/Awards/Dokuments/DIG-Diplomprogramm_2022_DE.pdf";
+        if (latestProgram != null) {
+            latestProgram.href = "../../assets/Awards/Dokuments/DIG-Diplomprogramm_2022_DE.pdf";
+        }
         let linkGCR = document.getElementById("linkGCR");
-        linkGCR.href = "../../assets/Awards/Dokuments/GCR-List.pdf";
+        if (latestProgram != null) {
+            linkGCR.href = "../../assets/Awards/Dokuments/GCR-List.pdf";
+        }
     }
 })(DIG_main || (DIG_main = {}));
 //# sourceMappingURL=script.js.map

@@ -9,21 +9,20 @@
         {"textDE": "Rundsprüche",           "textEN": "Rundsprueche"},
         {"textDE": "Aktuell",               "textEN": "Latest"},
         {"textDE": "Archiv",                "textEN": "Archive"},
-        {"textDE": "Forum",                 "textEN": "Forum"},
         {"textDE": "Diplome",               "textEN": "Awards"},
         {"textDE": "Diplombeilage",         "textEN": "Award-Insert"},
         {"textDE": "Archiv",                "textEN": "Archive"},
         {"textDE": "Conteste",              "textEN": "Contests"},
         {"textDE": "Ergebnisse",            "textEN": "Results"},
         {"textDE": "Mitglieder",            "textEN": "Members"},
-        {"textDE": "Regeln",            "textEN": "Rules"},
+        {"textDE": "Regeln",                "textEN": "Rules"},
         {"textDE": "Mitglied werden?",      "textEN": "Become a member?"},
         {"textDE": "Mitgliederliste",       "textEN": "Memberlist"},
         {"textDE": "Sektionen",             "textEN": "Departments"},
         {"textDE": "Downloads",             "textEN": "Downloads"},
-        {"textDE": "rund um Diplome",        "textEN": "all-around Awards"},
-        {"textDE": "rund um Conteste",        "textEN": "all-around Contests"},
-        {"textDE": "rund um Mitglieder",        "textEN": "all-around the Members"}
+        {"textDE": "rund um Diplome",       "textEN": "all-around Awards"},
+        {"textDE": "rund um Conteste",      "textEN": "all-around Contests"},
+        {"textDE": "rund um Mitglieder",    "textEN": "all-around the Members"}
     ]
 
 }

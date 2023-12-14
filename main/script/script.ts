@@ -24,15 +24,7 @@ namespace DIG_main {
 
     export let header: HTMLElement;
 
-    // let logo: HTMLElement;
-    // let infos: HTMLElement;
-    // let blog: HTMLElement;
-    // let awards: HTMLElement;
-    // let contests: HTMLElement;
-    // let members: HTMLElement;
-    // let downloads: HTMLElement;
-
-    // let contentSection: HTMLElement;
+    let slideIndex: number = 1;
 
     async function handleLoad(): Promise<void> {
 
@@ -50,6 +42,13 @@ namespace DIG_main {
         getBrowserInfos();
         addNavListeners();
         addContactInfo();
+
+        //Slideshow
+        showSlides(slideIndex);
+        let slidecontrolPrev: HTMLAnchorElement = <HTMLAnchorElement>document.getElementById("prev");
+        slidecontrolPrev.addEventListener("click", slideSub);
+        let slidecontrolNext: HTMLAnchorElement = <HTMLAnchorElement>document.getElementById("next");
+        slidecontrolNext.addEventListener("click", slideAdd);
 
         addAndchangeLinks();
 
@@ -352,14 +351,44 @@ namespace DIG_main {
         contactFooter.appendChild(contactDiv);
     }
 
-    function addAndchangeLinks():void {
+    // Slideshow
+
+    function slideSub() {
+        slideIndex--;
+        showSlides(slideIndex);
+    }
+
+    function slideAdd() {
+        slideIndex++;
+        showSlides(slideIndex);
+    }
+
+    function showSlides(n: number) {
+        let i: number;
+        let slides: HTMLCollectionOf<HTMLDivElement> = <HTMLCollectionOf<HTMLDivElement>>document.getElementsByClassName("mySlides");
+
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(slideAdd, 4000); // Change image every 2 seconds
+    }
+
+    function addAndchangeLinks(): void {
 
         let latestProgram: HTMLAnchorElement = <HTMLAnchorElement>document.getElementById("latestProgram");
-        latestProgram.href = "../../assets/Awards/Dokuments/DIG-Diplomprogramm_2022_DE.pdf";
+        if (latestProgram != null) {
+            latestProgram.href = "../../assets/Awards/Dokuments/DIG-Diplomprogramm_2022_DE.pdf";
+        }
 
         let linkGCR: HTMLAnchorElement = <HTMLAnchorElement>document.getElementById("linkGCR");
-        linkGCR.href = "../../assets/Awards/Dokuments/GCR-List.pdf";
-        
+        if (latestProgram != null) {
+            linkGCR.href = "../../assets/Awards/Dokuments/GCR-List.pdf";
+        }
+
     }
 
 }

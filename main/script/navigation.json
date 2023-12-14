@@ -18,9 +18,7 @@
         {"element": "a", "href": "Blog/Rundsprueche/Rundsprueche_latest.html", "textDE": "Aktuell", "textEN": "Latest"},
         {"element": "li", "id": "Aktuell"},
         {"element": "a", "href": "Blog/Rundsprueche/Rundsprueche_archive.html", "textDE": "Archiv", "textEN": "Archive"},
-        {"element": "li", "id": "Archiv"},
-        {"element": "a", "href": "Blog/Forum.html", "textDE": "Forum", "textEN": "Forum"},
-        {"element": "li", "id": "Forum"}
+        {"element": "li", "id": "Archiv"}
     ],
     "Diplome": [
         {"element": "a", "class": "mI_text", "href": "Awards.html", "textDE": "Diplome", "textEN": "Awards"},
