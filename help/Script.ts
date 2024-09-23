@@ -1,19 +1,22 @@
-"use strict";
-var sortAlphabetic;
-(function (sortAlphabetic) {
+namespace sortAlphabetic {
+
     window.addEventListener("load", init);
+
     function init() {
-        let ul = document.querySelector(".help");
+        let ul: HTMLUListElement = <HTMLUListElement>document.querySelector(".help");
         console.log(ul);
-        if (ul != null) {
-            let list = ul.getElementsByTagName("li");
+
+        if(ul != null) {
+            let list: HTMLCollectionOf<HTMLLIElement> = ul.getElementsByTagName("li");
             console.log(list);
-            let liArray = Array.prototype.slice.call(list);
+    
+            let liArray: HTMLLIElement[] = Array.prototype.slice.call(list);
             console.log(liArray);
+    
             ul.innerHTML = "";
+    
             liArray.sort((a, b) => a.innerText.localeCompare(b.innerText));
             liArray.forEach(liElement => ul.appendChild(liElement));
         }
     }
-})(sortAlphabetic || (sortAlphabetic = {}));
-//# sourceMappingURL=Script.js.map
+}
